@@ -1,0 +1,37 @@
+{
+  "name": "@bybit-exchange/mcp-server",
+  "version": "1.0.0",
+  "description": "Bybit trading MCP server — exposes Bybit REST and WebSocket APIs as MCP tools",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "trading-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "node --env-file=.env --import tsx/esm src/index.ts",
+    "generate:new": "bash scripts/generate-new.sh",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.10.2",
+    "ws": "^8.18.0",
+    "zod": "^3.24.2",
+    "zod-to-json-schema": "^3.24.5"
+  },
+  "devDependencies": {
+    "js-yaml": "^4.1.0",
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^22.0.0",
+    "@types/ws": "^8.5.13",
+    "tsup": "^8.4.0",
+    "tsx": "^4.19.3",
+    "typescript": "^5.7.3"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
