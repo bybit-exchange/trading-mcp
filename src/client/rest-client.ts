@@ -1,5 +1,6 @@
 import { buildAuthHeaders, toQueryString } from '../utils/auth.js';
 import { rateLimiter } from '../utils/rate-limiter.js';
+import { commonHeaders } from '../version.js';
 
 const MAINNET = 'https://api.bybit.com';
 const TESTNET = 'https://api-testnet.bybit.com';
@@ -28,7 +29,7 @@ class RestClient {
     const { baseUrl } = getConfig();
     const qs = toQueryString(params);
     const url = qs ? `${baseUrl}${path}?${qs}` : `${baseUrl}${path}`;
-    const res = await fetch(url);
+    const res = await fetch(url, { headers: commonHeaders() });
     return handleResponse(res);
   }
 
@@ -38,7 +39,7 @@ class RestClient {
     await rateLimiter.acquire(path);
     const qs = toQueryString(params);
     const url = qs ? `${baseUrl}${path}?${qs}` : `${baseUrl}${path}`;
-    const headers = buildAuthHeaders(qs, apiKey!, apiSecret!);
+    const headers = { ...commonHeaders(), ...buildAuthHeaders(qs, apiKey!, apiSecret!) };
     const res = await fetch(url, { headers });
     return handleResponse(res);
   }
@@ -49,7 +50,7 @@ class RestClient {
     const bodyStr = JSON.stringify(body);
     const res = await fetch(`${baseUrl}${path}`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { ...commonHeaders(), 'Content-Type': 'application/json' },
       body: bodyStr,
     });
     return handleResponse(res);
@@ -61,6 +62,7 @@ class RestClient {
     await rateLimiter.acquire(path);
     const bodyStr = JSON.stringify(body);
     const headers = {
+      ...commonHeaders(),
       'Content-Type': 'application/json',
       ...buildAuthHeaders(bodyStr, apiKey!, apiSecret!),
     };

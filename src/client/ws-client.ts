@@ -1,5 +1,6 @@
 import WebSocket from 'ws';
 import { sign } from '../utils/auth.js';
+import { commonHeaders } from '../version.js';
 
 /**
  * WebSocket base URLs by channel category.
@@ -66,7 +67,7 @@ export class WsClient {
     return new Promise((resolve, reject) => {
       const urls = process.env.BYBIT_TESTNET === 'true' ? WS_TESTNET : WS_MAINNET;
       const url = urls[category];
-      const ws = new WebSocket(url);
+      const ws = new WebSocket(url, { headers: commonHeaders() });
       const messages: unknown[] = [];
       let settled = false;
       let timer: ReturnType<typeof setTimeout>;
