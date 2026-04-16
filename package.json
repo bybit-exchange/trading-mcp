@@ -32,10 +32,7 @@
     "build": "tsup",
     "dev": "node --env-file=.env --import tsx/esm src/index.ts",
     "typecheck": "tsc --noEmit",
-    "bump": "bash scripts/bump-version.sh",
-    "gen-manifest": "bash scripts/gen-manifest.sh",
-    "publish-pkg": "bash scripts/publish.sh",
-    "release": "bash scripts/release.sh"
+    "publish-pkg": "bash scripts/publish.sh"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.10.2",

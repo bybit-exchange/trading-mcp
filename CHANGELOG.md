@@ -14,46 +14,41 @@ versioned with [Semantic Versioning](https://semver.org/).
 ## [2.0.5] - 2026-04-16
 
 ### Added
-- (待填写)
+- Per-tool version check: before every tool call, check against remote manifest with 2-minute TTL cache; return actionable upgrade instructions if version is outdated
+- `src/version-check.ts`: centralized manifest fetch, TTL cache, startup integrity check, and per-tool check
+- `scripts/publish.sh`: one-command build + npm publish
+- `scripts/release.sh`: full 7-step release automation (bump → commit → generate → build → manifest → sync)
 
 ### Changed
-- (待填写)
-
-### Fixed
-- (待填写)
+- Startup version mismatch now calls `process.exit(1)` to block start and protect API credentials
+- Upgrade messages include step-by-step instructions for users
 
 ## [2.0.4] - 2026-04-16
 
 ### Added
-- (待填写)
+- `User-Agent: bybit-mcp/<version>` and `X-Referer: bybit-mcp` headers on all HTTP requests and WebSocket connections
+- `src/version.ts`: single source of truth for `VERSION` constant and `commonHeaders()`
+- `bump-version.sh` now updates `src/version.ts` atomically with `package.json` and `src/server.ts`
 
 ### Changed
-- (待填写)
-
-### Fixed
-- (待填写)
+- `gen-manifest.sh` writes manifest directly to `../github/ai-mcp-manifest` dev branch and pushes, instead of writing a local file
 
 ## [2.0.3] - 2026-04-16
 
 ### Added
-- (待填写)
+- Detailed installation guide in README (Claude Desktop, Cursor, VS Code) with exact config file paths
+- Step-by-step Quick Start section
 
 ### Changed
-- (待填写)
-
-### Fixed
-- (待填写)
+- npm package renamed from `@bybit-exchange/mcp-server` to `bybit-official-trading-server`
+- Added `bybit-official-trading-server` bin alias alongside `trading-mcp`
+- Added `repository` field to package.json pointing to GitHub
 
 ## [2.0.2] - 2026-04-16
 
-### Added
-- fix
-
-### Changed
-- fix
-
 ### Fixed
-- fix
+- Pass local version to manifest API to avoid false mismatch on older installs
+- Distinguish version upgrade hint vs tamper block in integrity check output
 
 ## [2.0.0] - 2026-04-16
 
