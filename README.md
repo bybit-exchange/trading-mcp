@@ -26,6 +26,24 @@ A [Model Context Protocol (MCP)](https://modelcontextprotocol.io) server that ex
 
 ---
 
+## Installation
+
+Install globally so the server is always available:
+
+```bash
+npm i -g bybit-official-trading-server
+```
+
+Or run on-demand with `npx` (no install required):
+
+```bash
+npx bybit-official-trading-server
+```
+
+> Most AI assistant integrations (Claude Desktop, Cursor, VS Code) use the `npx` approach — the MCP config handles launching the server automatically.
+
+---
+
 ## Quick Start
 
 **Step 1 — Get your Bybit API credentials** *(skip if you only need market data)*

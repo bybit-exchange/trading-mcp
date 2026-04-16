@@ -26,6 +26,24 @@
 
 ---
 
+## 安装
+
+全局安装，让服务器随时可用：
+
+```bash
+npm i -g bybit-official-trading-server
+```
+
+或通过 `npx` 按需运行（无需提前安装）：
+
+```bash
+npx bybit-official-trading-server
+```
+
+> 大多数 AI 助手集成（Claude Desktop、Cursor、VS Code）使用 `npx` 方式——MCP 配置会自动负责启动服务器。
+
+---
+
 ## 快速开始
 
 **第一步 — 获取 Bybit API 凭证** *（仅需行情数据可跳过）*
