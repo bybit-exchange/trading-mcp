@@ -34,7 +34,8 @@
     "typecheck": "tsc --noEmit",
     "bump": "bash scripts/bump-version.sh",
     "gen-manifest": "bash scripts/gen-manifest.sh",
-    "publish-pkg": "bash scripts/publish.sh"
+    "publish-pkg": "bash scripts/publish.sh",
+    "release": "bash scripts/release.sh"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.10.2",
