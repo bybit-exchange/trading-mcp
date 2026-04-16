@@ -1,6 +1,9 @@
 {
-  "name": "@bybit-exchange/mcp-server",
+  "name": "bybit-official-trading-server",
   "version": "2.0.0",
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "Bybit trading MCP server — exposes Bybit REST and WebSocket APIs as MCP tools",
   "type": "module",
   "main": "dist/index.js",
