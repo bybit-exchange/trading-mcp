@@ -1,5 +1,5 @@
 {
-  "name": "@bybit-exchange/mcp-server",
+  "name": "bybit-official-trading-server",
   "version": "2.0.2",
   "description": "Bybit trading MCP server — exposes Bybit REST and WebSocket APIs as MCP tools",
   "type": "module",

@@ -1,4 +1,4 @@
-# @bybit-exchange/mcp-server
+# bybit-official-trading-server
 
 将 Bybit REST 和 WebSocket API 封装为 [MCP（模型上下文协议）](https://modelcontextprotocol.io) 工具的服务器，让 AI 助手（Claude、Cursor 等）可以直接用自然语言查询行情数据、管理 Bybit 账户。
 
@@ -28,13 +28,13 @@
 ## 安装
 
 ```bash
-npm install -g @bybit-exchange/mcp-server
+npm install -g bybit-official-trading-server
 ```
 
 或直接通过 `npx` 运行（无需全局安装）：
 
 ```bash
-npx @bybit-exchange/mcp-server
+npx bybit-official-trading-server
 ```
 
 ---
@@ -64,7 +64,7 @@ npx @bybit-exchange/mcp-server
   "mcpServers": {
     "bybit": {
       "command": "npx",
-      "args": ["-y", "@bybit-exchange/mcp-server"],
+      "args": ["-y", "bybit-official-trading-server"],
       "env": {
         "BYBIT_API_KEY": "你的 API Key",
         "BYBIT_API_SECRET": "你的 API Secret"
@@ -81,7 +81,7 @@ npx @bybit-exchange/mcp-server
   "mcpServers": {
     "bybit": {
       "command": "npx",
-      "args": ["-y", "@bybit-exchange/mcp-server"],
+      "args": ["-y", "bybit-official-trading-server"],
       "env": {
         "BYBIT_API_KEY": "你的测试网 API Key",
         "BYBIT_API_SECRET": "你的测试网 API Secret",
@@ -103,7 +103,7 @@ npx @bybit-exchange/mcp-server
   "mcpServers": {
     "bybit": {
       "command": "npx",
-      "args": ["-y", "@bybit-exchange/mcp-server"],
+      "args": ["-y", "bybit-official-trading-server"],
       "env": {
         "BYBIT_API_KEY": "你的 API Key",
         "BYBIT_API_SECRET": "你的 API Secret"

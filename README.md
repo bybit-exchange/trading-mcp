@@ -1,4 +1,4 @@
-# @bybit-exchange/mcp-server
+# bybit-official-trading-server
 
 A [Model Context Protocol (MCP)](https://modelcontextprotocol.io) server that exposes Bybit REST and WebSocket APIs as MCP tools, enabling AI assistants (Claude, Cursor, etc.) to query market data and manage accounts on Bybit.
 
@@ -28,13 +28,13 @@ A [Model Context Protocol (MCP)](https://modelcontextprotocol.io) server that ex
 ## Installation
 
 ```bash
-npm install -g @bybit-exchange/mcp-server
+npm install -g bybit-official-trading-server
 ```
 
 Or run directly with `npx`:
 
 ```bash
-npx @bybit-exchange/mcp-server
+npx bybit-official-trading-server
 ```
 
 ---
@@ -64,7 +64,7 @@ Add the following to your `claude_desktop_config.json`:
   "mcpServers": {
     "bybit": {
       "command": "npx",
-      "args": ["-y", "@bybit-exchange/mcp-server"],
+      "args": ["-y", "bybit-official-trading-server"],
       "env": {
         "BYBIT_API_KEY": "your_api_key",
         "BYBIT_API_SECRET": "your_api_secret"
@@ -81,7 +81,7 @@ For testnet:
   "mcpServers": {
     "bybit": {
       "command": "npx",
-      "args": ["-y", "@bybit-exchange/mcp-server"],
+      "args": ["-y", "bybit-official-trading-server"],
       "env": {
         "BYBIT_API_KEY": "your_testnet_api_key",
         "BYBIT_API_SECRET": "your_testnet_api_secret",
@@ -103,7 +103,7 @@ Add to your MCP settings file:
   "mcpServers": {
     "bybit": {
       "command": "npx",
-      "args": ["-y", "@bybit-exchange/mcp-server"],
+      "args": ["-y", "bybit-official-trading-server"],
       "env": {
         "BYBIT_API_KEY": "your_api_key",
         "BYBIT_API_SECRET": "your_api_secret"
