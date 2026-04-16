@@ -21,27 +21,34 @@
 
 ## 环境要求
 
-- Node.js >= 20.6
+- **Node.js >= 20.6** — 运行 `node -v` 查看当前版本，如需安装请前往 [nodejs.org](https://nodejs.org/)
+- **Bybit 账户** — 仅账户/资产/用户类工具需要，行情类工具无需登录
 
 ---
 
-## 安装
+## 快速开始
 
-```bash
-npm install -g bybit-official-trading-server
-```
+**第一步 — 获取 Bybit API 凭证** *（仅需行情数据可跳过）*
 
-或直接通过 `npx` 运行（无需全局安装）：
+1. 登录 [Bybit](https://www.bybit.com)，进入 **账户与安全 → API 管理**
+2. 点击 **创建新密钥**，选择 **系统生成的 API Key**
+3. 按需设置权限（建议只开启只读权限）
+4. 保存 **API Key** 和 **API Secret**（Secret 仅在创建时显示一次，请妥善保管）
 
-```bash
-npx bybit-official-trading-server
-```
+**第二步 — 接入 AI 助手**
+
+根据你使用的工具，参照下方对应章节完成配置（Claude Desktop、Cursor 或 VS Code）。
+
+**第三步 — 验证是否连接成功**
+
+配置完成后重启 AI 助手，发送以下提问：
+> *"BTCUSDT 现在的价格是多少？"*
+
+如果返回了实时价格，说明服务器已正常连接。
 
 ---
 
-## 配置
-
-启动前设置以下环境变量：
+## 配置项说明
 
 | 变量名 | 是否必填 | 默认值 | 说明 |
 |--------|----------|--------|------|
@@ -57,7 +64,16 @@ npx bybit-official-trading-server
 
 > **首次使用提示：** Claude Desktop 会在每个工具第一次调用时弹出授权确认框。点击 **"Always allow"** 即可永久免授权，后续调用不再弹出。
 
-在 `claude_desktop_config.json` 中添加以下配置：
+**1. 找到配置文件**
+
+| 系统 | 路径 |
+|------|------|
+| macOS | `~/Library/Application Support/Claude/claude_desktop_config.json` |
+| Windows | `%APPDATA%\Claude\claude_desktop_config.json` |
+
+用任意文本编辑器打开（文件不存在时手动创建）。
+
+**2. 添加 MCP 服务器配置**
 
 ```json
 {
@@ -74,7 +90,14 @@ npx bybit-official-trading-server
 }
 ```
 
-使用测试网：
+> 将 `你的 API Key` 和 `你的 API Secret` 替换为实际的 Bybit 凭证。
+> 如果文件中已有其他 MCP 服务器配置，将 `"bybit"` 块添加到现有 `"mcpServers"` 对象内即可。
+
+**3. 重启 Claude Desktop**
+
+退出并重新打开 Claude Desktop，Bybit 工具将在下次启动时自动加载。
+
+**使用测试网：**
 
 ```json
 {
@@ -94,9 +117,18 @@ npx bybit-official-trading-server
 
 ---
 
-## 在 Cursor / VS Code 中使用
+## 在 Cursor 中使用
 
-在 MCP 配置文件中添加：
+**1. 找到配置文件**
+
+| 系统 | 路径 |
+|------|------|
+| macOS / Linux | `~/.cursor/mcp.json` |
+| Windows | `%USERPROFILE%\.cursor\mcp.json` |
+
+文件不存在时手动创建。
+
+**2. 添加 MCP 服务器配置**
 
 ```json
 {
@@ -112,6 +144,42 @@ npx bybit-official-trading-server
   }
 }
 ```
+
+**3. 重启 Cursor**
+
+保存文件后重启 Cursor，可在 **设置 → MCP** 中看到 Bybit 服务器已加载。
+
+---
+
+## 在 VS Code 中使用
+
+**1. 创建 MCP 配置文件**
+
+在项目根目录（或工作区目录）下创建 `.vscode/mcp.json`：
+
+```json
+{
+  "servers": {
+    "bybit": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "bybit-official-trading-server"],
+      "env": {
+        "BYBIT_API_KEY": "你的 API Key",
+        "BYBIT_API_SECRET": "你的 API Secret"
+      }
+    }
+  }
+}
+```
+
+**2. 开启 VS Code 的 MCP 支持**
+
+打开设置（`Cmd+,` / `Ctrl+,`），搜索 `mcp`，确认你所使用的 AI 插件（如 GitHub Copilot）已开启 MCP 支持。
+
+**3. 重载窗口**
+
+通过命令面板（`Cmd+Shift+P` / `Ctrl+Shift+P`）执行 **Developer: Reload Window**，使配置生效。
 
 ---
 
