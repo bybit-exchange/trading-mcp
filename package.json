@@ -13,7 +13,9 @@
   "scripts": {
     "build": "tsup",
     "dev": "node --env-file=.env --import tsx/esm src/index.ts",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "bump": "bash scripts/bump-version.sh",
+    "gen-manifest": "bash scripts/gen-manifest.sh"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.10.2",
