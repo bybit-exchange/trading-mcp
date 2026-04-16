@@ -11,6 +11,17 @@ versioned with [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [2.0.4] - 2026-04-16
+
+### Added
+- (待填写)
+
+### Changed
+- (待填写)
+
+### Fixed
+- (待填写)
+
 ## [2.0.3] - 2026-04-16
 
 ### Added
