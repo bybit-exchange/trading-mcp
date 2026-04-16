@@ -1,4 +1,4 @@
-# @bybit-exchange/mcp-server
+# bybit-official-trading-server
 
 A [Model Context Protocol (MCP)](https://modelcontextprotocol.io) server that exposes Bybit REST and WebSocket APIs as MCP tools, enabling AI assistants (Claude, Cursor, etc.) to query market data and manage accounts on Bybit.
 
@@ -21,27 +21,34 @@ A [Model Context Protocol (MCP)](https://modelcontextprotocol.io) server that ex
 
 ## Requirements
 
-- Node.js >= 20.6
+- **Node.js >= 20.6** — Check your version with `node -v`. Download from [nodejs.org](https://nodejs.org/) if needed.
+- A **Bybit account** — Required only for account/asset/user tools. Market data tools work without an account.
 
 ---
 
-## Installation
+## Quick Start
 
-```bash
-npm install -g @bybit-exchange/mcp-server
-```
+**Step 1 — Get your Bybit API credentials** *(skip if you only need market data)*
 
-Or run directly with `npx`:
+1. Log in to [Bybit](https://www.bybit.com) and go to **Account & Security → API Management**
+2. Click **Create New Key**, select **System-generated API Key**
+3. Set the permissions you need (read-only is recommended for safety)
+4. Save the **API Key** and **API Secret** — the secret is shown only once
 
-```bash
-npx @bybit-exchange/mcp-server
-```
+**Step 2 — Connect to your AI assistant**
+
+Choose the section below that matches your tool (Claude Desktop, Cursor, or VS Code).
+
+**Step 3 — Verify the connection**
+
+After configuring, restart your AI assistant and ask:
+> *"What's the current BTCUSDT price?"*
+
+If you get a live price back, the server is connected and working.
 
 ---
 
-## Configuration
-
-Set the following environment variables before starting the server:
+## Configuration Reference
 
 | Variable | Required | Default | Description |
 |----------|----------|---------|-------------|
@@ -49,7 +56,7 @@ Set the following environment variables before starting the server:
 | `BYBIT_API_SECRET` | For auth endpoints | — | Your Bybit API secret |
 | `BYBIT_TESTNET` | No | `false` | Set to `true` to use the testnet |
 
-Market data tools work without credentials. Account, asset, user, and WebSocket private channel tools require `BYBIT_API_KEY` and `BYBIT_API_SECRET`.
+Market data tools work without credentials. Account, asset, user, and WebSocket private channel tools require both `BYBIT_API_KEY` and `BYBIT_API_SECRET`.
 
 ---
 
@@ -57,14 +64,23 @@ Market data tools work without credentials. Account, asset, user, and WebSocket 
 
 > **First-time setup:** Claude Desktop will show an authorization prompt the first time each tool is called. Click **"Always allow"** to permanently approve it — you won't be asked again.
 
-Add the following to your `claude_desktop_config.json`:
+**1. Find your config file**
+
+| Platform | Path |
+|----------|------|
+| macOS | `~/Library/Application Support/Claude/claude_desktop_config.json` |
+| Windows | `%APPDATA%\Claude\claude_desktop_config.json` |
+
+Open the file in any text editor (create it if it doesn't exist).
+
+**2. Add the MCP server config**
 
 ```json
 {
   "mcpServers": {
     "bybit": {
       "command": "npx",
-      "args": ["-y", "@bybit-exchange/mcp-server"],
+      "args": ["-y", "bybit-official-trading-server"],
       "env": {
         "BYBIT_API_KEY": "your_api_key",
         "BYBIT_API_SECRET": "your_api_secret"
@@ -74,14 +90,21 @@ Add the following to your `claude_desktop_config.json`:
 }
 ```
 
-For testnet:
+> Replace `your_api_key` and `your_api_secret` with your actual Bybit credentials.
+> If the file already has other MCP servers, add the `"bybit"` block inside the existing `"mcpServers"` object.
+
+**3. Restart Claude Desktop**
+
+Quit and reopen Claude Desktop. The Bybit tools will be available automatically on next launch.
+
+**For testnet:**
 
 ```json
 {
   "mcpServers": {
     "bybit": {
       "command": "npx",
-      "args": ["-y", "@bybit-exchange/mcp-server"],
+      "args": ["-y", "bybit-official-trading-server"],
       "env": {
         "BYBIT_API_KEY": "your_testnet_api_key",
         "BYBIT_API_SECRET": "your_testnet_api_secret",
@@ -94,16 +117,25 @@ For testnet:
 
 ---
 
-## Usage with Cursor / VS Code
+## Usage with Cursor
 
-Add to your MCP settings file:
+**1. Find your config file**
+
+| Platform | Path |
+|----------|------|
+| macOS / Linux | `~/.cursor/mcp.json` |
+| Windows | `%USERPROFILE%\.cursor\mcp.json` |
+
+Create the file if it doesn't exist.
+
+**2. Add the MCP server config**
 
 ```json
 {
   "mcpServers": {
     "bybit": {
       "command": "npx",
-      "args": ["-y", "@bybit-exchange/mcp-server"],
+      "args": ["-y", "bybit-official-trading-server"],
       "env": {
         "BYBIT_API_KEY": "your_api_key",
         "BYBIT_API_SECRET": "your_api_secret"
@@ -112,6 +144,42 @@ Add to your MCP settings file:
   }
 }
 ```
+
+**3. Restart Cursor**
+
+After saving the file, restart Cursor. The Bybit MCP server will be listed under **Settings → MCP**.
+
+---
+
+## Usage with VS Code
+
+**1. Find or create your MCP config**
+
+In your project root (or workspace), create `.vscode/mcp.json`:
+
+```json
+{
+  "servers": {
+    "bybit": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "bybit-official-trading-server"],
+      "env": {
+        "BYBIT_API_KEY": "your_api_key",
+        "BYBIT_API_SECRET": "your_api_secret"
+      }
+    }
+  }
+}
+```
+
+**2. Enable MCP in VS Code settings**
+
+Open VS Code Settings (`Cmd+,` / `Ctrl+,`), search for `mcp`, and ensure **MCP support** is enabled for your AI extension (e.g. GitHub Copilot).
+
+**3. Reload the window**
+
+Run **Developer: Reload Window** from the Command Palette (`Cmd+Shift+P` / `Ctrl+Shift+P`) to pick up the new config.
 
 ---
 

@@ -45,7 +45,7 @@ async function checkIntegrity(): Promise<void> {
       process.stderr.write(
         `\n[trading-mcp] A new version is available: ${manifest.version}\n` +
         `  You are running: ${localVersion}\n` +
-        `  To upgrade: npm update @bybit-exchange/mcp-server\n\n`,
+        `  To upgrade: npm update bybit-official-trading-server\n\n`,
       );
       return;
     }
@@ -65,7 +65,7 @@ async function checkIntegrity(): Promise<void> {
           `\n[trading-mcp] Integrity check FAILED: installed package does not match official release.\n` +
           `  Version: ${localVersion}\n` +
           `  Refusing to start to protect your API credentials.\n` +
-          `  To fix: npm install -g @bybit-exchange/mcp-server@latest\n\n`,
+          `  To fix: npm install -g bybit-official-trading-server@latest\n\n`,
         );
         process.exit(1);
       }

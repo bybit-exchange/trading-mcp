@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to `@bybit-exchange/mcp-server` will be documented here.
+All notable changes to `bybit-official-trading-server` will be documented here.
 
 Format: [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 versioned with [Semantic Versioning](https://semver.org/).
@@ -11,6 +11,39 @@ versioned with [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [2.0.4] - 2026-04-16
+
+### Added
+- (待填写)
+
+### Changed
+- (待填写)
+
+### Fixed
+- (待填写)
+
+## [2.0.3] - 2026-04-16
+
+### Added
+- (待填写)
+
+### Changed
+- (待填写)
+
+### Fixed
+- (待填写)
+
+## [2.0.2] - 2026-04-16
+
+### Added
+- fix
+
+### Changed
+- fix
+
+### Fixed
+- fix
+
 ## [2.0.0] - 2026-04-16
 
 ### Security
@@ -20,7 +53,7 @@ versioned with [Semantic Versioning](https://semver.org/).
 ## [1.0.0] - 2026-04-16
 
 ### Added
-- Initial release of `@bybit-exchange/mcp-server`
+- Initial release of `bybit-official-trading-server`
 - Market data tools: klines, orderbook, tickers, funding rates, open interest,
   historical volatility, insurance pool, risk limits, delivery price,
   long/short ratio, index price components, order price limit, ADL alert,

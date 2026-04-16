@@ -1,6 +1,6 @@
 {
   "name": "bybit-official-trading-server",
-  "version": "2.0.1",
+  "version": "2.0.4",
   "publishConfig": {
     "access": "public"
   },
@@ -18,7 +18,12 @@
     "api"
   ],
   "bin": {
-    "trading-mcp": "dist/index.js"
+    "trading-mcp": "dist/index.js",
+    "bybit-official-trading-server": "dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bybit-exchange/trading-mcp.git"
   },
   "files": [
     "dist"
