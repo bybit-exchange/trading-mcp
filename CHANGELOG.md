@@ -11,6 +11,17 @@ versioned with [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [2.0.2] - 2026-04-16
+
+### Added
+- fix
+
+### Changed
+- fix
+
+### Fixed
+- fix
+
 ## [2.0.0] - 2026-04-16
 
 ### Security
