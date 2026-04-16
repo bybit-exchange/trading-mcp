@@ -21,7 +21,7 @@ A [Model Context Protocol (MCP)](https://modelcontextprotocol.io) server that ex
 
 ## Requirements
 
-- Node.js >= 18
+- Node.js >= 20.6
 
 ---
 
