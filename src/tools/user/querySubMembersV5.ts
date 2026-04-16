@@ -10,6 +10,9 @@ export const querySubMembersV5 = {
     nextCursor: z.number().int().min(0).default(0).optional(),
   }),
   handler: async (input: Record<string, unknown>) => {
-    return restClient.getAuth("/v5/user/submembers", input);
+    const result = await restClient.getAuth("/v5/user/submembers", input) as any;
+    // Strip user-controlled free-text field to prevent indirect prompt injection
+    result?.result?.subMembers?.forEach((m: any) => { delete m.remark; });
+    return result;
   },
 };

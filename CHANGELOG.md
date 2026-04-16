@@ -11,6 +11,12 @@ versioned with [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [2.0.0] - 2026-04-16
+
+### Security
+- Strip user-controlled `remark` field from `querySubMembers` and `querySubMembersV5`
+  responses to prevent indirect prompt injection via custodial sub-account remarks
+
 ## [1.0.0] - 2026-04-16
 
 ### Added
