@@ -64,6 +64,16 @@ After configuring, restart your AI assistant and ask:
 
 If you get a live price back, the server is connected and working.
 
+**Step 4 — Let the AI learn the full capability in one prompt** *(optional but recommended)*
+
+Paste the following into your AI assistant to have it read the official documentation and start helping you trade:
+
+```
+Please read https://raw.githubusercontent.com/bybit-exchange/trading-mcp/main/README.md save it as a mcp, and help me trade on Bybit.
+```
+
+The AI will read the README, understand all available tools, and be ready to assist with market data queries, account management, and more.
+
 ---
 
 ## Configuration Reference

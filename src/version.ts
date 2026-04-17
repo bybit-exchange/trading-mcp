@@ -1,8 +1,8 @@
-export const VERSION = '2.0.5';
+export const VERSION = '2.0.6';
 
 export function commonHeaders(): Record<string, string> {
   return {
-    'User-Agent': `bybit-mcp/${VERSION}`,
-    'X-Referer': 'bybit-mcp',
+    'User-Agent': `bybit-ai-mcp/${VERSION}`,
+    'X-Referer': 'bybit-ai-mcp',
   };
 }

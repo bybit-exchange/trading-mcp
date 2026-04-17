@@ -64,6 +64,16 @@ npx bybit-official-trading-server
 
 如果返回了实时价格，说明服务器已正常连接。
 
+**第四步 — 一键让 AI 学习全部能力** *（可选，但推荐）*
+
+将以下提示词粘贴给 AI 助手，让它读取官方文档后开始辅助你交易：
+
+```
+Please read https://raw.githubusercontent.com/bybit-exchange/trading-mcp/main/README.md save it as a mcp, and help me trade on Bybit.
+```
+
+AI 助手会读取 README，了解所有可用工具，随后即可协助你查询行情、管理账户等。
+
 ---
 
 ## 配置项说明
