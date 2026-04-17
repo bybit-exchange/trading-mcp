@@ -108,7 +108,7 @@ Open the file in any text editor (create it if it doesn't exist).
   "mcpServers": {
     "bybit": {
       "command": "npx",
-      "args": ["-y", "bybit-official-trading-server"],
+      "args": ["-y", "bybit-official-trading-server@latest"],
       "env": {
         "BYBIT_API_KEY": "your_api_key",
         "BYBIT_API_SECRET": "your_api_secret"
@@ -132,7 +132,7 @@ Quit and reopen Claude Desktop. The Bybit tools will be available automatically 
   "mcpServers": {
     "bybit": {
       "command": "npx",
-      "args": ["-y", "bybit-official-trading-server"],
+      "args": ["-y", "bybit-official-trading-server@latest"],
       "env": {
         "BYBIT_API_KEY": "your_testnet_api_key",
         "BYBIT_API_SECRET": "your_testnet_api_secret",
@@ -163,7 +163,7 @@ Create the file if it doesn't exist.
   "mcpServers": {
     "bybit": {
       "command": "npx",
-      "args": ["-y", "bybit-official-trading-server"],
+      "args": ["-y", "bybit-official-trading-server@latest"],
       "env": {
         "BYBIT_API_KEY": "your_api_key",
         "BYBIT_API_SECRET": "your_api_secret"
@@ -191,7 +191,7 @@ In your project root (or workspace), create `.vscode/mcp.json`:
     "bybit": {
       "type": "stdio",
       "command": "npx",
-      "args": ["-y", "bybit-official-trading-server"],
+      "args": ["-y", "bybit-official-trading-server@latest"],
       "env": {
         "BYBIT_API_KEY": "your_api_key",
         "BYBIT_API_SECRET": "your_api_secret"
