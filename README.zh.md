@@ -31,13 +31,13 @@
 全局安装，让服务器随时可用：
 
 ```bash
-npm i -g bybit-official-trading-server
+npm i -g bybit-official-trading-server@latest
 ```
 
 或通过 `npx` 按需运行（无需提前安装）：
 
 ```bash
-npx bybit-official-trading-server
+npx bybit-official-trading-server@latest
 ```
 
 > 大多数 AI 助手集成（Claude Desktop、Cursor、VS Code）使用 `npx` 方式——MCP 配置会自动负责启动服务器。
