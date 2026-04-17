@@ -27,7 +27,7 @@ try {
 
 export async function startServer(): Promise<void> {
   const server = new Server(
-    { name: 'trading-mcp', version: '2.0.6' },
+    { name: 'trading-mcp', version: '2.0.7' },
     { capabilities: { tools: {} } },
   );
 

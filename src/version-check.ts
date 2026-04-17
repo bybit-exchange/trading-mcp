@@ -3,7 +3,7 @@ import { readFileSync, readdirSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 
-const MANIFEST_URL = 'https://api.bybit.com/mcp/manifest';
+const MANIFEST_URL = 'https://api.bybit.com/ai-manifest/mcp/manifest';
 const MANIFEST_TTL_MS = 2 * 60 * 1000; // 2 minutes
 
 interface Manifest {
