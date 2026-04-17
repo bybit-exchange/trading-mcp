@@ -26,6 +26,24 @@
 
 ---
 
+## 安装
+
+全局安装，让服务器随时可用：
+
+```bash
+npm i -g bybit-official-trading-server@latest
+```
+
+或通过 `npx` 按需运行（无需提前安装）：
+
+```bash
+npx bybit-official-trading-server@latest
+```
+
+> 大多数 AI 助手集成（Claude Desktop、Cursor、VS Code）使用 `npx` 方式——MCP 配置会自动负责启动服务器。
+
+---
+
 ## 快速开始
 
 **第一步 — 获取 Bybit API 凭证** *（仅需行情数据可跳过）*
@@ -45,6 +63,16 @@
 > *"BTCUSDT 现在的价格是多少？"*
 
 如果返回了实时价格，说明服务器已正常连接。
+
+**第四步 — 一键让 AI 学习全部能力** *（可选，但推荐）*
+
+将以下提示词粘贴给 AI 助手，让它读取官方文档后开始辅助你交易：
+
+```
+Please read https://raw.githubusercontent.com/bybit-exchange/trading-mcp/main/README.md save it as a mcp, and help me trade on Bybit.
+```
+
+AI 助手会读取 README，了解所有可用工具，随后即可协助你查询行情、管理账户等。
 
 ---
 
@@ -80,7 +108,7 @@
   "mcpServers": {
     "bybit": {
       "command": "npx",
-      "args": ["-y", "bybit-official-trading-server"],
+      "args": ["-y", "bybit-official-trading-server@latest"],
       "env": {
         "BYBIT_API_KEY": "你的 API Key",
         "BYBIT_API_SECRET": "你的 API Secret"
@@ -104,7 +132,7 @@
   "mcpServers": {
     "bybit": {
       "command": "npx",
-      "args": ["-y", "bybit-official-trading-server"],
+      "args": ["-y", "bybit-official-trading-server@latest"],
       "env": {
         "BYBIT_API_KEY": "你的测试网 API Key",
         "BYBIT_API_SECRET": "你的测试网 API Secret",
@@ -135,7 +163,7 @@
   "mcpServers": {
     "bybit": {
       "command": "npx",
-      "args": ["-y", "bybit-official-trading-server"],
+      "args": ["-y", "bybit-official-trading-server@latest"],
       "env": {
         "BYBIT_API_KEY": "你的 API Key",
         "BYBIT_API_SECRET": "你的 API Secret"
@@ -163,7 +191,7 @@
     "bybit": {
       "type": "stdio",
       "command": "npx",
-      "args": ["-y", "bybit-official-trading-server"],
+      "args": ["-y", "bybit-official-trading-server@latest"],
       "env": {
         "BYBIT_API_KEY": "你的 API Key",
         "BYBIT_API_SECRET": "你的 API Secret"

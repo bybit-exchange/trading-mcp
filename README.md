@@ -26,6 +26,24 @@ A [Model Context Protocol (MCP)](https://modelcontextprotocol.io) server that ex
 
 ---
 
+## Installation
+ 
+Install globally so the server is always available:
+
+```bash
+npm i -g bybit-official-trading-server@latest
+```
+
+Or run on-demand with `npx` (no install required):
+
+```bash
+npx bybit-official-trading-server@latest
+```
+
+> Most AI assistant integrations (Claude Desktop, Cursor, VS Code) use the `npx` approach — the MCP config handles launching the server automatically.
+
+---
+
 ## Quick Start
 
 **Step 1 — Get your Bybit API credentials** *(skip if you only need market data)*
@@ -45,6 +63,16 @@ After configuring, restart your AI assistant and ask:
 > *"What's the current BTCUSDT price?"*
 
 If you get a live price back, the server is connected and working.
+
+**Step 4 — Let the AI learn the full capability in one prompt** *(optional but recommended)*
+
+Paste the following into your AI assistant to have it read the official documentation and start helping you trade:
+
+```
+Please read https://raw.githubusercontent.com/bybit-exchange/trading-mcp/main/README.md save it as a mcp, and help me trade on Bybit.
+```
+
+The AI will read the README, understand all available tools, and be ready to assist with market data queries, account management, and more.
 
 ---
 
@@ -80,7 +108,7 @@ Open the file in any text editor (create it if it doesn't exist).
   "mcpServers": {
     "bybit": {
       "command": "npx",
-      "args": ["-y", "bybit-official-trading-server"],
+      "args": ["-y", "bybit-official-trading-server@latest"],
       "env": {
         "BYBIT_API_KEY": "your_api_key",
         "BYBIT_API_SECRET": "your_api_secret"
@@ -104,7 +132,7 @@ Quit and reopen Claude Desktop. The Bybit tools will be available automatically 
   "mcpServers": {
     "bybit": {
       "command": "npx",
-      "args": ["-y", "bybit-official-trading-server"],
+      "args": ["-y", "bybit-official-trading-server@latest"],
       "env": {
         "BYBIT_API_KEY": "your_testnet_api_key",
         "BYBIT_API_SECRET": "your_testnet_api_secret",
@@ -135,7 +163,7 @@ Create the file if it doesn't exist.
   "mcpServers": {
     "bybit": {
       "command": "npx",
-      "args": ["-y", "bybit-official-trading-server"],
+      "args": ["-y", "bybit-official-trading-server@latest"],
       "env": {
         "BYBIT_API_KEY": "your_api_key",
         "BYBIT_API_SECRET": "your_api_secret"
@@ -163,7 +191,7 @@ In your project root (or workspace), create `.vscode/mcp.json`:
     "bybit": {
       "type": "stdio",
       "command": "npx",
-      "args": ["-y", "bybit-official-trading-server"],
+      "args": ["-y", "bybit-official-trading-server@latest"],
       "env": {
         "BYBIT_API_KEY": "your_api_key",
         "BYBIT_API_SECRET": "your_api_secret"

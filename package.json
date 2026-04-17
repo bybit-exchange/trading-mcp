@@ -1,6 +1,6 @@
 {
   "name": "bybit-official-trading-server",
-  "version": "2.0.4",
+  "version": "2.0.9",
   "publishConfig": {
     "access": "public"
   },
@@ -31,9 +31,7 @@
   "scripts": {
     "build": "tsup",
     "dev": "node --env-file=.env --import tsx/esm src/index.ts",
-    "typecheck": "tsc --noEmit",
-    "bump": "bash scripts/bump-version.sh",
-    "gen-manifest": "bash scripts/gen-manifest.sh"
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.10.2",

@@ -4,6 +4,7 @@ dist/
 *.d.ts.map
 .env
 .env.*
+scripts/publish.sh
 
 # IntelliJ IDEA
 .idea/
