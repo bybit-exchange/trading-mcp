@@ -6,7 +6,6 @@ dist/
 .env.*
 scripts/publish.sh
 docs/*
-!docs/superpowers/
 
 # IntelliJ IDEA
 .idea/
