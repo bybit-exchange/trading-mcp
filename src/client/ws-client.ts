@@ -13,6 +13,7 @@ const WS_MAINNET = {
   option: 'wss://stream.bybit.com/v5/public/option',
   private: 'wss://stream.bybit.com/v5/private',
   spread: 'wss://stream.bybit.com/v5/public/spread',
+  misc: 'wss://stream.bybit.com/v5/public/misc/status',
 } as const;
 
 const WS_TESTNET = {
@@ -22,6 +23,7 @@ const WS_TESTNET = {
   option: 'wss://stream-testnet.bybit.com/v5/public/option',
   private: 'wss://stream-testnet.bybit.com/v5/private',
   spread: 'wss://stream-testnet.bybit.com/v5/public/spread',
+  misc: 'wss://stream-testnet.bybit.com/v5/public/misc/status',
 } as const;
 
 export type WsCategory = keyof typeof WS_MAINNET;

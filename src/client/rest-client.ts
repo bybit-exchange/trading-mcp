@@ -20,7 +20,11 @@ async function handleResponse(res: Response): Promise<unknown> {
     const body = await res.text().catch(() => '');
     throw new Error(`HTTP ${res.status} ${res.statusText}: ${body.slice(0, 300)}`);
   }
-  return res.json();
+  const data = (await res.json()) as { retCode?: number; retMsg?: string };
+  if (data.retCode !== undefined && data.retCode !== 0) {
+    throw new Error(`Bybit API error ${data.retCode}: ${data.retMsg ?? 'unknown'}`);
+  }
+  return data;
 }
 
 class RestClient {

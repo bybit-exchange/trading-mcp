@@ -7,7 +7,7 @@ export const subscribeOrderbook = {
   name: 'subscribeOrderbook',
   description: "订阅订单薄深度快照（subscribe-snapshot 模式）",
   inputSchema: z.object({
-    depth: z.enum(["1", "50", "200"]),
+    depth: z.enum(["1", "50", "200", "1000"]),
     symbol: z.string(),
     category: z.enum(["linear", "spot", "inverse", "option"]).default("linear").optional(),
     messageCount: z.number().int().min(1).default(1).optional(),
