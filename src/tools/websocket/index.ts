@@ -23,6 +23,7 @@ import { subscribeSpreadOrder } from './subscribeSpreadOrder.js';
 import { subscribeSpreadOrderbook } from './subscribeSpreadOrderbook.js';
 import { subscribeSpreadPublicTrade } from './subscribeSpreadPublicTrade.js';
 import { subscribeSpreadTickers } from './subscribeSpreadTickers.js';
+import { subscribeSystemStatus } from './subscribeSystemStatus.js';
 import { subscribeTickers } from './subscribeTickers.js';
 import { subscribeWallet } from './subscribeWallet.js';
 
@@ -51,6 +52,7 @@ export const websocketTools = [
   subscribeSpreadOrderbook,
   subscribeSpreadPublicTrade,
   subscribeSpreadTickers,
+  subscribeSystemStatus,
   subscribeTickers,
   subscribeWallet,
 ];

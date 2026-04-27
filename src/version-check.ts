@@ -28,6 +28,8 @@ function getLocalVersion(distDir: string): string {
   ) as { version: string }).version;
 }
 
+const SEMVER_RE = /^\d+\.\d+\.\d+$/;
+
 async function fetchManifest(): Promise<Manifest | null> {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), 3000);
@@ -35,7 +37,8 @@ async function fetchManifest(): Promise<Manifest | null> {
     const res = await fetch(MANIFEST_URL, { signal: controller.signal });
     if (!res.ok) return null;
     const data = await res.json() as { version?: string; files?: Record<string, string> };
-    if (!data.version || !data.files) return null;
+    // Strict semver validation — rejects any string containing newlines or injected content.
+    if (!data.version || !SEMVER_RE.test(data.version) || !data.files) return null;
     return { version: data.version, files: data.files };
   } catch {
     return null;
@@ -95,7 +98,15 @@ export async function checkIntegrityAtStartup(): Promise<void> {
     const jsFiles = readdirSync(distDir).filter((f) => f.endsWith('.js'));
     for (const file of jsFiles) {
       const remoteHash = manifest.files[`dist/${file}`];
-      if (!remoteHash) continue;
+      if (!remoteHash) {
+        // File exists locally but is absent from the official manifest — potential injection.
+        process.stderr.write(
+          `\n[trading-mcp] Integrity check FAILED: unexpected file not in manifest: dist/${file}\n` +
+          `  Refusing to start to protect your API credentials.\n` +
+          `  To fix: npm install -g bybit-official-trading-server@latest\n\n`,
+        );
+        process.exit(1);
+      }
       const content = readFileSync(join(distDir, file));
       const localHash = 'sha256:' + createHash('sha256').update(content).digest('hex');
       if (localHash !== remoteHash) {
@@ -108,8 +119,21 @@ export async function checkIntegrityAtStartup(): Promise<void> {
         process.exit(1);
       }
     }
-  } catch {
-    // Network unavailable, timeout, parse failure — skip silently
+  } catch (e) {
+    // Distinguish network errors (safe to skip) from local filesystem errors (should not ignore).
+    const isNetworkError = e instanceof Error && (
+      e.name === 'AbortError' ||
+      e.message.includes('fetch') ||
+      e.message.includes('network') ||
+      e.message.includes('ENOTFOUND') ||
+      e.message.includes('ECONNREFUSED')
+    );
+    if (isNetworkError) {
+      process.stderr.write('[trading-mcp] WARNING: integrity check skipped (network unavailable)\n');
+    } else {
+      // Local errors (e.g. package.json missing, dist unreadable) are re-thrown to block startup.
+      throw e;
+    }
   }
 }
 

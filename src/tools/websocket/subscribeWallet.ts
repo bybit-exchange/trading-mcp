@@ -5,7 +5,7 @@ import type { WsCategory } from '../../client/ws-client.js';
 
 export const subscribeWallet = {
   name: 'subscribeWallet',
-  description: "订阅钱包变动（需要鉴权）",
+  description: "Subscribe to real-time wallet updates for the Unified Trading Account (UTA).",
   inputSchema: z.object({
 
     messageCount: z.number().int().min(1).default(1).optional(),
