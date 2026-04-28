@@ -1,46 +1,93 @@
-# bybit-official-trading-server
+<div align="center">
 
-A [Model Context Protocol (MCP)](https://modelcontextprotocol.io) server that exposes Bybit REST and WebSocket APIs as MCP tools, enabling AI assistants (Claude, Cursor, etc.) to query market data and manage accounts on Bybit.
+# Bybit MCP Server
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Node.js 20.6+](https://img.shields.io/badge/node-20.6+-blue.svg)](https://nodejs.org/)
+[![MCP](https://img.shields.io/badge/MCP-compatible-purple.svg)](https://modelcontextprotocol.io)
+[![Tools](https://img.shields.io/badge/Tools-190-orange.svg)](#-available-tool-categories)
+[![Bybit V5 API](https://img.shields.io/badge/Bybit-V5%20API-green.svg)](https://bybit-exchange.github.io/docs/v5/intro)
+
+**A production-ready MCP server for Bybit — 200 tools covering market data, trading, positions, account management, assets, and real-time WebSocket streams**
+
+[Quick Start](#-quick-start) •
+[Features](#-features) •
+[Configuration](#-configuration-reference) •
+[Tools Reference](#-available-tool-categories) •
+[Troubleshooting](#-troubleshooting) •
+[Contributing](#-contributing)
 
 [中文文档](./README.zh.md)
+
+</div>
+
+---
+
+## Overview
+
+Bybit MCP Server enables AI assistants like **Claude**, **Cursor**, **VS Code**, and other MCP-compatible clients to interact directly with the Bybit cryptocurrency exchange. Query live market data, manage your account, and monitor real-time streams — all through natural language.
+
+### Why Bybit MCP?
+
+- **Complete V5 Coverage** — 200 tools across market data, trading, positions, account, asset, user, and WebSocket categories
+- **Secure by Design** — API credentials are read from environment variables at runtime, never hardcoded
+- **Read-Only Mode** — All 22 market data tools work without any API key
+- **Real-Time Streams** — 26 WebSocket tools for live orderbook, tickers, positions, and more
+- **Zero-Install Start** — Run instantly with `npx bybit-official-trading-server@latest`
+- **Universal Compatibility** — Works with Claude Desktop, Cursor, VS Code, and any MCP client
 
 ---
 
 ## Features
 
-- **Market Data** — Klines, orderbook, tickers, funding rates, open interest, risk limits, and more (22 tools, no auth required)
-- **Account** — Wallet balance, transaction logs, fee rates, collateral info, MMP state, DCP config, SMP group, and more (11 tools, auth required)
-- **Asset** — Asset overview, portfolio margin, delivery/settlement records, total member assets (5 tools, auth required)
-- **User** — API key info, sub-account listing, member account type, referral queries (7 tools, auth required)
-- **WebSocket** — Subscribe-snapshot pattern for real-time orderbook, tickers, klines, executions, positions, wallet, RFQ, spread trading, and more (26 tools)
-- **HMAC-SHA256 signing** — Automatic request signing for all authenticated endpoints
-- **Rate limiting** — Per-endpoint rate limiting built in
-- **Mainnet / Testnet** — Switch via environment variable
+<table>
+<tr>
+<td width="50%">
 
----
+### Market Data
+- **Prices & Tickers** — Real-time spot and derivatives prices
+- **Orderbook** — Configurable depth snapshots
+- **Klines** — Historical OHLCV candlestick data
+- **Funding Rates** — Current and historical rates
+- **Open Interest** — Long/short ratio, ADL indicators
+- **Risk Limits** — Volatility index, delivery prices, insurance pool
 
-## Requirements
+</td>
+<td width="50%">
 
-- **Node.js >= 20.6** — Check your version with `node -v`. Download from [nodejs.org](https://nodejs.org/) if needed.
-- A **Bybit account** — Required only for account/asset/user tools. Market data tools work without an account.
+### Account & Asset
+- **Wallet Balance** — Unified account overview
+- **Transaction Log** — Full trade and funding history
+- **Fee Rates** — Maker/taker rates by instrument
+- **Collateral** — Settings, Greeks, MMP state
+- **Asset Overview** — Portfolio margin, delivery/settlement records
+- **Multi-Account** — Aggregated parent and sub-account assets
 
----
+</td>
+</tr>
+<tr>
+<td width="50%">
 
-## Installation
- 
-Install globally so the server is always available:
+### User & Sub-Accounts
+- **API Key Info** — Permissions, VIP level, rate limits
+- **Sub-Account Management** — List and query sub-accounts
+- **Member Types** — Account type queries per member
+- **Referral & Affiliate** — Invitation and referral queries
 
-```bash
-npm i -g bybit-official-trading-server@latest
-```
+</td>
+<td width="50%">
 
-Or run on-demand with `npx` (no install required):
+### WebSocket Real-Time
+- **Public Streams** — Orderbook, tickers, klines, trades, liquidations
+- **Private Streams** — Executions, positions, wallet updates
+- **Options** — Greeks snapshots
+- **Block Trading** — RFQ updates
+- **Spread Trading** — Spread instrument streams
+- **Snapshot Model** — Single-call, no persistent connections needed
 
-```bash
-npx bybit-official-trading-server@latest
-```
-
-> Most AI assistant integrations (Claude Desktop, Cursor, VS Code) use the `npx` approach — the MCP config handles launching the server automatically.
+</td>
+</tr>
+</table>
 
 ---
 
@@ -213,13 +260,28 @@ Run **Developer: Reload Window** from the Command Palette (`Cmd+Shift+P` / `Ctrl
 
 ## Available Tool Categories
 
-| Category | Auth | Description |
-|----------|------|-------------|
-| `market` | No | Klines, orderbook, tickers, funding rates, open interest, volatility, risk limits, long/short ratio, delivery price, insurance pool, and more (22 tools) |
-| `account` | Yes | Wallet balance, transaction log, fee rates, collateral settings, option Greeks, MMP state, DCP config, SMP group, account instruments, and more (11 tools) |
-| `asset` | Yes | Asset overview, portfolio margin, delivery/settlement records, aggregated parent+sub account assets (5 tools) |
-| `user` | Yes | API key info & permissions, sub-account listing, member account types, referral/invitation queries (7 tools) |
-| `websocket` | Mixed | Real-time snapshots via subscribe-snapshot pattern: orderbook, tickers, klines, trades, liquidations, executions, positions, wallet, option Greeks, RFQ block trades, spread trading (26 tools) |
+| Category | Auth | Tools | Description |
+|----------|------|------:|-------------|
+| `market` | No | 22 | Klines, orderbook, tickers, funding rates, open interest, volatility, risk limits, long/short ratio, delivery price, insurance pool, and more |
+| `account` | Yes | 18 | Wallet balance, transaction log, fee rates, margin mode, collateral switch, hedging mode, price limit, MMP modify and reset, option Greeks, DCP config, SMP group, account instruments, and more |
+| `trade` | Yes | 12 | Create, amend, cancel orders, batch order operations, open orders, order history, spot borrow quota, DCP, and order pre-check |
+| `rfq-trading` | Yes | 15 | Create/cancel RFQs and quotes, execute quotes, accept non-LP quotes, RFQ config, realtime and historical RFQs/quotes, trade history, public trades |
+| `position` | Yes | 11 | Position list, leverage, position mode, trading stop, auto-add margin, add/reduce margin, closed PnL, closed positions, move positions, and risk limit confirmation |
+| `asset` | Yes | 5 | Asset overview, portfolio margin, delivery/settlement records, aggregated parent+sub account assets |
+| `user` | Yes | 16 | API key info & permissions, sub-account listing and management, create/update/delete API keys, freeze sub-accounts, delete sub-accounts, sign agreement, member account types, referral/invitation queries |
+| `spread-trading` | Mixed | 11 | Spread instruments, orderbook, tickers, recent trades, create/amend/cancel spread orders, open orders, order history, trade history |
+| `pre-upgrade` | Yes | 6 | Pre-upgrade order history, execution list, closed PnL, transaction log, delivery and settlement records |
+| `bot` | Yes | 18 | Futures combo bot, futures grid bot, futures martingale bot, spot grid bot, spot DCA bot — create, close, detail, validate, and parameter limits |
+| `copy-trading-classic` | Yes | 2 | Classic copy trading: recommended leader leaderboard, create follower binding |
+| `copy-trading-tradfi` | Yes | 2 | TradFi copy trading (MT5): recommended provider leaderboard, create follower binding |
+| `strategy` | Yes | 6 | TWAP, Chase Limit, Iceberg strategy orders — create, list, sub-order list, stop |
+| `earn` | Yes | 6 | Earn product queries, stake/redeem orders, order history, positions, yield history, hourly yield |
+| `advanceearn` | Yes | 4 | Advance Earn (dual-currency): product queries, place order, positions, order history |
+| `p2p` | Yes | 10 | P2P ad management and order queries: create/update/remove ads, browse online ads, query personal ads and details, order list, order detail, pending orders, mark order as paid |
+| `alpha` | Yes | 10 | On-chain trading: trade quote, purchase, redeem, pay token list, order list, token list, token prices, token details, asset list, asset detail |
+| `websocket` | Mixed | 26 | Real-time snapshots via subscribe-snapshot pattern: orderbook, tickers, klines, trades, liquidations, executions, positions, wallet, option Greeks, RFQ block trades, spread trading |
+
+**Total: 200 tools**
 
 ---
 
@@ -276,6 +338,59 @@ This makes real-time data accessible in a single tool call without managing pers
 
 ---
 
+## Troubleshooting
+
+### MCP Server Not Loading / "No MCP servers configured"
+
+If you've configured the server but your AI assistant shows no tools or "No MCP servers configured":
+
+#### 1. Check the correct configuration file
+
+Claude Code reads MCP server config from `~/.claude.json` (per-project), **not** from `~/.claude/settings.json`. The recommended way to add the server is via CLI:
+
+```bash
+claude mcp add bybit -- npx -y bybit-official-trading-server@latest
+```
+
+This writes the config to the correct location.
+
+#### 2. Use the full path to `node` / `npx` if needed
+
+Some environments spawn subprocesses without loading your shell profile (`.zshrc` / `.zprofile`), so `PATH` may not include the Node.js bin directory. Find the full path and use it explicitly:
+
+```bash
+# Find your npx path
+which npx
+# Example: /usr/local/bin/npx
+```
+
+#### 3. Restart your AI assistant after configuration changes
+
+MCP servers connect at session startup. After adding or changing config, you must **exit and restart** your AI assistant for changes to take effect.
+
+#### 4. Verify the server starts correctly
+
+Test that the server can start and respond to MCP protocol:
+
+```bash
+echo '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2024-11-05","capabilities":{},"clientInfo":{"name":"test","version":"0.1"}}}' | npx -y bybit-official-trading-server@latest
+```
+
+#### 5. Don't run the server manually
+
+Your AI client manages the MCP server process itself via stdio. A manually started server instance is **completely separate** — the client won't connect to it. Let the client handle the lifecycle automatically.
+
+### Quick Diagnosis Checklist
+
+| Symptom | Cause | Fix |
+|---------|-------|-----|
+| No tools shown after config | Config in wrong file | Use `claude mcp add` CLI command |
+| Config exists but tools don't load | `npx` / `node` not found in PATH | Use absolute path to `npx` |
+| Tools loaded before but not now | Session not restarted after config change | Restart your AI assistant |
+| Authentication errors | Missing or incorrect API credentials | Check `BYBIT_API_KEY` and `BYBIT_API_SECRET` env vars |
+
+---
+
 ## Local Development
 
 ```bash
@@ -291,6 +406,40 @@ npm run typecheck
 # Build for production
 npm run build
 ```
+
+---
+
+## Risk Warning
+
+Cryptocurrency trading involves substantial risk of loss. Please read the following before use:
+
+- **Protect Your API Credentials** — Use IP allowlists and grant only the minimum permissions required; disable withdrawal access unless explicitly needed
+- **Test Before You Trade** — Validate your setup on [Bybit Testnet](https://testnet.bybit.com/) before connecting to your live account (set `BYBIT_TESTNET=true`)
+- **You Are in Control** — All actions are initiated by you or your AI assistant; review orders carefully before execution
+- **Bybit Terms Apply** — Use of this server is subject to [Bybit's Terms of Service](https://www.bybit.com/en/terms-service/terms-of-use)
+
+---
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+---
+
+## Resources
+
+| Resource | Description |
+|----------|-------------|
+| [Bybit V5 API Docs](https://bybit-exchange.github.io/docs/v5/intro) | Official Bybit API documentation |
+| [Bybit Testnet](https://testnet.bybit.com/) | Practice trading with test funds |
+| [MCP Specification](https://modelcontextprotocol.io/) | Model Context Protocol spec |
+| [npm Package](https://www.npmjs.com/package/bybit-official-trading-server) | Published npm package |
 
 ---
 

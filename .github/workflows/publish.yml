@@ -22,6 +22,15 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Validate tag is on main branch
+        run: |
+          git fetch origin main --depth=50
+          if ! git branch -r --contains "$GITHUB_SHA" | grep -q 'origin/main'; then
+            echo "Error: tag '$GITHUB_REF_NAME' is not reachable from origin/main"
+            exit 1
+          fi
+          echo "Branch check passed: tag is on main"
+
       - name: Validate tag matches package.json version
         run: |
           PKG_VERSION=$(jq -r .version package.json)

@@ -4,7 +4,7 @@ import { restClient } from '../../client/rest-client.js';
 
 export const getWalletBalance = {
   name: 'getWalletBalance',
-  description: "Query the wallet balance of the unified account, including account-level margin\ninformation and per-coin balance details. Returns equity, wallet balance, margin\nrequirements, unrealised PnL, collateral settings, and borrowing info.\n\nRate limit: 10 req/s\n\nAgent hint: Use this to check overall account health (margin ratios, equity) or individual coin\nbalances. Always pass accountType=UNIFIED. Use the coin parameter to filter for\nspecific assets (comma-separated). String numeric fields represent decimal values.",
+  description: "Obtain wallet balance, query asset information of each currency, and each currency carries the risk rate of the current position.\n- By default, non-zero asset or liability currencies are not returned.\n- Unified account covers: UNIFIED\n- For Funding wallet balance, please use a separate endpoint.\n\n**Notes:**\n- Under UTA manual borrow logic, `spotBorrow` represents spot liabilities.\n- During extreme market volatility, the interface may experience increased latency.",
   inputSchema: z.object({
     accountType: z.enum(["UNIFIED"]),
     coin: z.string().optional(),

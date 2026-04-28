@@ -12,3 +12,5 @@ docs/*
 
 # macOS
 .DS_Store
+
+.mcp.json

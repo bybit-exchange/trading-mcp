@@ -10,8 +10,7 @@ export const querySubMembers = {
   }),
   handler: async (input: Record<string, unknown>) => {
     const result = await restClient.getAuth("/v5/user/query-sub-members", input) as any;
-    // Strip user-controlled free-text field to prevent indirect prompt injection
-    result?.result?.subMembers?.forEach((m: any) => { delete m.remark; });
+        result?.result?.subMembers?.forEach((m: any) => { delete m.remark; });
     return result;
   },
 };
