@@ -13,6 +13,8 @@ export const getAds = {
     size: z.string().optional(),
   }),
   handler: async (input: Record<string, unknown>) => {
-    return restClient.postAuth("/v5/p2p/item/online", input);
+    const result = await restClient.postAuth("/v5/p2p/item/online", input) as any;
+        result?.result?.items?.forEach((item: any) => { delete item.remark; });
+    return result;
   },
 };
