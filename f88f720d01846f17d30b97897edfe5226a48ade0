@@ -1,0 +1,29 @@
+src/utils/auth.ts
+  0be786705b6724f0 2,4-6,9-10,12-46,50-53,67,72-75,78,81-84
+src/client/ws-client.ts
+  0be786705b6724f0 2,46,94-96,99-103,107-110
+src/server.ts
+  0be786705b6724f0 10,82-92
+src/client/rest-client.ts
+  0be786705b6724f0 1,50-52,56,81-83,89,99-101
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.23-bit.2+50d84e3",
+  "base_commit_sha": "f88f720d01846f17d30b97897edfe5226a48ade0",
+  "prompts": {
+    "0be786705b6724f0": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "97a0e611-36d7-4b80-86d4-2ef666e6fec8",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "paul.yang <paul.yang@bybit.com>",
+      "messages": [],
+      "total_additions": 117,
+      "total_deletions": 54,
+      "accepted_lines": 96,
+      "overriden_lines": 0
+    }
+  }
+}
