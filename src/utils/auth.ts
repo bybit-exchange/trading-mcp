@@ -48,7 +48,7 @@ export function signHmac(rawStr: string, secret: string): string {
 }
 
 export function signRsa(rawStr: string, privateKey: string): string {
-  return crypto.createSign('RSA-SHA256').update(rawStr).sign(privateKey, 'hex');
+  return crypto.createSign('RSA-SHA256').update(rawStr).sign(privateKey, 'base64');
 }
 
 export function toQueryString(params: Record<string, unknown>): string {
