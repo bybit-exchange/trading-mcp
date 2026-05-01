@@ -1,0 +1,23 @@
+src/utils/auth.ts
+  0be786705b6724f0 51
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.23-bit.2+50d84e3",
+  "base_commit_sha": "6878b58536237ac0494438a52bfca1ff7b3708b0",
+  "prompts": {
+    "0be786705b6724f0": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "97a0e611-36d7-4b80-86d4-2ef666e6fec8",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "paul.yang <paul.yang@bybit.com>",
+      "messages": [],
+      "total_additions": 1,
+      "total_deletions": 1,
+      "accepted_lines": 1,
+      "overriden_lines": 0
+    }
+  }
+}
