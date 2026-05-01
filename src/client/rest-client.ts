@@ -1,4 +1,4 @@
-import { buildAuthHeaders, toQueryString } from '../utils/auth.js';
+import { buildAuthHeaders, resolveSignConfig, toQueryString } from '../utils/auth.js';
 import { rateLimiter } from '../utils/rate-limiter.js';
 import { commonHeaders } from '../version.js';
 
@@ -18,7 +18,6 @@ function getConfig() {
   return {
     baseUrl: process.env.BYBIT_TESTNET === 'true' ? TESTNET : MAINNET,
     apiKey: process.env.BYBIT_API_KEY,
-    apiSecret: process.env.BYBIT_API_SECRET,
   };
 }
 
@@ -48,12 +47,13 @@ class RestClient {
   }
 
   async getAuth(path: string, params: Record<string, unknown>): Promise<unknown> {
-    const { baseUrl, apiKey, apiSecret } = getConfig();
-    assertCredentials(apiKey, apiSecret);
+    const { baseUrl, apiKey } = getConfig();
+    assertApiKey(apiKey);
+    const signConfig = resolveSignConfig();
     await rateLimiter.acquire(path);
     const qs = toQueryString(params);
     const url = qs ? `${baseUrl}${path}?${qs}` : `${baseUrl}${path}`;
-    const headers = { ...commonHeaders(), ...buildAuthHeaders(qs, apiKey!, apiSecret!) };
+    const headers = { ...commonHeaders(), ...buildAuthHeaders(qs, apiKey!, signConfig) };
     const { signal, clear } = withTimeout(REQUEST_TIMEOUT_MS);
     try {
       const res = await fetch(url, { headers, signal });
@@ -78,14 +78,15 @@ class RestClient {
   }
 
   async postAuth(path: string, body: Record<string, unknown>): Promise<unknown> {
-    const { baseUrl, apiKey, apiSecret } = getConfig();
-    assertCredentials(apiKey, apiSecret);
+    const { baseUrl, apiKey } = getConfig();
+    assertApiKey(apiKey);
+    const signConfig = resolveSignConfig();
     await rateLimiter.acquire(path);
     const bodyStr = JSON.stringify(body);
     const headers = {
       ...commonHeaders(),
       'Content-Type': 'application/json',
-      ...buildAuthHeaders(bodyStr, apiKey!, apiSecret!),
+      ...buildAuthHeaders(bodyStr, apiKey!, signConfig),
     };
     const { signal, clear } = withTimeout(REQUEST_TIMEOUT_MS);
     try {
@@ -95,9 +96,9 @@ class RestClient {
   }
 }
 
-function assertCredentials(apiKey?: string, apiSecret?: string): void {
-  if (!apiKey || !apiSecret) {
-    throw new Error('BYBIT_API_KEY and BYBIT_API_SECRET must be set for authenticated requests.');
+function assertApiKey(apiKey?: string): void {
+  if (!apiKey) {
+    throw new Error('BYBIT_API_KEY must be set for authenticated requests.');
   }
 }
 

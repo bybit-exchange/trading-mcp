@@ -1,19 +1,56 @@
 import crypto from 'crypto';
+import fs from 'fs';
+
+export type SignConfig =
+  | { type: 'hmac'; secret: string }
+  | { type: 'rsa'; privateKey: string };
 
 /**
- * Builds the HMAC-SHA256 signature string required by Bybit API v5.
- *
- * For GET:  rawStr = timestamp + apiKey + recvWindow + queryString
- * For POST: rawStr = timestamp + apiKey + recvWindow + JSON.stringify(body)
+ * Resolves RSA/HMAC sign config from environment variables.
+ * Throws on ambiguous or invalid configuration — no silent fallback.
  */
-export function sign(rawStr: string, secret: string): string {
+export function resolveSignConfig(): SignConfig {
+  const secret = process.env.BYBIT_API_SECRET;
+  const rsaPath = process.env.BYBIT_API_PRIVATE_KEY_PATH;
+
+  const hasHmac = !!secret;
+  const hasRsa = !!rsaPath;
+
+  if (hasHmac && hasRsa) {
+    throw new Error(
+      'Ambiguous auth config: both BYBIT_API_SECRET and BYBIT_API_PRIVATE_KEY_PATH are set. ' +
+      'Keep only one to avoid unintended mode.',
+    );
+  }
+
+  if (hasRsa) {
+    if (!fs.existsSync(rsaPath)) {
+      throw new Error(`BYBIT_API_PRIVATE_KEY_PATH points to a non-existent file: ${rsaPath}`);
+    }
+    const privateKey = fs.readFileSync(rsaPath, 'utf-8');
+    if (!privateKey.includes('-----BEGIN')) {
+      throw new Error('RSA private key does not look like a valid PEM. Check BYBIT_API_PRIVATE_KEY_PATH.');
+    }
+    return { type: 'rsa', privateKey };
+  }
+
+  if (hasHmac) {
+    return { type: 'hmac', secret: secret! };
+  }
+
+  throw new Error(
+    'No auth credentials found. Set BYBIT_API_SECRET (HMAC) or BYBIT_API_PRIVATE_KEY_PATH (RSA).',
+  );
+}
+
+export function signHmac(rawStr: string, secret: string): string {
   return crypto.createHmac('sha256', secret).update(rawStr).digest('hex');
 }
 
-/**
- * Converts a plain params object into a URL query string,
- * skipping undefined / null values.
- */
+export function signRsa(rawStr: string, privateKey: string): string {
+  return crypto.createSign('RSA-SHA256').update(rawStr).sign(privateKey, 'hex');
+}
+
 export function toQueryString(params: Record<string, unknown>): string {
   return Object.entries(params)
     .filter(([, v]) => v !== undefined && v !== null)
@@ -27,15 +64,22 @@ export type AuthHeaders = Record<string, string>;
 export function buildAuthHeaders(
   paramStr: string,
   apiKey: string,
-  apiSecret: string,
+  signConfig: SignConfig,
   recvWindow = '5000',
 ): AuthHeaders {
   const timestamp = Date.now().toString();
   const rawStr = `${timestamp}${apiKey}${recvWindow}${paramStr}`;
-  return {
+  const signature = signConfig.type === 'rsa'
+    ? signRsa(rawStr, signConfig.privateKey)
+    : signHmac(rawStr, signConfig.secret);
+  const headers: AuthHeaders = {
     'X-BAPI-API-KEY': apiKey,
     'X-BAPI-TIMESTAMP': timestamp,
-    'X-BAPI-SIGN': sign(rawStr, apiSecret),
+    'X-BAPI-SIGN': signature,
     'X-BAPI-RECV-WINDOW': recvWindow,
   };
+  if (signConfig.type === 'rsa') {
+    headers['X-BAPI-SIGN-TYPE'] = '2';
+  }
+  return headers;
 }
