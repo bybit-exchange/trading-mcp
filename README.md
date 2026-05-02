@@ -95,10 +95,27 @@ Bybit MCP Server enables AI assistants like **Claude**, **Cursor**, **VS Code**,
 
 **Step 1 — Get your Bybit API credentials** *(skip if you only need market data)*
 
+**Option A — HMAC-SHA256 (standard, recommended for most users)**
+
 1. Log in to [Bybit](https://www.bybit.com) and go to **Account & Security → API Management**
 2. Click **Create New Key**, select **System-generated API Key**
 3. Set the permissions you need (read-only is recommended for safety)
 4. Save the **API Key** and **API Secret** — the secret is shown only once
+5. Use `BYBIT_API_KEY` + `BYBIT_API_SECRET` in your config
+
+**Option B — RSA-SHA256 (self-generated key pair)**
+
+1. Generate an RSA key pair locally:
+   ```bash
+   openssl genrsa -out bybit_private.pem 2048
+   openssl rsa -in bybit_private.pem -pubout -out bybit_public.pem
+   chmod 600 bybit_private.pem
+   ```
+2. Log in to [Bybit](https://www.bybit.com) and go to **Account & Security → API Management**
+3. Click **Create New Key**, select **Self-generated API Key**
+4. Paste the contents of `bybit_public.pem` into the public key field
+5. Save the **API Key** shown after creation
+6. Use `BYBIT_API_KEY` + `BYBIT_API_PRIVATE_KEY_PATH` (absolute path to `bybit_private.pem`) in your config
 
 **Step 2 — Connect to your AI assistant**
 
@@ -128,10 +145,18 @@ The AI will read the README, understand all available tools, and be ready to ass
 | Variable | Required | Default | Description |
 |----------|----------|---------|-------------|
 | `BYBIT_API_KEY` | For auth endpoints | — | Your Bybit API key |
-| `BYBIT_API_SECRET` | For auth endpoints | — | Your Bybit API secret |
+| `BYBIT_API_SECRET` | HMAC mode | — | Your Bybit API secret (HMAC-SHA256 signing) |
+| `BYBIT_API_PRIVATE_KEY_PATH` | RSA mode | — | Absolute path to your RSA private key PEM file (RSA-SHA256 signing) |
 | `BYBIT_TESTNET` | No | `false` | Set to `true` to use the testnet |
 
-Market data tools work without credentials. Account, asset, user, and WebSocket private channel tools require both `BYBIT_API_KEY` and `BYBIT_API_SECRET`.
+Market data tools work without credentials. Authenticated tools require `BYBIT_API_KEY` plus **exactly one** signing credential:
+
+- **HMAC-SHA256** (default) — set `BYBIT_API_SECRET`. Works with **System-generated API keys**.
+- **RSA-SHA256** — set `BYBIT_API_PRIVATE_KEY_PATH` pointing to a PEM file on disk. Required for **Self-generated (user-uploaded) RSA key pairs**. The server adds `X-BAPI-SIGN-TYPE: 2` automatically.
+
+> **Quick rule:** chose "System-generated" on Bybit → use HMAC. Chose "Self-generated" → use RSA.
+>
+> Setting both `BYBIT_API_SECRET` and `BYBIT_API_PRIVATE_KEY_PATH` at the same time is an error — the server will refuse to start.
 
 ---
 
@@ -150,6 +175,8 @@ Open the file in any text editor (create it if it doesn't exist).
 
 **2. Add the MCP server config**
 
+HMAC mode (System-generated API key):
+
 ```json
 {
   "mcpServers": {
@@ -165,7 +192,24 @@ Open the file in any text editor (create it if it doesn't exist).
 }
 ```
 
-> Replace `your_api_key` and `your_api_secret` with your actual Bybit credentials.
+RSA mode (Self-generated API key):
+
+```json
+{
+  "mcpServers": {
+    "bybit": {
+      "command": "npx",
+      "args": ["-y", "bybit-official-trading-server@latest"],
+      "env": {
+        "BYBIT_API_KEY": "your_api_key",
+        "BYBIT_API_PRIVATE_KEY_PATH": "/absolute/path/to/bybit_private.pem"
+      }
+    }
+  }
+}
+```
+
+> Replace the values with your actual Bybit credentials. Use one signing mode only — do not set both `BYBIT_API_SECRET` and `BYBIT_API_PRIVATE_KEY_PATH`.
 > If the file already has other MCP servers, add the `"bybit"` block inside the existing `"mcpServers"` object.
 
 **3. Restart Claude Desktop**
@@ -205,6 +249,8 @@ Create the file if it doesn't exist.
 
 **2. Add the MCP server config**
 
+HMAC mode (System-generated API key):
+
 ```json
 {
   "mcpServers": {
@@ -214,6 +260,23 @@ Create the file if it doesn't exist.
       "env": {
         "BYBIT_API_KEY": "your_api_key",
         "BYBIT_API_SECRET": "your_api_secret"
+      }
+    }
+  }
+}
+```
+
+RSA mode (Self-generated API key):
+
+```json
+{
+  "mcpServers": {
+    "bybit": {
+      "command": "npx",
+      "args": ["-y", "bybit-official-trading-server@latest"],
+      "env": {
+        "BYBIT_API_KEY": "your_api_key",
+        "BYBIT_API_PRIVATE_KEY_PATH": "/absolute/path/to/bybit_private.pem"
       }
     }
   }
@@ -230,7 +293,9 @@ After saving the file, restart Cursor. The Bybit MCP server will be listed under
 
 **1. Find or create your MCP config**
 
-In your project root (or workspace), create `.vscode/mcp.json`:
+In your project root (or workspace), create `.vscode/mcp.json`.
+
+HMAC mode (System-generated API key):
 
 ```json
 {
@@ -242,6 +307,24 @@ In your project root (or workspace), create `.vscode/mcp.json`:
       "env": {
         "BYBIT_API_KEY": "your_api_key",
         "BYBIT_API_SECRET": "your_api_secret"
+      }
+    }
+  }
+}
+```
+
+RSA mode (Self-generated API key):
+
+```json
+{
+  "servers": {
+    "bybit": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "bybit-official-trading-server@latest"],
+      "env": {
+        "BYBIT_API_KEY": "your_api_key",
+        "BYBIT_API_PRIVATE_KEY_PATH": "/absolute/path/to/bybit_private.pem"
       }
     }
   }
@@ -332,7 +415,8 @@ This makes real-time data accessible in a single tool call without managing pers
 ## Security Notes
 
 - API keys are read from environment variables at call time, never hardcoded
-- All authenticated requests use HMAC-SHA256 signing per Bybit's V5 API specification
+- Two signing modes are supported: **HMAC-SHA256** (default, via `BYBIT_API_SECRET`) and **RSA-SHA256** (via `BYBIT_API_PRIVATE_KEY_PATH`) per Bybit's V5 API specification
+- For RSA mode, store the PEM file with `chmod 600` and never commit it to source control
 - Never share your API secret or commit it to source control
 - Use API keys with minimal required permissions (read-only where possible)
 
@@ -387,7 +471,7 @@ Your AI client manages the MCP server process itself via stdio. A manually start
 | No tools shown after config | Config in wrong file | Use `claude mcp add` CLI command |
 | Config exists but tools don't load | `npx` / `node` not found in PATH | Use absolute path to `npx` |
 | Tools loaded before but not now | Session not restarted after config change | Restart your AI assistant |
-| Authentication errors | Missing or incorrect API credentials | Check `BYBIT_API_KEY` and `BYBIT_API_SECRET` env vars |
+| Authentication errors | Missing or incorrect API credentials | Check `BYBIT_API_KEY` and `BYBIT_API_SECRET` (HMAC) or `BYBIT_API_PRIVATE_KEY_PATH` (RSA) |
 
 ---
 

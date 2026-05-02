@@ -1,5 +1,5 @@
 import WebSocket from 'ws';
-import { sign } from '../utils/auth.js';
+import { resolveSignConfig, signHmac, signRsa } from '../utils/auth.js';
 import { commonHeaders } from '../version.js';
 
 /**
@@ -43,10 +43,7 @@ export interface SnapshotOptions {
 
 // Env vars are read at call time so they can be set after module load.
 function getCredentials() {
-  return {
-    apiKey: process.env.BYBIT_API_KEY,
-    apiSecret: process.env.BYBIT_API_SECRET,
-  };
+  return { apiKey: process.env.BYBIT_API_KEY };
 }
 
 export class WsClient {
@@ -94,13 +91,23 @@ export class WsClient {
         timer = setTimeout(done, timeoutMs);
 
         if (requiresAuth) {
-          const { apiKey, apiSecret } = getCredentials();
-          if (!apiKey || !apiSecret) {
-            fail(new Error('BYBIT_API_KEY and BYBIT_API_SECRET must be set for private channels.'));
+          const { apiKey } = getCredentials();
+          if (!apiKey) {
+            fail(new Error('BYBIT_API_KEY must be set for private channels.'));
+            return;
+          }
+          let signConfig;
+          try {
+            signConfig = resolveSignConfig();
+          } catch (e) {
+            fail(e instanceof Error ? e : new Error(String(e)));
             return;
           }
           const expires = Date.now() + 5000;
-          const sig = sign(`GET/realtime${expires}`, apiSecret);
+          const rawStr = `GET/realtime${expires}`;
+          const sig = signConfig.type === 'rsa'
+            ? signRsa(rawStr, signConfig.privateKey)
+            : signHmac(rawStr, signConfig.secret);
           // Send auth; subscribe will be sent after the auth ack arrives (see message handler).
           ws.send(JSON.stringify({ op: 'auth', args: [apiKey, expires, sig] }));
         } else {
