@@ -7,7 +7,9 @@ export type SignConfig =
 
 /**
  * Resolves RSA/HMAC sign config from environment variables.
- * Throws on ambiguous or invalid configuration — no silent fallback.
+ * RSA takes priority over HMAC when both are set (e.g. system env has BYBIT_API_SECRET
+ * while MCP config injects BYBIT_API_PRIVATE_KEY_PATH). A warning is emitted to stderr
+ * so users can clean up stale vars, but the server continues normally.
  */
 export function resolveSignConfig(): SignConfig {
   const secret = process.env.BYBIT_API_SECRET;
@@ -16,14 +18,13 @@ export function resolveSignConfig(): SignConfig {
   const hasHmac = !!secret;
   const hasRsa = !!rsaPath;
 
-  if (hasHmac && hasRsa) {
-    throw new Error(
-      'Ambiguous auth config: both BYBIT_API_SECRET and BYBIT_API_PRIVATE_KEY_PATH are set. ' +
-      'Keep only one to avoid unintended mode.',
-    );
-  }
-
   if (hasRsa) {
+    if (hasHmac) {
+      console.error(
+        '[trading-mcp] WARNING: Both BYBIT_API_SECRET and BYBIT_API_PRIVATE_KEY_PATH are set. ' +
+        'RSA mode takes precedence. Remove BYBIT_API_SECRET to suppress this warning.',
+      );
+    }
     if (!fs.existsSync(rsaPath)) {
       throw new Error(`BYBIT_API_PRIVATE_KEY_PATH points to a non-existent file: ${rsaPath}`);
     }

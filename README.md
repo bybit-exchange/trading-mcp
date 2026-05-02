@@ -156,7 +156,7 @@ Market data tools work without credentials. Authenticated tools require `BYBIT_A
 
 > **Quick rule:** chose "System-generated" on Bybit → use HMAC. Chose "Self-generated" → use RSA.
 >
-> Setting both `BYBIT_API_SECRET` and `BYBIT_API_PRIVATE_KEY_PATH` at the same time is an error — the server will refuse to start.
+> If both `BYBIT_API_SECRET` and `BYBIT_API_PRIVATE_KEY_PATH` are set (e.g. a system-level env var conflicts with your MCP config), RSA takes precedence and a warning is printed to the server log. Remove `BYBIT_API_SECRET` to suppress the warning.
 
 ---
 
