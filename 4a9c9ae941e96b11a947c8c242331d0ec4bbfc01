@@ -1,0 +1,27 @@
+README.zh.md
+  0be786705b6724f0 159
+src/utils/auth.ts
+  0be786705b6724f0 10-12,22-27
+README.md
+  0be786705b6724f0 159
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.23-bit.2+50d84e3",
+  "base_commit_sha": "4a9c9ae941e96b11a947c8c242331d0ec4bbfc01",
+  "prompts": {
+    "0be786705b6724f0": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "97a0e611-36d7-4b80-86d4-2ef666e6fec8",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "paul.yang <paul.yang@bybit.com>",
+      "messages": [],
+      "total_additions": 11,
+      "total_deletions": 10,
+      "accepted_lines": 11,
+      "overriden_lines": 0
+    }
+  }
+}
