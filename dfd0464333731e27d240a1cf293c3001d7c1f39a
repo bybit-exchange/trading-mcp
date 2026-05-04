@@ -1,0 +1,23 @@
+src/client/subscription-manager.ts
+  0be786705b6724f0 34,105,107,125-127,224
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.23-bit.2+50d84e3",
+  "base_commit_sha": "dfd0464333731e27d240a1cf293c3001d7c1f39a",
+  "prompts": {
+    "0be786705b6724f0": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "97a0e611-36d7-4b80-86d4-2ef666e6fec8",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "paul.yang <paul.yang@bybit.com>",
+      "messages": [],
+      "total_additions": 8,
+      "total_deletions": 5,
+      "accepted_lines": 1359,
+      "overriden_lines": 0
+    }
+  }
+}
