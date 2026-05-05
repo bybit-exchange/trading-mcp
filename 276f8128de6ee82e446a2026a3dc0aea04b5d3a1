@@ -1,0 +1,87 @@
+src/tools/liquiditymining/getLiquidityMiningLiquidationRecords.ts
+  0be786705b6724f0 1-19
+README.zh.md
+  0be786705b6724f0 361,363-365,370
+src/tools/liquiditymining/getLiquidityMiningOrders.ts
+  0be786705b6724f0 1-22
+src/tools/earntoken/getTokenPosition.ts
+  0be786705b6724f0 1-14
+src/tools/liquiditymining/reinvestLiquidity.ts
+  0be786705b6724f0 1-16
+src/tools/liquiditymining/removeLiquidity.ts
+  0be786705b6724f0 1-18
+src/tools/fixedterm/redeemFixedTerm.ts
+  0be786705b6724f0 1-16
+src/tools/liquiditymining/getLiquidityMiningProducts.ts
+  0be786705b6724f0 1-15
+src/tools/earntoken/getTokenProduct.ts
+  0be786705b6724f0 1-14
+src/tools/earn/index.ts
+  0be786705b6724f0 2,8,12,18
+src/tools/fixedterm/setFixedTermAutoInvest.ts
+  0be786705b6724f0 1-17
+src/tools/liquiditymining/getLiquidityMiningYieldRecords.ts
+  0be786705b6724f0 1-19
+src/tools/index.ts
+  0be786705b6724f0 15,17-18,46,48-49
+src/tools/fixedterm/getFixedTermOrder.ts
+  0be786705b6724f0 1-21
+src/tools/liquiditymining/addLiquidity.ts
+  0be786705b6724f0 1-20
+src/tools/earntoken/getTokenHistoricalApr.ts
+  0be786705b6724f0 1-15
+src/tools/liquiditymining/index.ts
+  0be786705b6724f0 1-24
+src/tools/earn/modifyEarnPosition.ts
+  0be786705b6724f0 1-17
+README.md
+  0be786705b6724f0 361,363-365,370
+src/tools/fixedterm/index.ts
+  0be786705b6724f0 1-16
+src/tools/fixedterm/getFixedTermProduct.ts
+  0be786705b6724f0 1-14
+src/tools/liquiditymining/getLiquidityMiningPositions.ts
+  0be786705b6724f0 1-15
+src/tools/fixedterm/getFixedTermPosition.ts
+  0be786705b6724f0 1-16
+src/tools/earntoken/index.ts
+  0be786705b6724f0 1-18
+src/tools/earntoken/placeTokenOrder.ts
+  0be786705b6724f0 1-18
+src/tools/earntoken/getTokenDailyYield.ts
+  0be786705b6724f0 1-18
+src/tools/liquiditymining/addMargin.ts
+  0be786705b6724f0 1-18
+src/tools/earn/getEarnAprHistory.ts
+  0be786705b6724f0 1-17
+src/tools/fixedterm/placeFixedTermOrder.ts
+  0be786705b6724f0 1-20
+src/tools/earntoken/getTokenOrderList.ts
+  0be786705b6724f0 1-21
+src/tools/earntoken/getTokenHourlyYield.ts
+  0be786705b6724f0 1-18
+src/tools/liquiditymining/claimLiquidityInterest.ts
+  0be786705b6724f0 1-14
+scripts/generate-all.sh
+  0be786705b6724f0 327-364
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.23-bit.2+50d84e3",
+  "base_commit_sha": "276f8128de6ee82e446a2026a3dc0aea04b5d3a1",
+  "prompts": {
+    "0be786705b6724f0": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "97a0e611-36d7-4b80-86d4-2ef666e6fec8",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "paul.yang <paul.yang@bybit.com>",
+      "messages": [],
+      "total_additions": 550,
+      "total_deletions": 11,
+      "accepted_lines": 550,
+      "overriden_lines": 0
+    }
+  }
+}
