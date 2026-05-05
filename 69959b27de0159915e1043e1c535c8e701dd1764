@@ -1,0 +1,41 @@
+src/tools/fixedterm/placeFixedTermOrder.ts
+  0be786705b6724f0 7
+src/tools/liquiditymining/addMargin.ts
+  0be786705b6724f0 7
+src/tools/p2p/getCounterpartyUserInfo.ts
+  0be786705b6724f0 7
+src/generator/tool-patches.ts
+  0be786705b6724f0 118-147,163-168
+src/tools/p2p/getChatMessages.ts
+  0be786705b6724f0 14-18
+scripts/generate-all.sh
+  0be786705b6724f0 120,129-131
+src/tools/spot-margin-trade-uta/renewFixedBorrow.ts
+  0be786705b6724f0 7
+src/tools/earntoken/placeTokenOrder.ts
+  0be786705b6724f0 7
+src/tools/spot-margin-trade-uta/accountFixedBorrow.ts
+  0be786705b6724f0 7
+src/tools/liquiditymining/addLiquidity.ts
+  0be786705b6724f0 7
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.23-bit.2+50d84e3",
+  "base_commit_sha": "69959b27de0159915e1043e1c535c8e701dd1764",
+  "prompts": {
+    "0be786705b6724f0": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "97a0e611-36d7-4b80-86d4-2ef666e6fec8",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "paul.yang <paul.yang@bybit.com>",
+      "messages": [],
+      "total_additions": 52,
+      "total_deletions": 12,
+      "accepted_lines": 52,
+      "overriden_lines": 0
+    }
+  }
+}
