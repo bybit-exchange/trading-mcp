@@ -1,0 +1,69 @@
+src/tools/spot-margin-trade-uta/queryFixedBorrowMarket.ts
+  0be786705b6724f0 1-18
+src/tools/spot-margin-trade-uta/queryFixedBorrowOrders.ts
+  0be786705b6724f0 1-19
+src/tools/asset/convert/index.ts
+  0be786705b6724f0 2,6,8,17,21,23
+src/tools/account/index.ts
+  0be786705b6724f0 5,31
+src/tools/asset/convert/QueryOrderFromOpenApi.ts
+  0be786705b6724f0 1-23
+src/tools/spot-margin-trade-uta/accountFixedBorrow.ts
+  0be786705b6724f0 1-19
+src/tools/spot-margin-trade-uta/index.ts
+  0be786705b6724f0 2,8-12,18,24-28
+src/tools/spot-margin-trade-uta/queryBorrowLiability.ts
+  0be786705b6724f0 1-14
+src/tools/asset/convert/LimitOrderCallback.ts
+  0be786705b6724f0 1-19
+src/tools/crypto-loan-fixed-term/postCryptoLoanFixedSupplyOrderCancel.ts
+  0be786705b6724f0 10
+src/tools/p2p/getUserPayment.ts
+  0be786705b6724f0 1-14
+src/tools/p2p/index.ts
+  0be786705b6724f0 4-5,10,19-20,25
+src/tools/spread-trading/index.ts
+  0be786705b6724f0 7,21
+src/tools/account/getAccountInfo.ts
+  0be786705b6724f0 1-14
+src/tools/asset/convert/CoinConvertLimitQuery.ts
+  0be786705b6724f0 1-18
+src/tools/spot-margin-trade-uta/queryFixedBorrowContracts.ts
+  0be786705b6724f0 1-18
+src/tools/spot-margin-trade-uta/renewFixedBorrow.ts
+  0be786705b6724f0 1-15
+scripts/generate-all.sh
+  0be786705b6724f0 125-129,202,254-261,331-335
+src/tools/crypto-loan-fixed-term/postCryptoLoanFixedSupply.ts
+  0be786705b6724f0 13
+src/tools/spread-trading/getSpreadMaxQty.ts
+  0be786705b6724f0 1-16
+src/tools/p2p/getChatMessages.ts
+  0be786705b6724f0 1-16
+README.zh.md
+  0be786705b6724f0 355,368,372
+src/tools/p2p/getCounterpartyUserInfo.ts
+  0be786705b6724f0 1-15
+README.md
+  0be786705b6724f0 355,368,372
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.23-bit.2+50d84e3",
+  "base_commit_sha": "a1dc2ac13957d8787986bf7b970be8fa679badce",
+  "prompts": {
+    "0be786705b6724f0": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "97a0e611-36d7-4b80-86d4-2ef666e6fec8",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "paul.yang <paul.yang@bybit.com>",
+      "messages": [],
+      "total_additions": 291,
+      "total_deletions": 9,
+      "accepted_lines": 293,
+      "overriden_lines": 0
+    }
+  }
+}
