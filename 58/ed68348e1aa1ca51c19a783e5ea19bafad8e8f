@@ -1,0 +1,41 @@
+src/tools/doublewin/getDoubleWinLeverage.ts
+  0be786705b6724f0 1-17
+src/tools/smartleverage/index.ts
+  0be786705b6724f0 1-6
+src/tools/advanceearn/getAdvanceEarnProductExtraInfo.ts
+  0be786705b6724f0 1-15
+scripts/generate-all.sh
+  0be786705b6724f0 321-328
+README.zh.md
+  0be786705b6724f0 362-364,372
+src/tools/advanceearn/index.ts
+  0be786705b6724f0 5,12
+src/tools/index.ts
+  0be786705b6724f0 14,25,47,58
+src/tools/smartleverage/getSmartLeverageRedeemEstAmountList.ts
+  0be786705b6724f0 1-15
+README.md
+  0be786705b6724f0 362-364,372
+src/tools/doublewin/index.ts
+  0be786705b6724f0 1-6
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.23-bit.2+50d84e3",
+  "base_commit_sha": "58ed68348e1aa1ca51c19a783e5ea19bafad8e8f",
+  "prompts": {
+    "0be786705b6724f0": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "97a0e611-36d7-4b80-86d4-2ef666e6fec8",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "paul.yang <paul.yang@bybit.com>",
+      "messages": [],
+      "total_additions": 81,
+      "total_deletions": 9,
+      "accepted_lines": 83,
+      "overriden_lines": 0
+    }
+  }
+}
