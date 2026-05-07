@@ -228,7 +228,9 @@ export class WsClient {
         const m = msg as Record<string, unknown>;
 
         if (m['op'] === 'auth') {
-          if (m['success'] === true) {
+          // /v5/trade uses retCode:0 for success; /v5/private uses success:true
+          const authOk = m['retCode'] === 0 || m['success'] === true;
+          if (authOk) {
             ws.send(JSON.stringify({
               reqId: `req-${Date.now()}`,
               header: { 'X-BAPI-TIMESTAMP': String(Date.now()), 'X-BAPI-RECV-WINDOW': '5000' },
