@@ -5,9 +5,6 @@ import { wsBatchCancelOrders } from './wsBatchCancelOrders.js';
 import { wsBatchCreateOrders } from './wsBatchCreateOrders.js';
 import { wsCancelOrder } from './wsCancelOrder.js';
 import { wsCreateOrder } from './wsCreateOrder.js';
-import { wsOrderAmend } from './wsOrderAmend.js';
-import { wsOrderCancel } from './wsOrderCancel.js';
-import { wsOrderCreate } from './wsOrderCreate.js';
 
 export const wstradeTools = [
   wsAmendOrder,
@@ -16,7 +13,4 @@ export const wstradeTools = [
   wsBatchCreateOrders,
   wsCancelOrder,
   wsCreateOrder,
-  wsOrderAmend,
-  wsOrderCancel,
-  wsOrderCreate,
 ];
