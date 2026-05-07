@@ -8,7 +8,7 @@
 [![Tools](https://img.shields.io/badge/Tools-190-orange.svg)](#-available-tool-categories)
 [![Bybit V5 API](https://img.shields.io/badge/Bybit-V5%20API-green.svg)](https://bybit-exchange.github.io/docs/v5/intro)
 
-**A production-ready MCP server for Bybit — 200 tools covering market data, trading, positions, account management, assets, and real-time WebSocket streams**
+**A production-ready MCP server for Bybit — 206 tools covering market data, trading, positions, account management, assets, and real-time WebSocket streams**
 
 [Quick Start](#-quick-start) •
 [Features](#-features) •
@@ -29,7 +29,7 @@ Bybit MCP Server enables AI assistants like **Claude**, **Cursor**, **VS Code**,
 
 ### Why Bybit MCP?
 
-- **Complete V5 Coverage** — 200 tools across market data, trading, positions, account, asset, user, and WebSocket categories
+- **Complete V5 Coverage** — 206 tools across market data, trading, positions, account, asset, user, WebSocket, and WS-trade categories
 - **Secure by Design** — API credentials are read from environment variables at runtime, never hardcoded
 - **Read-Only Mode** — All 22 market data tools work without any API key
 - **Real-Time Streams** — 26 WebSocket tools for live orderbook, tickers, positions, and more
@@ -368,8 +368,9 @@ Run **Developer: Reload Window** from the Command Palette (`Cmd+Shift+P` / `Ctrl
 | `p2p` | Yes | 13 | P2P ad management and order queries: create/update/remove ads, browse online ads, query personal ads and details, order list, order detail, pending orders, mark order as paid, chat messages, counterparty info, payment methods |
 | `alpha` | Yes | 10 | On-chain trading: trade quote, purchase, redeem, pay token list, order list, token list, token prices, token details, asset list, asset detail |
 | `websocket` | Mixed | 26 | Real-time snapshots via subscribe-snapshot pattern: orderbook, tickers, klines, trades, liquidations, executions, positions, wallet, option Greeks, RFQ block trades, spread trading |
+| `wstrade` | Yes | 6 | WebSocket trade operations via /v5/trade: place order, cancel order, amend order, batch place, batch cancel, batch amend |
 
-**Total: 242 tools**
+**Total: 248 tools**
 
 ---
 

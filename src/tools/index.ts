@@ -27,9 +27,11 @@ import { spotMarginTradeUtaTools } from './spot-margin-trade-uta/index.js';
 import { spotMarginUtaTools } from './spot-margin-uta/index.js';
 import { spreadTradingTools } from './spread-trading/index.js';
 import { strategyTools } from './strategy/index.js';
+import { subscriptionTools } from './subscription/index.js';
 import { tradeTools } from './trade/index.js';
 import { userTools } from './user/index.js';
 import { websocketTools } from './websocket/index.js';
+import { wstradeTools } from './wstrade/index.js';
 
 export const allTools = [
   ...accountTools,
@@ -60,7 +62,9 @@ export const allTools = [
   ...spotMarginUtaTools,
   ...spreadTradingTools,
   ...strategyTools,
+  ...subscriptionTools,
   ...tradeTools,
   ...userTools,
   ...websocketTools,
+  ...wstradeTools,
 ];

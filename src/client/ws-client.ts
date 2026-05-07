@@ -14,6 +14,7 @@ const WS_MAINNET = {
   private: 'wss://stream.bybit.com/v5/private',
   spread: 'wss://stream.bybit.com/v5/public/spread',
   misc: 'wss://stream.bybit.com/v5/public/misc/status',
+  trade: 'wss://stream.bybit.com/v5/trade',
 } as const;
 
 const WS_TESTNET = {
@@ -24,9 +25,19 @@ const WS_TESTNET = {
   private: 'wss://stream-testnet.bybit.com/v5/private',
   spread: 'wss://stream-testnet.bybit.com/v5/public/spread',
   misc: 'wss://stream-testnet.bybit.com/v5/public/misc/status',
+  trade: 'wss://stream-testnet.bybit.com/v5/trade',
 } as const;
 
 export type WsCategory = keyof typeof WS_MAINNET;
+
+export interface TradeRequestOptions {
+  /** WS op name, e.g. 'order.create', 'order.cancel' */
+  op: string;
+  /** args array sent in the WS request payload */
+  args: unknown[];
+  /** Max wait time in ms (default 5000) */
+  timeoutMs?: number;
+}
 
 export interface SnapshotOptions {
   /** WS URL category key */
@@ -152,6 +163,96 @@ export class WsClient {
       });
     });
   }
+
+  /**
+   * Opens a WebSocket connection to /v5/trade, authenticates, sends a single
+   * trade request (place/cancel/amend order), waits for the acknowledgment,
+   * then closes and returns the server response.
+   */
+  tradeRequest(opts: TradeRequestOptions): Promise<unknown> {
+    const { op, args, timeoutMs = 5000 } = opts;
+
+    return new Promise((resolve, reject) => {
+      const urls = process.env.BYBIT_TESTNET === 'true' ? WS_TESTNET : WS_MAINNET;
+      const url = urls.trade;
+      const ws = new WebSocket(url, { headers: commonHeaders() });
+      let settled = false;
+      let timer: ReturnType<typeof setTimeout>;
+
+      const done = (result: unknown) => {
+        if (settled) return;
+        settled = true;
+        clearTimeout(timer);
+        ws.close();
+        resolve(result);
+      };
+
+      const fail = (err: Error) => {
+        if (settled) return;
+        settled = true;
+        clearTimeout(timer);
+        ws.close();
+        reject(err);
+      };
+
+      ws.on('open', () => {
+        timer = setTimeout(() => fail(new Error(`Trade WS request timed out after ${timeoutMs}ms`)), timeoutMs);
+        const { apiKey } = getCredentials();
+        if (!apiKey) {
+          fail(new Error('BYBIT_API_KEY must be set for trade operations.'));
+          return;
+        }
+        let signConfig;
+        try {
+          signConfig = resolveSignConfig();
+        } catch (e) {
+          fail(e instanceof Error ? e : new Error(String(e)));
+          return;
+        }
+        const expires = Date.now() + 5000;
+        const rawStr = `GET/realtime${expires}`;
+        const sig = signConfig.type === 'rsa'
+          ? signRsa(rawStr, signConfig.privateKey)
+          : signHmac(rawStr, signConfig.secret);
+        ws.send(JSON.stringify({ op: 'auth', args: [apiKey, expires, sig] }));
+      });
+
+      ws.on('message', (raw) => {
+        let msg: unknown;
+        try {
+          msg = JSON.parse(raw.toString());
+        } catch {
+          return;
+        }
+        if (typeof msg !== 'object' || msg === null) return;
+        const m = msg as Record<string, unknown>;
+
+        if (m['op'] === 'auth') {
+          if (m['success'] === true) {
+            ws.send(JSON.stringify({
+              reqId: `req-${Date.now()}`,
+              header: { 'X-BAPI-TIMESTAMP': String(Date.now()), 'X-BAPI-RECV-WINDOW': '5000' },
+              op,
+              args,
+            }));
+          } else {
+            fail(new Error(`WebSocket auth failed: ${JSON.stringify(m)}`));
+          }
+          return;
+        }
+
+        if (m['op'] === op) {
+          done(m);
+        }
+      });
+
+      ws.on('error', (err) => fail(err));
+      ws.on('close', () => {
+        if (!settled) fail(new Error('Trade WS connection closed unexpectedly'));
+      });
+    });
+  }
 }
 
 export const wsClient = new WsClient();
+

@@ -12,6 +12,7 @@ const WS_MAINNET: Record<WsCategory, string> = {
   private: 'wss://stream.bybit.com/v5/private',
   spread:  'wss://stream.bybit.com/v5/public/spread',
   misc:    'wss://stream.bybit.com/v5/public/misc/status',
+  trade:   'wss://stream.bybit.com/v5/trade',
 };
 
 const WS_TESTNET: Record<WsCategory, string> = {
@@ -22,6 +23,7 @@ const WS_TESTNET: Record<WsCategory, string> = {
   private: 'wss://stream-testnet.bybit.com/v5/private',
   spread:  'wss://stream-testnet.bybit.com/v5/public/spread',
   misc:    'wss://stream-testnet.bybit.com/v5/public/misc/status',
+  trade:   'wss://stream-testnet.bybit.com/v5/trade',
 };
 
 const MAX_MESSAGES = 500;
