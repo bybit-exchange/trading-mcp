@@ -1,0 +1,25 @@
+src/tools/p2p/getChatMessages.ts
+  392824f0d6edf656 16-18,20-28
+src/generator/tool-patches.ts
+  392824f0d6edf656 163-167,170-182
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.23-bit.2+50d84e3",
+  "base_commit_sha": "bd9d234265269855fb7c4cd23c5864b6ef116f44",
+  "prompts": {
+    "392824f0d6edf656": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3117a6af-21bb-4157-b4fd-a9c3aa24cd09",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "paul.yang <paul.yang@bybit.com>",
+      "messages": [],
+      "total_additions": 30,
+      "total_deletions": 5,
+      "accepted_lines": 30,
+      "overriden_lines": 0
+    }
+  }
+}
