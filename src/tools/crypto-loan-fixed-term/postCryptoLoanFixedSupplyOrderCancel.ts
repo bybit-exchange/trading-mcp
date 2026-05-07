@@ -7,6 +7,7 @@ export const postCryptoLoanFixedSupplyOrderCancel = {
   description: "Cancel a pending supply (lending) order.\n\n**Rate limit:** 1 request per UID",
   inputSchema: z.object({
     orderId: z.string(),
+    refundedAccount: z.enum(["0", "1"]).default("0").optional(),
   }),
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/crypto-loan-fixed/supply-order-cancel", input);

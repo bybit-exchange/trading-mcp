@@ -10,6 +10,7 @@ export const postCryptoLoanFixedSupply = {
     orderAmount: z.string(),
     annualRate: z.string(),
     term: z.string(),
+    availableSource: z.enum(["0", "1", "2"]).default("0").optional(),
   }),
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/crypto-loan-fixed/supply", input);

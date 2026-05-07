@@ -4,6 +4,7 @@ import { cancelAllSpreadOrders } from './cancelAllSpreadOrders.js';
 import { cancelSpreadOrder } from './cancelSpreadOrder.js';
 import { createSpreadOrder } from './createSpreadOrder.js';
 import { getSpreadInstrumentsInfo } from './getSpreadInstrumentsInfo.js';
+import { getSpreadMaxQty } from './getSpreadMaxQty.js';
 import { getSpreadOpenOrders } from './getSpreadOpenOrders.js';
 import { getSpreadOrderHistory } from './getSpreadOrderHistory.js';
 import { getSpreadOrderbook } from './getSpreadOrderbook.js';
@@ -17,6 +18,7 @@ export const spreadTradingTools = [
   cancelSpreadOrder,
   createSpreadOrder,
   getSpreadInstrumentsInfo,
+  getSpreadMaxQty,
   getSpreadOpenOrders,
   getSpreadOrderHistory,
   getSpreadOrderbook,

@@ -352,19 +352,24 @@ Run **Developer: Reload Window** from the Command Palette (`Cmd+Shift+P` / `Ctrl
 | `position` | Yes | 11 | Position list, leverage, position mode, trading stop, auto-add margin, add/reduce margin, closed PnL, closed positions, move positions, and risk limit confirmation |
 | `asset` | Yes | 5 | Asset overview, portfolio margin, delivery/settlement records, aggregated parent+sub account assets |
 | `user` | Yes | 16 | API key info & permissions, sub-account listing and management, create/update/delete API keys, freeze sub-accounts, delete sub-accounts, sign agreement, member account types, referral/invitation queries |
-| `spread-trading` | Mixed | 11 | Spread instruments, orderbook, tickers, recent trades, create/amend/cancel spread orders, open orders, order history, trade history |
+| `spread-trading` | Mixed | 12 | Spread instruments, orderbook, tickers, recent trades, create/amend/cancel spread orders, open orders, order history, trade history, max order quantity |
 | `pre-upgrade` | Yes | 6 | Pre-upgrade order history, execution list, closed PnL, transaction log, delivery and settlement records |
 | `bot` | Yes | 18 | Futures combo bot, futures grid bot, futures martingale bot, spot grid bot, spot DCA bot — create, close, detail, validate, and parameter limits |
 | `copy-trading-classic` | Yes | 2 | Classic copy trading: recommended leader leaderboard, create follower binding |
 | `copy-trading-tradfi` | Yes | 2 | TradFi copy trading (MT5): recommended provider leaderboard, create follower binding |
 | `strategy` | Yes | 6 | TWAP, Chase Limit, Iceberg strategy orders — create, list, sub-order list, stop |
-| `earn` | Yes | 6 | Earn product queries, stake/redeem orders, order history, positions, yield history, hourly yield |
-| `advanceearn` | Yes | 4 | Advance Earn (dual-currency): product queries, place order, positions, order history |
-| `p2p` | Yes | 10 | P2P ad management and order queries: create/update/remove ads, browse online ads, query personal ads and details, order list, order detail, pending orders, mark order as paid |
+| `earn` | Mixed | 8 | Earn product queries, stake/redeem orders, order history, positions, yield history, hourly yield, APR history, position modify |
+| `advanceearn` | Mixed | 5 | Advance Earn: product queries, place order, positions, order history, product extra info |
+| `smartleverage` | Yes | 1 | Smart Leverage: redeem estimation amount list |
+| `doublewin` | Yes | 1 | Double Win: leverage and expiry queries |
+| `fixedterm` | Mixed | 6 | Fixed-term deposits: product list, place/redeem orders, positions, order history, auto-invest settings |
+| `earntoken` | Mixed | 7 | Token earn products: place orders, positions, order history, daily/hourly yield, historical APR |
+| `liquiditymining` | Yes | 10 | Liquidity mining: add/remove/reinvest liquidity, add margin, claim interest, positions, orders, yield records, liquidation records |
+| `p2p` | Yes | 13 | P2P ad management and order queries: create/update/remove ads, browse online ads, query personal ads and details, order list, order detail, pending orders, mark order as paid, chat messages, counterparty info, payment methods |
 | `alpha` | Yes | 10 | On-chain trading: trade quote, purchase, redeem, pay token list, order list, token list, token prices, token details, asset list, asset detail |
 | `websocket` | Mixed | 26 | Real-time snapshots via subscribe-snapshot pattern: orderbook, tickers, klines, trades, liquidations, executions, positions, wallet, option Greeks, RFQ block trades, spread trading |
 
-**Total: 200 tools**
+**Total: 242 tools**
 
 ---
 

@@ -2,6 +2,7 @@
 import { accountBorrow } from './accountBorrow.js';
 import { accountNoConvertRepay } from './accountNoConvertRepay.js';
 import { accountRepay } from './accountRepay.js';
+import { getAccountInfo } from './getAccountInfo.js';
 import { getAccountInstruments } from './getAccountInstruments.js';
 import { getAccountWithdrawalInfo } from './getAccountWithdrawalInfo.js';
 import { getBorrowHistory } from './getBorrowHistory.js';
@@ -27,6 +28,7 @@ export const accountTools = [
   accountBorrow,
   accountNoConvertRepay,
   accountRepay,
+  getAccountInfo,
   getAccountInstruments,
   getAccountWithdrawalInfo,
   getBorrowHistory,
