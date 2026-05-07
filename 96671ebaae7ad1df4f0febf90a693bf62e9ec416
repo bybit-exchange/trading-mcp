@@ -1,0 +1,23 @@
+src/generator/ws-trade-generator.ts
+  61c386ed6ed867c4 10-15
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.23-bit.2+50d84e3",
+  "base_commit_sha": "96671ebaae7ad1df4f0febf90a693bf62e9ec416",
+  "prompts": {
+    "61c386ed6ed867c4": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4ab07154-fc34-4b12-b37b-78e6aacb34a3",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "paul.yang <paul.yang@bybit.com>",
+      "messages": [],
+      "total_additions": 6,
+      "total_deletions": 6,
+      "accepted_lines": 6,
+      "overriden_lines": 0
+    }
+  }
+}
