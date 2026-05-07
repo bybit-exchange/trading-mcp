@@ -1,0 +1,63 @@
+src/client/subscription-manager.ts
+  f883facbfdc7a314 15,26
+src/tools/wstrade/wsBatchCreateOrders.ts
+  f883facbfdc7a314 1-46
+README.md
+  f883facbfdc7a314 11,32,371,373
+src/tools/wstrade/wsOrderCreate.ts
+  f883facbfdc7a314 1-42
+README.zh.md
+  f883facbfdc7a314 11,32,371,373
+src/tools/wstrade/wsCancelOrder.ts
+  f883facbfdc7a314 1-18
+src/tools/wstrade/wsAmendOrder.ts
+  f883facbfdc7a314 1-29
+src/generator/index.ts
+  f883facbfdc7a314 19-20,86-104
+src/generator/ws-trade-parser.ts
+  f883facbfdc7a314 1-189
+src/tools/index.ts
+  f883facbfdc7a314 30,34,65,69
+src/tools/wstrade/wsCreateOrder.ts
+  f883facbfdc7a314 1-42
+scripts/generate-all.sh
+  f883facbfdc7a314 431-439
+src/tools/wstrade/index.ts
+  f883facbfdc7a314 1-22
+src/tools/subscription/index.ts
+  f883facbfdc7a314 1-2,4,8,10
+src/client/ws-client.ts
+  f883facbfdc7a314 17,28,33-41,167-254,258
+src/generator/ws-trade-generator.ts
+  f883facbfdc7a314 1-55
+src/tools/wstrade/wsBatchCancelOrders.ts
+  f883facbfdc7a314 1-22
+src/generator/ws-trade-defs.ts
+  f883facbfdc7a314 1-23
+src/tools/wstrade/wsOrderAmend.ts
+  f883facbfdc7a314 1-29
+src/tools/wstrade/wsBatchAmendOrders.ts
+  f883facbfdc7a314 1-33
+src/tools/wstrade/wsOrderCancel.ts
+  f883facbfdc7a314 1-18
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.23-bit.2+50d84e3",
+  "base_commit_sha": "58aba05641f29e7ab08afc56bfb05db84e30a573",
+  "prompts": {
+    "f883facbfdc7a314": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "7604709b-af15-4c04-8b48-085e74eba1aa",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "paul.yang <paul.yang@bybit.com>",
+      "messages": [],
+      "total_additions": 985,
+      "total_deletions": 276,
+      "accepted_lines": 720,
+      "overriden_lines": 0
+    }
+  }
+}
