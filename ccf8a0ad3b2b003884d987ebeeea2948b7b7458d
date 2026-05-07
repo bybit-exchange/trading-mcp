@@ -1,0 +1,64 @@
+src/client/ws-client.ts
+  392824f0d6edf656 231-233
+src/generator/ws-trade-generator.ts
+  61c386ed6ed867c4 10-15
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.23-bit.2+50d84e3",
+  "base_commit_sha": "ccf8a0ad3b2b003884d987ebeeea2948b7b7458d",
+  "prompts": {
+    "0be786705b6724f0": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "97a0e611-36d7-4b80-86d4-2ef666e6fec8",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "paul.yang <paul.yang@bybit.com>",
+      "messages": [],
+      "total_additions": 52,
+      "total_deletions": 12,
+      "accepted_lines": 14,
+      "overriden_lines": 0
+    },
+    "392824f0d6edf656": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "3117a6af-21bb-4157-b4fd-a9c3aa24cd09",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": null,
+      "messages": [],
+      "total_additions": 3,
+      "total_deletions": 1,
+      "accepted_lines": 3,
+      "overriden_lines": 0
+    },
+    "61c386ed6ed867c4": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "4ab07154-fc34-4b12-b37b-78e6aacb34a3",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "paul.yang <paul.yang@bybit.com>",
+      "messages": [],
+      "total_additions": 6,
+      "total_deletions": 6,
+      "accepted_lines": 6,
+      "overriden_lines": 0
+    },
+    "f883facbfdc7a314": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "7604709b-af15-4c04-8b48-085e74eba1aa",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "paul.yang <paul.yang@bybit.com>",
+      "messages": [],
+      "total_additions": 985,
+      "total_deletions": 276,
+      "accepted_lines": 170,
+      "overriden_lines": 0
+    }
+  }
+}
