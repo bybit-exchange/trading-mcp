@@ -1,0 +1,29 @@
+CHANGELOG.md
+  25b102ce72079be5 14-20
+src/server.ts
+  25b102ce72079be5 33
+package.json
+  25b102ce72079be5 3
+src/version.ts
+  25b102ce72079be5 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.23-bit.2+50d84e3",
+  "base_commit_sha": "6ab968389a984c22ca63c7c460bde4c39ac7d390",
+  "prompts": {
+    "25b102ce72079be5": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e8faad5f-c77f-4cf9-9a24-dec4862a4bfd",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "paul.yang <paul.yang@bybit.com>",
+      "messages": [],
+      "total_additions": 18,
+      "total_deletions": 11,
+      "accepted_lines": 10,
+      "overriden_lines": 0
+    }
+  }
+}
