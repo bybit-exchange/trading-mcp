@@ -1,0 +1,23 @@
+CHANGELOG.md
+  fd7eb7862c2d97cd 1-180
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.23-bit.2+50d84e3",
+  "base_commit_sha": "d9f93057644b32b11d61a7c9cd4824f32e714b94",
+  "prompts": {
+    "fd7eb7862c2d97cd": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "bf6f05bd-a010-404f-8e37-bc067efb5e87",
+        "model": "claude-sonnet-4-6"
+      },
+      "human_author": "paul.yang <paul.yang@bybit.com>",
+      "messages": [],
+      "total_additions": 180,
+      "total_deletions": 0,
+      "accepted_lines": 180,
+      "overriden_lines": 0
+    }
+  }
+}
