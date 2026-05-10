@@ -1,0 +1,23 @@
+scripts/sync-to-github.sh
+  25b102ce72079be5 195-196
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.1.23-bit.2+50d84e3",
+  "base_commit_sha": "192e2c11c61d039f82299999db3a457eb200c0b9",
+  "prompts": {
+    "25b102ce72079be5": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "e8faad5f-c77f-4cf9-9a24-dec4862a4bfd",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "paul.yang <paul.yang@bybit.com>",
+      "messages": [],
+      "total_additions": 2,
+      "total_deletions": 0,
+      "accepted_lines": 2,
+      "overriden_lines": 0
+    }
+  }
+}
