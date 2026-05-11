@@ -20,7 +20,6 @@ import { liquidityminingTools } from './liquiditymining/index.js';
 import { marketTools } from './market/index.js';
 import { p2pTools } from './p2p/index.js';
 import { positionTools } from './position/index.js';
-import { preUpgradeTools } from './pre-upgrade/index.js';
 import { rfqTradingTools } from './rfq-trading/index.js';
 import { smartleverageTools } from './smartleverage/index.js';
 import { spotMarginTradeUtaTools } from './spot-margin-trade-uta/index.js';
@@ -55,7 +54,6 @@ export const allTools = [
   ...marketTools,
   ...p2pTools,
   ...positionTools,
-  ...preUpgradeTools,
   ...rfqTradingTools,
   ...smartleverageTools,
   ...spotMarginTradeUtaTools,

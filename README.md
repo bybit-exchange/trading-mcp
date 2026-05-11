@@ -353,7 +353,6 @@ Run **Developer: Reload Window** from the Command Palette (`Cmd+Shift+P` / `Ctrl
 | `asset` | Yes | 5 | Asset overview, portfolio margin, delivery/settlement records, aggregated parent+sub account assets |
 | `user` | Yes | 16 | API key info & permissions, sub-account listing and management, create/update/delete API keys, freeze sub-accounts, delete sub-accounts, sign agreement, member account types, referral/invitation queries |
 | `spread-trading` | Mixed | 12 | Spread instruments, orderbook, tickers, recent trades, create/amend/cancel spread orders, open orders, order history, trade history, max order quantity |
-| `pre-upgrade` | Yes | 6 | Pre-upgrade order history, execution list, closed PnL, transaction log, delivery and settlement records |
 | `bot` | Yes | 18 | Futures combo bot, futures grid bot, futures martingale bot, spot grid bot, spot DCA bot — create, close, detail, validate, and parameter limits |
 | `copy-trading-classic` | Yes | 2 | Classic copy trading: recommended leader leaderboard, create follower binding |
 | `copy-trading-tradfi` | Yes | 2 | TradFi copy trading (MT5): recommended provider leaderboard, create follower binding |
@@ -370,7 +369,7 @@ Run **Developer: Reload Window** from the Command Palette (`Cmd+Shift+P` / `Ctrl
 | `websocket` | Mixed | 26 | Real-time snapshots via subscribe-snapshot pattern: orderbook, tickers, klines, trades, liquidations, executions, positions, wallet, option Greeks, RFQ block trades, spread trading |
 | `wstrade` | Yes | 6 | WebSocket trade operations via /v5/trade: place order, cancel order, amend order, batch place, batch cancel, batch amend |
 
-**Total: 248 tools**
+**Total: 242 tools**
 
 ---
 
