@@ -1,0 +1,23 @@
+release-note/release-note.md
+  e17125f626eaf749 1-2,4-22
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2-bit.6+68f331d",
+  "base_commit_sha": "1bbdc9e4eaf7421c8044a1f2cd4d20f32506f23c",
+  "prompts": {
+    "e17125f626eaf749": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "063a8a60-8759-4122-b3e0-a90c6434516c",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "paul.yang",
+      "messages": [],
+      "total_additions": 6191,
+      "total_deletions": 33,
+      "accepted_lines": 6162,
+      "overriden_lines": 1
+    }
+  }
+}
