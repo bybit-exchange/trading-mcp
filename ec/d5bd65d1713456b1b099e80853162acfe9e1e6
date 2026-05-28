@@ -1,0 +1,29 @@
+CHANGELOG.md
+  e17125f626eaf749 14-24
+src/version.ts
+  e17125f626eaf749 1
+src/server.ts
+  e17125f626eaf749 33
+package.json
+  e17125f626eaf749 3
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2-bit.6+68f331d",
+  "base_commit_sha": "ecd5bd65d1713456b1b099e80853162acfe9e1e6",
+  "prompts": {
+    "e17125f626eaf749": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "063a8a60-8759-4122-b3e0-a90c6434516c",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "paul.yang",
+      "messages": [],
+      "total_additions": 14,
+      "total_deletions": 3,
+      "accepted_lines": 14,
+      "overriden_lines": 0
+    }
+  }
+}
