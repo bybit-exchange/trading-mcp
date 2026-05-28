@@ -10,7 +10,7 @@ export const queryStrategyList = {
     status: z.enum(["2", "3", "4", "5", "6"]).optional(),
     symbol: z.string().optional(),
     category: z.enum(["UTA_USDT", "UTA_USDC", "UTA_USDC_FUTURE", "UTA_SPOT", "UTA_INVERSE", "UTA_INVERSE_FUTURE", "UTA_USDT_FUTURE"]).optional(),
-    strategyType: z.enum(["twap", "chaseOrder", "iceberg"]).optional(),
+    strategyType: z.enum(["twap", "chaseOrder", "iceberg", "pov"]).optional(),
     beginTimeE0: z.number().int().optional(),
     endTimeE0: z.number().int().optional(),
     pageSize: z.number().int().min(1).max(50).default(20).optional(),

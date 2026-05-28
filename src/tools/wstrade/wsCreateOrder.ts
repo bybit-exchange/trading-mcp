@@ -35,6 +35,7 @@ export const wsCreateOrder = {
   slLimitPrice: z.string().describe("Limit price when stop-loss is triggered (Partial mode).").optional(),
   tpOrderType: z.enum(["Market", "Limit"]).describe("Order type for take-profit.").optional(),
   slOrderType: z.enum(["Market", "Limit"]).describe("Order type for stop-loss.").optional(),
+  rpiTakerAccess: z.boolean().describe("Whether OpenAPI orders can take RPI orders.").optional(),
   }),
   handler: async (input: Record<string, unknown>) => {
     return wsClient.tradeRequest({ op: 'order.create', args: [input] });
