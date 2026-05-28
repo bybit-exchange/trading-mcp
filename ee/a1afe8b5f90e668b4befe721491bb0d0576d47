@@ -1,0 +1,33 @@
+src/tools/wstrade/wsCreateOrder.ts
+  e17125f626eaf749 38
+src/tools/trade/createOrder.ts
+  e17125f626eaf749 42
+src/tools/affiliate/getAffiliateUserList.ts
+  e17125f626eaf749 10
+src/tools/strategy/queryStrategyList.ts
+  e17125f626eaf749 13
+src/tools/user/queryAPIKey.ts
+  e17125f626eaf749 7
+src/tools/strategy/queryStrategyOrderList.ts
+  e17125f626eaf749 16
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2-bit.6+68f331d",
+  "base_commit_sha": "eea1afe8b5f90e668b4befe721491bb0d0576d47",
+  "prompts": {
+    "e17125f626eaf749": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "063a8a60-8759-4122-b3e0-a90c6434516c",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "paul.yang",
+      "messages": [],
+      "total_additions": 6,
+      "total_deletions": 4,
+      "accepted_lines": 6,
+      "overriden_lines": 0
+    }
+  }
+}
