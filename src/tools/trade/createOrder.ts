@@ -39,6 +39,7 @@ export const createOrder = {
     slOrderType: z.enum(["Market", "Limit"]).optional(),
     bboSideType: z.enum(["Queue", "Counterparty"]).optional(),
     bboLevel: z.enum(["1", "2", "3", "4", "5"]).optional(),
+    rpiTakerAccess: z.boolean().default(false).optional(),
   }),
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/order/create", input);

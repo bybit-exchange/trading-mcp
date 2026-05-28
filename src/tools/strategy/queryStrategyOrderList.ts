@@ -13,7 +13,7 @@ export const queryStrategyOrderList = {
     EndTimeE0: z.number().int().optional(),
     pageSize: z.number().int().min(1).max(50).default(20).optional(),
     cursor: z.string().optional(),
-    StrategyType: z.enum(["twap", "chaseOrder", "iceberg"]).optional(),
+    StrategyType: z.enum(["twap", "chaseOrder", "iceberg", "pov"]).optional(),
   }),
   handler: async (input: Record<string, unknown>) => {
     return restClient.getAuth("/v5/strategy/order-list", input);
