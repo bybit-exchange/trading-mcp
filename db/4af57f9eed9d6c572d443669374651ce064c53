@@ -1,0 +1,25 @@
+src/tools/index.ts
+  a35c606b705c96d8 9,44
+src/tools/card/index.ts
+  a35c606b705c96d8 1-6
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2-bit.6+68f331d",
+  "base_commit_sha": "db4af57f9eed9d6c572d443669374651ce064c53",
+  "prompts": {
+    "a35c606b705c96d8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "78269f91-7972-4676-89d0-2b5618fd2df9",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "paul.yang",
+      "messages": [],
+      "total_additions": 103,
+      "total_deletions": 0,
+      "accepted_lines": 103,
+      "overriden_lines": 0
+    }
+  }
+}
