@@ -1,0 +1,23 @@
+docs/superpowers/specs/2026-06-04-bybit-card-asset-records-design.md
+  a35c606b705c96d8 1-215
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2-bit.6+68f331d",
+  "base_commit_sha": "412326c6f3b609da9d8529bf6570fe8284ea7aef",
+  "prompts": {
+    "a35c606b705c96d8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "78269f91-7972-4676-89d0-2b5618fd2df9",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "paul.yang",
+      "messages": [],
+      "total_additions": 215,
+      "total_deletions": 0,
+      "accepted_lines": 215,
+      "overriden_lines": 0
+    }
+  }
+}
