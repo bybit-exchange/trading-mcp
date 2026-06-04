@@ -6,6 +6,7 @@ import { alphaTools } from './alpha/index.js';
 import { assetTools } from './asset/index.js';
 import { botTools } from './bot/index.js';
 import { brokerTools } from './broker/index.js';
+import { cardTools } from './card/index.js';
 import { copyTradingClassicTools } from './copy-trading-classic/index.js';
 import { copyTradingTradfiTools } from './copy-trading-tradfi/index.js';
 import { cryptoLoanFixedTermTools } from './crypto-loan-fixed-term/index.js';
@@ -40,6 +41,7 @@ export const allTools = [
   ...assetTools,
   ...botTools,
   ...brokerTools,
+  ...cardTools,
   ...copyTradingClassicTools,
   ...copyTradingTradfiTools,
   ...cryptoLoanFixedTermTools,
