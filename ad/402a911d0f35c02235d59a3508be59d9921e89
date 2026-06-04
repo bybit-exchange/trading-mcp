@@ -1,0 +1,23 @@
+src/generator/tool-patches.ts
+  a35c606b705c96d8 186-187
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2-bit.6+68f331d",
+  "base_commit_sha": "ad402a911d0f35c02235d59a3508be59d9921e89",
+  "prompts": {
+    "a35c606b705c96d8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "78269f91-7972-4676-89d0-2b5618fd2df9",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "paul.yang",
+      "messages": [],
+      "total_additions": 97,
+      "total_deletions": 2,
+      "accepted_lines": 97,
+      "overriden_lines": 0
+    }
+  }
+}
