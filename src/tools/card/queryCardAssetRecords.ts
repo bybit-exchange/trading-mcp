@@ -15,16 +15,20 @@ import { restClient } from '../../client/rest-client.js';
 export const queryCardAssetRecords = {
   name: 'queryCardAssetRecords',
   description:
-    'Query Bybit Card asset (transaction) records for the authenticated account.\n\n' +
+    'Query Bybit Card asset (transaction) records for the authenticated account. ' +
+    'Requires **Card** read permission on the API key.\n\n' +
     'POST /v5/card/transaction/query-asset-records — paginated, supports filters by ' +
-    'status code, card-number last digits (pan4), merchant name (fuzzy), query type ' +
-    '(SIDE_QUERY_AUTH/FINANCIAL/REFUND), transaction or order ID (exact), card token, ' +
-    'and time range.\n\n' +
+    'status code, last 2 or 4 digits of card number (pan4), merchant name (fuzzy), ' +
+    'query type (SIDE_QUERY_AUTH/FINANCIAL/REFUND), transaction or order ID (exact), ' +
+    'card token, and time range.\n\n' +
+    'Conditional requirement: `type` is required when neither `txnId` nor `orderNo` ' +
+    'is provided. This restriction does not apply when either `txnId` or `orderNo` ' +
+    'is present.\n\n' +
     'Privacy: the MCP layer removes the internal `uid` and the card BIN `pan6` from ' +
-    'each record before returning. The card last-four (`pan4`), merchant info, amounts, ' +
-    'fees, status, and timestamps are returned unchanged.\n\n' +
-    'Agent hint: use `pan4` to identify the user-facing card. Do not ask the user for ' +
-    '`uid` or `pan6` — they are not exposed.',
+    'each record before returning. The card last digits (`pan4`), merchant info, ' +
+    'amounts, fees, status, and timestamps are returned unchanged.\n\n' +
+    'Agent hint: use `pan4` (last 2 or 4 digits) to identify the user-facing card. ' +
+    'Do not ask the user for `uid` or `pan6` — they are not exposed.',
   inputSchema: z.object({
     statusCode: z.enum(['0', '1', '2']).optional(),
     limit: z.number().int().min(1).max(500).default(100).optional(),
