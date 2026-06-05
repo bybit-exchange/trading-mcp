@@ -365,11 +365,12 @@ Run **Developer: Reload Window** from the Command Palette (`Cmd+Shift+P` / `Ctrl
 | `earntoken` | Mixed | 7 | Token earn products: place orders, positions, order history, daily/hourly yield, historical APR |
 | `liquiditymining` | Yes | 10 | Liquidity mining: add/remove/reinvest liquidity, add margin, claim interest, positions, orders, yield records, liquidation records |
 | `p2p` | Yes | 13 | P2P ad management and order queries: create/update/remove ads, browse online ads, query personal ads and details, order list, order detail, pending orders, mark order as paid, chat messages, counterparty info, payment methods |
+| `card` | Yes | 1 | Bybit Card asset (transaction) records: paginated query with status, last-four card digits, merchant, query type, transaction/order ID, card token, and time-range filters |
 | `alpha` | Yes | 10 | On-chain trading: trade quote, purchase, redeem, pay token list, order list, token list, token prices, token details, asset list, asset detail |
 | `websocket` | Mixed | 26 | Real-time snapshots via subscribe-snapshot pattern: orderbook, tickers, klines, trades, liquidations, executions, positions, wallet, option Greeks, RFQ block trades, spread trading |
 | `wstrade` | Yes | 6 | WebSocket trade operations via /v5/trade: place order, cancel order, amend order, batch place, batch cancel, batch amend |
 
-**Total: 242 tools**
+**Total: 243 tools**
 
 ---
 
