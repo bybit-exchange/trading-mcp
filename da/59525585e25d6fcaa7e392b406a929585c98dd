@@ -1,0 +1,69 @@
+src/tools/earn/placeEarnOrder.ts
+  00d06aea0ebd3e83 18
+src/tools/earnrwa/getRwaProductList.ts
+  00d06aea0ebd3e83 1-14
+src/tools/earnrwa/placeRwaOrder.ts
+  00d06aea0ebd3e83 1-20
+src/tools/earnrwa/getRwaPositionList.ts
+  00d06aea0ebd3e83 1-14
+README.zh.md
+  00d06aea0ebd3e83 367-368,371,375
+src/tools/alpha/getLPOrderList.ts
+  00d06aea0ebd3e83 1-20
+scripts/generate-all.sh
+  00d06aea0ebd3e83 405-425
+README.md
+  00d06aea0ebd3e83 367-368,371,375
+src/tools/alpha/index.ts
+  00d06aea0ebd3e83 2-3,11-16,22-23,31-36
+src/tools/alpha/getLPPoolList.ts
+  00d06aea0ebd3e83 1-14
+src/tools/alpha/getLPPayTokenList.ts
+  00d06aea0ebd3e83 1-15
+release-note/release-note.md
+  00d06aea0ebd3e83 1-44
+src/tools/earnrwa/index.ts
+  00d06aea0ebd3e83 1-14
+src/tools/earnrwa/getRwaNavChart.ts
+  00d06aea0ebd3e83 1-16
+src/tools/holdtoearn/index.ts
+  00d06aea0ebd3e83 1-8
+src/tools/alpha/executeLPRedeem.ts
+  00d06aea0ebd3e83 1-17
+src/tools/earnrwa/getRwaOrderList.ts
+  00d06aea0ebd3e83 1-21
+src/tools/index.ts
+  00d06aea0ebd3e83 17,21,54,58
+src/tools/alpha/executeLPStake.ts
+  00d06aea0ebd3e83 1-21
+src/tools/alpha/getLPPayTokenPrice.ts
+  00d06aea0ebd3e83 1-15
+src/tools/alpha/getLPPositionList.ts
+  00d06aea0ebd3e83 1-14
+src/tools/holdtoearn/getHoldToEarnProduct.ts
+  00d06aea0ebd3e83 1-14
+src/tools/alpha/getLPPoolInfo.ts
+  00d06aea0ebd3e83 1-14
+src/tools/holdtoearn/getHoldToEarnYieldHistory.ts
+  00d06aea0ebd3e83 1-17
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2-bit.9+daa2e24",
+  "base_commit_sha": "da59525585e25d6fcaa7e392b406a929585c98dd",
+  "prompts": {
+    "00d06aea0ebd3e83": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1e5c95a0-14f5-4c6a-8ed2-1a2598b24faa",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "paul.yang",
+      "messages": [],
+      "total_additions": 362,
+      "total_deletions": 5,
+      "accepted_lines": 619,
+      "overriden_lines": 0
+    }
+  }
+}
