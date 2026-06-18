@@ -8,7 +8,7 @@ export const getHoldToEarnYieldHistory = {
   inputSchema: z.object({
     timeStart: z.number().int().optional(),
     timeEnd: z.number().int().optional(),
-    limit: z.number().int().min(1).max(49),
+    limit: z.number().int().min(1).max(49).default(20).optional(),
     cursor: z.string().optional(),
   }),
   handler: async (input: Record<string, unknown>) => {

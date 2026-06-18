@@ -9,7 +9,10 @@ export const getRwaNavChart = {
     productId: z.number().int(),
     startTime: z.number().int().optional(),
     endTime: z.number().int().optional(),
-  }),
+  }).refine(
+    (d) => d.startTime === undefined || d.endTime === undefined || (d.endTime - d.startTime) <= 15552000,
+    { message: 'endTime - startTime must not exceed 180 days (15,552,000 seconds)' }
+  ),
   handler: async (input: Record<string, unknown>) => {
     return restClient.get("/v5/earn/rwa/nav-chart", input);
   },

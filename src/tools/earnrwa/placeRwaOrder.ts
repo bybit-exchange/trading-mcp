@@ -13,7 +13,13 @@ export const placeRwaOrder = {
     redeemShares: z.string().optional(),
     accountType: z.enum(["FUND", "UNIFIED"]).default("FUND").optional(),
     orderLinkId: z.string(),
-  }),
+  }).refine(
+    (d) => d.orderType !== 'Stake' || d.stakeAmount !== undefined,
+    { message: 'stakeAmount is required when orderType=Stake' }
+  ).refine(
+    (d) => d.orderType !== 'Redeem' || d.redeemShares !== undefined,
+    { message: 'redeemShares is required when orderType=Redeem' }
+  ),
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/earn/rwa/place-order", input);
   },
