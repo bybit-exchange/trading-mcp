@@ -15,6 +15,7 @@ export const placeEarnOrder = {
     orderLinkId: z.string(),
     redeemPositionId: z.string().optional(),
     toAccountType: z.enum(["FUND", "UNIFIED"]).optional(),
+    interestCard: z.object({ awardId: z.number().int(), specCode: z.string() }).optional(),
   }),
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/earn/place-order", input);
