@@ -14,9 +14,11 @@ import { cryptoLoanFlexibleTools } from './crypto-loan-flexible/index.js';
 import { cryptoLoanNewTools } from './crypto-loan-new/index.js';
 import { doublewinTools } from './doublewin/index.js';
 import { earnTools } from './earn/index.js';
+import { earnrwaTools } from './earnrwa/index.js';
 import { earntokenTools } from './earntoken/index.js';
 import { fiatConvertTools } from './fiat-convert/index.js';
 import { fixedtermTools } from './fixedterm/index.js';
+import { holdtoearnTools } from './holdtoearn/index.js';
 import { liquidityminingTools } from './liquiditymining/index.js';
 import { marketTools } from './market/index.js';
 import { p2pTools } from './p2p/index.js';
@@ -49,9 +51,11 @@ export const allTools = [
   ...cryptoLoanNewTools,
   ...doublewinTools,
   ...earnTools,
+  ...earnrwaTools,
   ...earntokenTools,
   ...fiatConvertTools,
   ...fixedtermTools,
+  ...holdtoearnTools,
   ...liquidityminingTools,
   ...marketTools,
   ...p2pTools,
