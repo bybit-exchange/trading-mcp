@@ -19,6 +19,7 @@ import { earntokenTools } from './earntoken/index.js';
 import { fiatConvertTools } from './fiat-convert/index.js';
 import { fixedtermTools } from './fixedterm/index.js';
 import { holdtoearnTools } from './holdtoearn/index.js';
+import { institutionalLoanTools } from './institutional-loan/index.js';
 import { liquidityminingTools } from './liquiditymining/index.js';
 import { marketTools } from './market/index.js';
 import { p2pTools } from './p2p/index.js';
@@ -56,6 +57,7 @@ export const allTools = [
   ...fiatConvertTools,
   ...fixedtermTools,
   ...holdtoearnTools,
+  ...institutionalLoanTools,
   ...liquidityminingTools,
   ...marketTools,
   ...p2pTools,
