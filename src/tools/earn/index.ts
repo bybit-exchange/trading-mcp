@@ -5,6 +5,7 @@ import { getEarnOrderHistory } from './getEarnOrderHistory.js';
 import { getEarnPosition } from './getEarnPosition.js';
 import { getEarnProduct } from './getEarnProduct.js';
 import { getEarnYieldHistory } from './getEarnYieldHistory.js';
+import { listEarnCoupons } from './listEarnCoupons.js';
 import { modifyEarnPosition } from './modifyEarnPosition.js';
 import { placeEarnOrder } from './placeEarnOrder.js';
 
@@ -15,6 +16,7 @@ export const earnTools = [
   getEarnPosition,
   getEarnProduct,
   getEarnYieldHistory,
+  listEarnCoupons,
   modifyEarnPosition,
   placeEarnOrder,
 ];

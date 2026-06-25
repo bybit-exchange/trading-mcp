@@ -5,6 +5,7 @@ import { getClosePosition } from './getClosePosition.js';
 import { getClosedPnl } from './getClosedPnl.js';
 import { getMovePositionHistory } from './getMovePositionHistory.js';
 import { getPositionInfo } from './getPositionInfo.js';
+import { getPositionSymbolInfo } from './getPositionSymbolInfo.js';
 import { movePosition } from './movePosition.js';
 import { setAutoAddMargin } from './setAutoAddMargin.js';
 import { setLeverage } from './setLeverage.js';
@@ -18,6 +19,7 @@ export const positionTools = [
   getClosedPnl,
   getMovePositionHistory,
   getPositionInfo,
+  getPositionSymbolInfo,
   movePosition,
   setAutoAddMargin,
   setLeverage,

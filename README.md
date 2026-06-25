@@ -349,7 +349,7 @@ Run **Developer: Reload Window** from the Command Palette (`Cmd+Shift+P` / `Ctrl
 | `account` | Yes | 18 | Wallet balance, transaction log, fee rates, margin mode, collateral switch, hedging mode, price limit, MMP modify and reset, option Greeks, DCP config, SMP group, account instruments, and more |
 | `trade` | Yes | 12 | Create, amend, cancel orders, batch order operations, open orders, order history, spot borrow quota, DCP, and order pre-check |
 | `rfq-trading` | Yes | 15 | Create/cancel RFQs and quotes, execute quotes, accept non-LP quotes, RFQ config, realtime and historical RFQs/quotes, trade history, public trades |
-| `position` | Yes | 11 | Position list, leverage, position mode, trading stop, auto-add margin, add/reduce margin, closed PnL, closed positions, move positions, and risk limit confirmation |
+| `position` | Yes | 12 | Position list, leverage, position mode, trading stop, auto-add margin, add/reduce margin, closed PnL, closed positions, move positions, risk limit confirmation, and futures symbol leverage info |
 | `asset` | Yes | 5 | Asset overview, portfolio margin, delivery/settlement records, aggregated parent+sub account assets |
 | `user` | Yes | 16 | API key info & permissions, sub-account listing and management, create/update/delete API keys, freeze sub-accounts, delete sub-accounts, sign agreement, member account types, referral/invitation queries |
 | `spread-trading` | Mixed | 12 | Spread instruments, orderbook, tickers, recent trades, create/amend/cancel spread orders, open orders, order history, trade history, max order quantity |
@@ -357,7 +357,7 @@ Run **Developer: Reload Window** from the Command Palette (`Cmd+Shift+P` / `Ctrl
 | `copy-trading-classic` | Yes | 2 | Classic copy trading: recommended leader leaderboard, create follower binding |
 | `copy-trading-tradfi` | Yes | 2 | TradFi copy trading (MT5): recommended provider leaderboard, create follower binding |
 | `strategy` | Yes | 6 | TWAP, Chase Limit, Iceberg strategy orders — create, list, sub-order list, stop |
-| `earn` | Mixed | 8 | Earn product queries, stake/redeem orders, order history, positions, yield history, hourly yield, APR history, position modify |
+| `earn` | Mixed | 9 | Earn product queries, stake/redeem orders, order history, positions, yield history, hourly yield, APR history, position modify, interest-rate coupons and reward cards |
 | `advanceearn` | Mixed | 5 | Advance Earn: product queries, place order, positions, order history, product extra info |
 | `smartleverage` | Yes | 1 | Smart Leverage: redeem estimation amount list |
 | `doublewin` | Yes | 1 | Double Win: leverage and expiry queries |
@@ -366,13 +366,14 @@ Run **Developer: Reload Window** from the Command Palette (`Cmd+Shift+P` / `Ctrl
 | `liquiditymining` | Yes | 10 | Liquidity mining: add/remove/reinvest liquidity, add margin, claim interest, positions, orders, yield records, liquidation records |
 | `earnrwa` | Yes | 5 | Real-World Asset (RWA) earn: NAV-based product list, Stake/Redeem orders, positions, order history, historical NAV chart |
 | `holdtoearn` | Yes | 2 | Hold-to-Earn airdrop: product listings and personal yield history |
+| `institutional-loan` | Mixed | 2 | Institutional lending product info, hedge product coin delta amount |
 | `p2p` | Yes | 13 | P2P ad management and order queries: create/update/remove ads, browse online ads, query personal ads and details, order list, order detail, pending orders, mark order as paid, chat messages, counterparty info, payment methods |
 | `card` | Yes | 1 | Bybit Card asset (transaction) records: paginated query with status, last-four card digits, merchant, query type, transaction/order ID, card token, and time-range filters |
 | `alpha` | Mixed | 18 | On-chain trading and LP farming: trade quote/purchase/redeem, pay tokens, orders, biz tokens, asset detail; LP pool list/info, position list, orders, pay tokens & prices, LP stake, LP redeem |
 | `websocket` | Mixed | 26 | Real-time snapshots via subscribe-snapshot pattern: orderbook, tickers, klines, trades, liquidations, executions, positions, wallet, option Greeks, RFQ block trades, spread trading |
 | `wstrade` | Yes | 6 | WebSocket trade operations via /v5/trade: place order, cancel order, amend order, batch place, batch cancel, batch amend |
 
-**Total: 258 tools**
+**Total: 262 tools**
 
 ---
 

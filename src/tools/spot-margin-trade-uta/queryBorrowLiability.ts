@@ -9,6 +9,6 @@ export const queryBorrowLiability = {
     currency: z.string(),
   }),
   handler: async (input: Record<string, unknown>) => {
-    return restClient.getAuth("/v5/spot-margin-trade/Liability", input);
+    return restClient.getAuth("/v5/spot-margin-trade/liability", input);
   },
 };
