@@ -1,0 +1,29 @@
+scripts/generate-all.sh
+  ac411cbd86cc81b8 163,175
+src/tools/position/index.ts
+  ac411cbd86cc81b8 8,22
+README.zh.md
+  ac411cbd86cc81b8 352,376
+README.md
+  ac411cbd86cc81b8 352,376
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2-bit.9+daa2e24",
+  "base_commit_sha": "33fca7898418e77d0b0e7b026ea44c32c87aa199",
+  "prompts": {
+    "ac411cbd86cc81b8": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "ab143b96-6472-461e-bbc2-846dc57a3d1b",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "paul.yang",
+      "messages": [],
+      "total_additions": 296,
+      "total_deletions": 5,
+      "accepted_lines": 6537,
+      "overriden_lines": 0
+    }
+  }
+}
