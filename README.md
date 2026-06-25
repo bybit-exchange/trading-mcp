@@ -349,7 +349,7 @@ Run **Developer: Reload Window** from the Command Palette (`Cmd+Shift+P` / `Ctrl
 | `account` | Yes | 18 | Wallet balance, transaction log, fee rates, margin mode, collateral switch, hedging mode, price limit, MMP modify and reset, option Greeks, DCP config, SMP group, account instruments, and more |
 | `trade` | Yes | 12 | Create, amend, cancel orders, batch order operations, open orders, order history, spot borrow quota, DCP, and order pre-check |
 | `rfq-trading` | Yes | 15 | Create/cancel RFQs and quotes, execute quotes, accept non-LP quotes, RFQ config, realtime and historical RFQs/quotes, trade history, public trades |
-| `position` | Yes | 11 | Position list, leverage, position mode, trading stop, auto-add margin, add/reduce margin, closed PnL, closed positions, move positions, and risk limit confirmation |
+| `position` | Yes | 12 | Position list, leverage, position mode, trading stop, auto-add margin, add/reduce margin, closed PnL, closed positions, move positions, risk limit confirmation, and futures symbol leverage info |
 | `asset` | Yes | 5 | Asset overview, portfolio margin, delivery/settlement records, aggregated parent+sub account assets |
 | `user` | Yes | 16 | API key info & permissions, sub-account listing and management, create/update/delete API keys, freeze sub-accounts, delete sub-accounts, sign agreement, member account types, referral/invitation queries |
 | `spread-trading` | Mixed | 12 | Spread instruments, orderbook, tickers, recent trades, create/amend/cancel spread orders, open orders, order history, trade history, max order quantity |
@@ -373,7 +373,7 @@ Run **Developer: Reload Window** from the Command Palette (`Cmd+Shift+P` / `Ctrl
 | `websocket` | Mixed | 26 | Real-time snapshots via subscribe-snapshot pattern: orderbook, tickers, klines, trades, liquidations, executions, positions, wallet, option Greeks, RFQ block trades, spread trading |
 | `wstrade` | Yes | 6 | WebSocket trade operations via /v5/trade: place order, cancel order, amend order, batch place, batch cancel, batch amend |
 
-**Total: 261 tools**
+**Total: 262 tools**
 
 ---
 

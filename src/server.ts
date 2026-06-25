@@ -30,7 +30,7 @@ allTools = [...allTools, ...subscriptionTools];
 
 export async function startServer(): Promise<void> {
   const server = new Server(
-    { name: 'trading-mcp', version: '2.1.12' },
+    { name: 'trading-mcp', version: '2.1.13' },
     { capabilities: { tools: {} } },
   );
 
