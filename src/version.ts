@@ -1,4 +1,4 @@
-export const VERSION = '2.1.14';
+export const VERSION = '2.1.15';
 
 export function commonHeaders(): Record<string, string> {
   return {

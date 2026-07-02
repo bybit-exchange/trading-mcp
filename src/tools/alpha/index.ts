@@ -24,6 +24,7 @@ import { getPredictionGroupStageDetail } from './getPredictionGroupStageDetail.j
 import { getPredictionMatchList } from './getPredictionMatchList.js';
 import { getPredictionOrderBook } from './getPredictionOrderBook.js';
 import { getPredictionOrderEstimate } from './getPredictionOrderEstimate.js';
+import { getPredictionOrderList } from './getPredictionOrderList.js';
 import { getPredictionPayTokenList } from './getPredictionPayTokenList.js';
 import { getPredictionPortfolioSummary } from './getPredictionPortfolioSummary.js';
 import { getPredictionPositionHistory } from './getPredictionPositionHistory.js';
@@ -60,6 +61,7 @@ export const alphaTools = [
   getPredictionMatchList,
   getPredictionOrderBook,
   getPredictionOrderEstimate,
+  getPredictionOrderList,
   getPredictionPayTokenList,
   getPredictionPortfolioSummary,
   getPredictionPositionHistory,

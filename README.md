@@ -370,11 +370,11 @@ Run **Developer: Reload Window** from the Command Palette (`Cmd+Shift+P` / `Ctrl
 | `institutional-loan` | Mixed | 2 | Institutional lending product info, hedge product coin delta amount |
 | `p2p` | Yes | 13 | P2P ad management and order queries: create/update/remove ads, browse online ads, query personal ads and details, order list, order detail, pending orders, mark order as paid, chat messages, counterparty info, payment methods |
 | `card` | Yes | 1 | Bybit Card asset (transaction) records: paginated query with status, last-four card digits, merchant, query type, transaction/order ID, card token, and time-range filters |
-| `alpha` | Mixed | 34 | On-chain trading, LP farming and prediction markets: trade quote/purchase/redeem, pay tokens, orders, biz tokens, asset detail; LP pool list/info, position list, orders, pay tokens & prices, LP stake, LP redeem; prediction engine status, event/token/order-book/price queries, portfolio/position/order-estimate, prediction buy/sell |
+| `alpha` | Mixed | 35 | On-chain trading, LP farming and prediction markets: trade quote/purchase/redeem, pay tokens, orders, biz tokens, asset detail; LP pool list/info, position list, orders, pay tokens & prices, LP stake, LP redeem; prediction engine status, event/token/order-book/price queries, portfolio/position/order/order-estimate, prediction buy/sell |
 | `websocket` | Mixed | 26 | Real-time snapshots via subscribe-snapshot pattern: orderbook, tickers, klines, trades, liquidations, executions, positions, wallet, option Greeks, RFQ block trades, spread trading |
 | `wstrade` | Yes | 6 | WebSocket trade operations via /v5/trade: place order, cancel order, amend order, batch place, batch cancel, batch amend |
 
-**Total: 284 tools**
+**Total: 285 tools**
 
 ---
 
