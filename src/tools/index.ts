@@ -4,6 +4,7 @@ import { advanceearnTools } from './advanceearn/index.js';
 import { affiliateTools } from './affiliate/index.js';
 import { alphaTools } from './alpha/index.js';
 import { assetTools } from './asset/index.js';
+import { auroraTools } from './aurora/index.js';
 import { botTools } from './bot/index.js';
 import { brokerTools } from './broker/index.js';
 import { cardTools } from './card/index.js';
@@ -42,6 +43,7 @@ export const allTools = [
   ...affiliateTools,
   ...alphaTools,
   ...assetTools,
+  ...auroraTools,
   ...botTools,
   ...brokerTools,
   ...cardTools,
