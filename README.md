@@ -354,6 +354,7 @@ Run **Developer: Reload Window** from the Command Palette (`Cmd+Shift+P` / `Ctrl
 | `user` | Yes | 16 | API key info & permissions, sub-account listing and management, create/update/delete API keys, freeze sub-accounts, delete sub-accounts, sign agreement, member account types, referral/invitation queries |
 | `spread-trading` | Mixed | 12 | Spread instruments, orderbook, tickers, recent trades, create/amend/cancel spread orders, open orders, order history, trade history, max order quantity |
 | `bot` | Yes | 18 | Futures combo bot, futures grid bot, futures martingale bot, spot grid bot, spot DCA bot — create, close, detail, validate, and parameter limits |
+| `aurora` | Yes | 5 | Aurora AI strategy recommendations: home page, creation page, explore page, one-click EasyBot, and single-strategy detail lookup |
 | `copy-trading-classic` | Yes | 2 | Classic copy trading: recommended leader leaderboard, create follower binding |
 | `copy-trading-tradfi` | Yes | 2 | TradFi copy trading (MT5): recommended provider leaderboard, create follower binding |
 | `strategy` | Yes | 6 | TWAP, Chase Limit, Iceberg strategy orders — create, list, sub-order list, stop |
@@ -369,11 +370,11 @@ Run **Developer: Reload Window** from the Command Palette (`Cmd+Shift+P` / `Ctrl
 | `institutional-loan` | Mixed | 2 | Institutional lending product info, hedge product coin delta amount |
 | `p2p` | Yes | 13 | P2P ad management and order queries: create/update/remove ads, browse online ads, query personal ads and details, order list, order detail, pending orders, mark order as paid, chat messages, counterparty info, payment methods |
 | `card` | Yes | 1 | Bybit Card asset (transaction) records: paginated query with status, last-four card digits, merchant, query type, transaction/order ID, card token, and time-range filters |
-| `alpha` | Mixed | 18 | On-chain trading and LP farming: trade quote/purchase/redeem, pay tokens, orders, biz tokens, asset detail; LP pool list/info, position list, orders, pay tokens & prices, LP stake, LP redeem |
+| `alpha` | Mixed | 34 | On-chain trading, LP farming and prediction markets: trade quote/purchase/redeem, pay tokens, orders, biz tokens, asset detail; LP pool list/info, position list, orders, pay tokens & prices, LP stake, LP redeem; prediction engine status, event/token/order-book/price queries, portfolio/position/order-estimate, prediction buy/sell |
 | `websocket` | Mixed | 26 | Real-time snapshots via subscribe-snapshot pattern: orderbook, tickers, klines, trades, liquidations, executions, positions, wallet, option Greeks, RFQ block trades, spread trading |
 | `wstrade` | Yes | 6 | WebSocket trade operations via /v5/trade: place order, cancel order, amend order, batch place, batch cancel, batch amend |
 
-**Total: 262 tools**
+**Total: 284 tools**
 
 ---
 

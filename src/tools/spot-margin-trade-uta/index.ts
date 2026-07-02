@@ -6,6 +6,7 @@ import { getSpotMarginTradeMaxBorrowable } from './getSpotMarginTradeMaxBorrowab
 import { getSpotMarginTradeRepaymentAvailableAmount } from './getSpotMarginTradeRepaymentAvailableAmount.js';
 import { getSpotMarginTradeState } from './getSpotMarginTradeState.js';
 import { queryBorrowLiability } from './queryBorrowLiability.js';
+import { queryFixedAvailableInventory } from './queryFixedAvailableInventory.js';
 import { queryFixedBorrowContracts } from './queryFixedBorrowContracts.js';
 import { queryFixedBorrowMarket } from './queryFixedBorrowMarket.js';
 import { queryFixedBorrowOrders } from './queryFixedBorrowOrders.js';
@@ -22,6 +23,7 @@ export const spotMarginTradeUtaTools = [
   getSpotMarginTradeRepaymentAvailableAmount,
   getSpotMarginTradeState,
   queryBorrowLiability,
+  queryFixedAvailableInventory,
   queryFixedBorrowContracts,
   queryFixedBorrowMarket,
   queryFixedBorrowOrders,

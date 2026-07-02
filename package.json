@@ -1,6 +1,6 @@
 {
   "name": "bybit-official-trading-server",
-  "version": "2.1.13",
+  "version": "2.1.14",
   "publishConfig": {
     "access": "public"
   },
