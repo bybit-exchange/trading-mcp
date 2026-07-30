@@ -5,10 +5,10 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Node.js 20.6+](https://img.shields.io/badge/node-20.6+-blue.svg)](https://nodejs.org/)
 [![MCP](https://img.shields.io/badge/MCP-compatible-purple.svg)](https://modelcontextprotocol.io)
-[![Tools](https://img.shields.io/badge/Tools-372-orange.svg)](#-工具分类)
+[![Tools](https://img.shields.io/badge/Tools-379-orange.svg)](#-工具分类)
 [![Bybit V5 API](https://img.shields.io/badge/Bybit-V5%20API-green.svg)](https://bybit-exchange.github.io/docs/v5/intro)
 
-**生产就绪的 Bybit MCP 服务器 — 372 个工具，覆盖行情数据、交易下单、仓位管理、账户管理、资产查询、借贷、理财和 WebSocket 实时推送**
+**生产就绪的 Bybit MCP 服务器 — 379 个工具，覆盖行情数据、交易下单、仓位管理、账户管理、资产查询、借贷、理财和 WebSocket 实时推送**
 
 [快速开始](#-快速开始) •
 [功能特性](#-功能特性) •
@@ -29,7 +29,7 @@ Bybit MCP 服务器让 **Claude**、**Cursor**、**VS Code** 等支持 MCP 协�
 
 ### 为什么选择 Bybit MCP？
 
-- **完整的 V5 覆盖** — 372 个工具，涵盖行情、交易、仓位、账户、资产、借贷、理财、跟单、WebSocket 和 WS 交易等类别
+- **完整的 V5 覆盖** — 379 个工具，涵盖行情、交易、仓位、账户、资产、借贷、理财、跟单、WebSocket 和 WS 交易等类别
 - **安全设计** — API 凭证从环境变量读取，不会硬编码在任何地方
 - **免鉴权行情** — 22 个行情工具无需 API Key 即可使用
 - **实时数据流** — 27 个 WebSocket 工具，支持订单薄、Ticker、仓位等实时推送
@@ -376,6 +376,9 @@ RSA 模式（自生成 API Key）：
 | `liquiditymining` | 是 | 10 | 流动性挖矿：添加/移除/再投资流动性、追加保证金、领取利息、持仓/订单/收益/清算记录查询 |
 | `earnrwa` | 是 | 5 | RWA（真实世界资产）理财：NAV 计价产品列表、Stake/Redeem 下单、持仓查询、订单历史、历史 NAV 净值曲线 |
 | `holdtoearn` | 是 | 2 | 持币空投：产品列表、个人收益历史查询 |
+| `launchpool` | 混合 | 4 | Launchpool 活动：活动列表、当前质押持仓、质押操作记录、已完成质押历史 |
+| `puzzle` | 否 | 1 | Puzzle 活动列表 |
+| `tokensplash` | 混合 | 2 | Token Splash 活动：活动列表、用户活动交易进度 |
 | `p2p` | 是 | 13 | P2P 点对点交易：发布/更新/下架广告、浏览在线广告、查询我的广告及详情、订单列表、订单详情、待处理订单、标记已付款、聊天消息记录、对手方信息、付款方式列表 |
 | `card` | 是 | 1 | Bybit Card 资产流水记录：按状态、卡尾号、商户名、查询类型、交易/订单号、卡 token、时间区间分页查询 |
 | `alpha` | 混合 | 35 | 链上交易、LP 流动性挖矿与预测市场：交易报价/买入/赎回、支付代币、订单、链上代币、资产详情；LP 池列表/详情、持仓、订单、支付代币与价格、LP 质押、LP 赎回；预测撮合状态、事件/代币/订单簿/价格查询、持仓概览、订单列表、下单预估、预测买入/卖出 |
@@ -383,7 +386,7 @@ RSA 模式（自生成 API Key）：
 | `wstrade` | 是 | 6 | WebSocket 交易操作（/v5/trade 端点）：下单、撤单、改单、批量下单、批量撤单、批量改单 |
 | `subscription` | 是 | 4 | WebSocket 订阅生命周期管理：启动/停止订阅、列出活跃订阅、读取缓冲消息 |
 
-**合计：372 个工具**
+**合计：379 个工具**
 
 ---
 

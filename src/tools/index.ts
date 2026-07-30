@@ -21,10 +21,12 @@ import { fiatConvertTools } from './fiat-convert/index.js';
 import { fixedtermTools } from './fixedterm/index.js';
 import { holdtoearnTools } from './holdtoearn/index.js';
 import { institutionalLoanTools } from './institutional-loan/index.js';
+import { launchpoolTools } from './launchpool/index.js';
 import { liquidityminingTools } from './liquiditymining/index.js';
 import { marketTools } from './market/index.js';
 import { p2pTools } from './p2p/index.js';
 import { positionTools } from './position/index.js';
+import { puzzleTools } from './puzzle/index.js';
 import { rfqTradingTools } from './rfq-trading/index.js';
 import { smartleverageTools } from './smartleverage/index.js';
 import { spotMarginTradeUtaTools } from './spot-margin-trade-uta/index.js';
@@ -32,6 +34,7 @@ import { spotMarginUtaTools } from './spot-margin-uta/index.js';
 import { spreadTradingTools } from './spread-trading/index.js';
 import { strategyTools } from './strategy/index.js';
 import { subscriptionTools } from './subscription/index.js';
+import { tokensplashTools } from './tokensplash/index.js';
 import { tradeTools } from './trade/index.js';
 import { userTools } from './user/index.js';
 import { websocketTools } from './websocket/index.js';
@@ -60,10 +63,12 @@ export const allTools = [
   ...fixedtermTools,
   ...holdtoearnTools,
   ...institutionalLoanTools,
+  ...launchpoolTools,
   ...liquidityminingTools,
   ...marketTools,
   ...p2pTools,
   ...positionTools,
+  ...puzzleTools,
   ...rfqTradingTools,
   ...smartleverageTools,
   ...spotMarginTradeUtaTools,
@@ -71,6 +76,7 @@ export const allTools = [
   ...spreadTradingTools,
   ...strategyTools,
   ...subscriptionTools,
+  ...tokensplashTools,
   ...tradeTools,
   ...userTools,
   ...websocketTools,
