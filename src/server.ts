@@ -26,11 +26,17 @@ try {
 } catch {
   // No tools generated yet — server starts with empty tool list.
 }
-allTools = [...allTools, ...subscriptionTools];
+// subscriptionTools are hand-written (not generated). The generated tools/index.ts
+// already includes them, so only append the ones not already present — this keeps
+// them available in the pre-generation fallback path without double-registering.
+allTools = [
+  ...allTools,
+  ...subscriptionTools.filter((s) => !allTools.some((t) => t.name === s.name)),
+];
 
 export async function startServer(): Promise<void> {
   const server = new Server(
-    { name: 'trading-mcp', version: '2.1.15' },
+    { name: 'trading-mcp', version: '2.1.16' },
     { capabilities: { tools: {} } },
   );
 
