@@ -1,0 +1,29 @@
+src/version.ts
+  d6b35dfd7f45717e 1
+src/server.ts
+  d6b35dfd7f45717e 39
+package.json
+  d6b35dfd7f45717e 3
+CHANGELOG.md
+  d6b35dfd7f45717e 14-24
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2-bit.10+672fbf0",
+  "base_commit_sha": "cbaf1cc433aeea3c9c43c48a0ef3ab09580176ee",
+  "prompts": {
+    "d6b35dfd7f45717e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "a1983cb2-611d-4bc1-a8d9-c39531392bc7",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "paul.yang",
+      "messages": [],
+      "total_additions": 25,
+      "total_deletions": 3,
+      "accepted_lines": 25,
+      "overriden_lines": 0
+    }
+  }
+}
