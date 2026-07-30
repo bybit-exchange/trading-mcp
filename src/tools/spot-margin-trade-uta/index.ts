@@ -2,6 +2,7 @@
 import { accountFixedBorrow } from './accountFixedBorrow.js';
 import { getSpotMarginTradeAutoRepayMode } from './getSpotMarginTradeAutoRepayMode.js';
 import { getSpotMarginTradeCoinState } from './getSpotMarginTradeCoinState.js';
+import { getSpotMarginTradeFlexibleAvailableInventory } from './getSpotMarginTradeFlexibleAvailableInventory.js';
 import { getSpotMarginTradeMaxBorrowable } from './getSpotMarginTradeMaxBorrowable.js';
 import { getSpotMarginTradeRepaymentAvailableAmount } from './getSpotMarginTradeRepaymentAvailableAmount.js';
 import { getSpotMarginTradeState } from './getSpotMarginTradeState.js';
@@ -19,6 +20,7 @@ export const spotMarginTradeUtaTools = [
   accountFixedBorrow,
   getSpotMarginTradeAutoRepayMode,
   getSpotMarginTradeCoinState,
+  getSpotMarginTradeFlexibleAvailableInventory,
   getSpotMarginTradeMaxBorrowable,
   getSpotMarginTradeRepaymentAvailableAmount,
   getSpotMarginTradeState,
