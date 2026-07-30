@@ -1,0 +1,68 @@
+scripts/generate-all.sh
+  5ea4fe15820dc216 139,147,269
+src/tools/spot-margin-trade-uta/getSpotMarginTradeFlexibleAvailableInventory.ts
+  5ea4fe15820dc216 1-14
+release-note/release-note.md
+  5ea4fe15820dc216 1-32
+  bc749efd75a2a3f2 33-107
+README.md
+  5ea4fe15820dc216 8,11,32,35,349,352,354-357,363-369,382,384,386
+src/tools/user/index.ts
+  5ea4fe15820dc216 6,16
+src/tools/spot-margin-trade-uta/index.ts
+  5ea4fe15820dc216 5,23
+src/tools/asset/withdraw/getWithdrawableAmountByCoin.ts
+  5ea4fe15820dc216 7
+src/server.ts
+  5ea4fe15820dc216 29-35
+src/generator/parser.ts
+  5ea4fe15820dc216 57-58,65
+README.zh.md
+  5ea4fe15820dc216 8,11,32,35,349,352,354-357,363-369,382,384,386
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.3.2-bit.10+672fbf0",
+  "base_commit_sha": "0223fc2a2f2f65c2c42bd546b3336a5deac8bcb1",
+  "prompts": {
+    "5ea4fe15820dc216": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "79487090-6748-40a2-ae0b-c09177267ffe",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "paul.yang",
+      "messages": [],
+      "total_additions": 157,
+      "total_deletions": 51,
+      "accepted_lines": 133,
+      "overriden_lines": 0
+    },
+    "869af1dc3359ecc2": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "8d8fb96f-87ad-4632-8fae-ff1a64cfb6af",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "paul.yang",
+      "messages": [],
+      "total_additions": 6614,
+      "total_deletions": 0,
+      "accepted_lines": 6613,
+      "overriden_lines": 0
+    },
+    "bc749efd75a2a3f2": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "112e2a67-bdfc-416d-b86e-d554a5b9e62f",
+        "model": "claude-opus-4-7"
+      },
+      "human_author": "paul.yang",
+      "messages": [],
+      "total_additions": 139,
+      "total_deletions": 64,
+      "accepted_lines": 381,
+      "overriden_lines": 0
+    }
+  }
+}
