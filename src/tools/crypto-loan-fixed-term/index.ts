@@ -1,4 +1,5 @@
 // crypto-loan-fixed-term/index.ts — auto-generated, do not edit
+import { getCryptoLoanFixedAvailableInventory } from './getCryptoLoanFixedAvailableInventory.js';
 import { getCryptoLoanFixedBorrowContractInfo } from './getCryptoLoanFixedBorrowContractInfo.js';
 import { getCryptoLoanFixedBorrowOrderInfo } from './getCryptoLoanFixedBorrowOrderInfo.js';
 import { getCryptoLoanFixedBorrowOrderQuote } from './getCryptoLoanFixedBorrowOrderQuote.js';
@@ -16,6 +17,7 @@ import { postCryptoLoanFixedSupply } from './postCryptoLoanFixedSupply.js';
 import { postCryptoLoanFixedSupplyOrderCancel } from './postCryptoLoanFixedSupplyOrderCancel.js';
 
 export const cryptoLoanFixedTermTools = [
+  getCryptoLoanFixedAvailableInventory,
   getCryptoLoanFixedBorrowContractInfo,
   getCryptoLoanFixedBorrowOrderInfo,
   getCryptoLoanFixedBorrowOrderQuote,

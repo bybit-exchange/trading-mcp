@@ -5,10 +5,10 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Node.js 20.6+](https://img.shields.io/badge/node-20.6+-blue.svg)](https://nodejs.org/)
 [![MCP](https://img.shields.io/badge/MCP-compatible-purple.svg)](https://modelcontextprotocol.io)
-[![Tools](https://img.shields.io/badge/Tools-379-orange.svg)](#-available-tool-categories)
+[![Tools](https://img.shields.io/badge/Tools-381-orange.svg)](#-available-tool-categories)
 [![Bybit V5 API](https://img.shields.io/badge/Bybit-V5%20API-green.svg)](https://bybit-exchange.github.io/docs/v5/intro)
 
-**A production-ready MCP server for Bybit — 379 tools covering market data, trading, positions, account management, assets, loans, earn products, and real-time WebSocket streams**
+**A production-ready MCP server for Bybit — 381 tools covering market data, trading, positions, account management, assets, loans, earn products, and real-time WebSocket streams**
 
 [Quick Start](#-quick-start) •
 [Features](#-features) •
@@ -29,7 +29,7 @@ Bybit MCP Server enables AI assistants like **Claude**, **Cursor**, **VS Code**,
 
 ### Why Bybit MCP?
 
-- **Complete V5 Coverage** — 379 tools across market data, trading, positions, account, asset, loans, earn, copy trading, WebSocket, and WS-trade categories
+- **Complete V5 Coverage** — 381 tools across market data, trading, positions, account, asset, loans, earn, copy trading, WebSocket, and WS-trade categories
 - **Secure by Design** — API credentials are read from environment variables at runtime, never hardcoded
 - **Read-Only Mode** — All 22 market data tools work without any API key
 - **Real-Time Streams** — 27 WebSocket tools for live orderbook, tickers, positions, and more
@@ -363,8 +363,8 @@ Run **Developer: Reload Window** from the Command Palette (`Cmd+Shift+P` / `Ctrl
 | `spot-margin-uta` | Yes | 4 | Spot margin (UTA) market data: VIP margin data, tiered collateral ratio, historical interest rate, position tiers |
 | `spot-margin-trade-uta` | Mixed | 16 | UTA spot margin trading: switch mode, set leverage, trade state, max borrowable, coin state, repayment-available amount, auto-repay mode (get/set), fixed-term borrow/renew with market/orders/contracts, borrow liability, and fixed/flexible available inventory |
 | `crypto-loan-new` | Mixed | 7 | Crypto loan (common): loanable & collateral data, max collateral amount, max loan, adjust LTV, positions, adjustment history |
-| `crypto-loan-flexible` | Yes | 6 | Flexible crypto loan: borrow, repay, repay with collateral, ongoing coins, borrow and repayment history |
-| `crypto-loan-fixed-term` | Yes | 15 | Fixed-term crypto loan: borrow/supply order quotes, place borrow/supply, cancel orders, contract & order info, fully repay, repay with collateral, renew (with renew info), repayment history |
+| `crypto-loan-flexible` | Yes | 7 | Flexible crypto loan: borrow, repay, repay with collateral, ongoing coins, borrow and repayment history, available inventory |
+| `crypto-loan-fixed-term` | Yes | 16 | Fixed-term crypto loan: borrow/supply order quotes, place borrow/supply, cancel orders, contract & order info, fully repay, repay with collateral, renew (with renew info), repayment history, available inventory |
 | `institutional-loan` | Mixed | 2 | Institutional lending product info, hedge product coin delta amount |
 | `fiat-convert` | Mixed | 7 | Fiat conversion: coin list, reference price, quote apply, trade execute, trade query, trade history, balance |
 | `earn` | Mixed | 9 | Earn product queries, stake/redeem orders, order history, positions, yield history, hourly yield, APR history, position modify, interest-rate coupons and reward cards |
@@ -386,7 +386,7 @@ Run **Developer: Reload Window** from the Command Palette (`Cmd+Shift+P` / `Ctrl
 | `wstrade` | Yes | 6 | WebSocket trade operations via /v5/trade: place order, cancel order, amend order, batch place, batch cancel, batch amend |
 | `subscription` | Yes | 4 | WebSocket subscription lifecycle: start/stop a subscription, list active subscriptions, read buffered messages |
 
-**Total: 379 tools**
+**Total: 381 tools**
 
 ---
 
