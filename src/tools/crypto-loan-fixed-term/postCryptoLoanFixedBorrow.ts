@@ -13,6 +13,7 @@ export const postCryptoLoanFixedBorrow = {
     autoRepay: z.enum(["0", "1"]).optional(),
     collateralList: z.array(z.object({ currency: z.string(), amount: z.string() })),
     repayType: z.string().optional(),
+    strategyType: z.enum(["PARTIAL", "FULL"]).default("PARTIAL").optional(),
   }),
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/crypto-loan-fixed/borrow", input);
