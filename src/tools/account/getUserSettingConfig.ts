@@ -4,7 +4,7 @@ import { restClient } from '../../client/rest-client.js';
 
 export const getUserSettingConfig = {
   name: 'getUserSettingConfig',
-  description: "Query the user account setting configuration, including margin mode, account mode, spot hedging status, and other account-level settings.\n\n**Notes:**\n- This endpoint requires authentication but no query parameters.\n- Returns the current account configuration for the authenticated user.\n- Maps internally to `/v5/account/info` on the public Bybit API.",
+  description: "Query the user account setting configuration, including margin mode, account mode, spot hedging status, and other account-level settings.\n\n**Notes:**\n- This endpoint requires authentication but no query parameters.\n- Returns the current account configuration for the authenticated user.",
   inputSchema: z.object({
 
   }),

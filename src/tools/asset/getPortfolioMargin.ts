@@ -4,7 +4,7 @@ import { restClient } from '../../client/rest-client.js';
 
 export const getPortfolioMargin = {
   name: 'getPortfolioMargin',
-  description: "Query the portfolio margin information including wallet balance, margin rates, and asset PNL range.\n\n**Notes:**\n- This endpoint requires authentication.\n- If `baseCoin` is not specified, returns all base coins.\n- Maps internally to `/option/usdc/private/asset/query/protoMarginInfos`.",
+  description: "Query the portfolio margin information including wallet balance, margin rates, and asset PNL range.\n\n**Notes:**\n- This endpoint requires authentication.\n- If `baseCoin` is not specified, returns all base coins.",
   inputSchema: z.object({
     baseCoin: z.string().optional(),
   }),
