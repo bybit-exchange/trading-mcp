@@ -23,6 +23,7 @@ import { setHedgingMode } from './setHedgingMode.js';
 import { setMarginMode } from './setMarginMode.js';
 import { setMmp } from './setMmp.js';
 import { setPriceLimit } from './setPriceLimit.js';
+import { upgradeToUta } from './upgradeToUta.js';
 
 export const accountTools = [
   accountBorrow,
@@ -49,4 +50,5 @@ export const accountTools = [
   setMarginMode,
   setMmp,
   setPriceLimit,
+  upgradeToUta,
 ];

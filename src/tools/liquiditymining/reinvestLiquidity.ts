@@ -9,6 +9,7 @@ export const reinvestLiquidity = {
     productId: z.string(),
     orderLinkId: z.string(),
     positionId: z.string(),
+    leverage: z.string().optional(),
   }),
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/earn/liquidity-mining/reinvest", input);
