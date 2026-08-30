@@ -6,7 +6,7 @@ export const closeDCABot = {
   name: 'closeDCABot',
   description: "Closes a running DCA bot. You must specify a close_mode to determine\nhow remaining assets are settled:\n- 1 (DCA_BIT_MODE): settle in BIT\n- 2 (DCA_BASE_MODE): convert all to base tokens\n- 3 (DCA_QUOTE_MODE): convert all to quote token\n\nThe bot must be in a closeable state. Bots that are currently in the\nmiddle of an investment cycle may not be closeable (status_code=503).\n\nRate limit: 3 qps per UID.\n\nAgent hint: Use close_mode=3 (DCA_QUOTE_MODE) if the user wants to convert\neverything back to the quote coin (e.g., USDT).",
   inputSchema: z.object({
-    bot_id: z.number().int(),
+    bot_id: z.union([z.string().regex(/^\d+$/), z.number().int()]).transform(String),
     close_mode: z.enum(["1", "2", "3"]),
   }),
   handler: async (input: Record<string, unknown>) => {

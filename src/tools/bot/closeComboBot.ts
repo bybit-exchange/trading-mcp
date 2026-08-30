@@ -6,7 +6,7 @@ export const closeComboBot = {
   name: 'closeComboBot',
   description: "Closes (stops) a running futures combo trading bot. The bot will cancel\nall pending orders and close all positions across the portfolio.\n\nThe bot_id can be obtained from the createComboBot response or from\ngetComboDetail. Only bots in a running state can be closed.\n\nRate limit: 10 requests per second per UID.\n\nAgent hint: Use this to stop a running combo bot. The bot_id is required and can be\nfound in the createComboBot response. The stop_type indicates the reason\nfor closing. After closing, use getComboDetail to check the final PnL\nand close reason.",
   inputSchema: z.object({
-    bot_id: z.number().int(),
+    bot_id: z.union([z.string().regex(/^\d+$/), z.number().int()]).transform(String),
     stop_type: z.enum(["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"]).optional(),
   }),
   handler: async (input: Record<string, unknown>) => {
