@@ -10,6 +10,7 @@ export const ConvertHistoryQuery = {
     index: z.number().int().optional(),
     limit: z.number().int().optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.getAuth("/v5/asset/exchange/query-convert-history", input);
   },

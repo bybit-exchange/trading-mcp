@@ -28,6 +28,7 @@ export const preCheckOrder = {
     slOrderType: z.enum(["Market", "Limit"]).optional(),
     orderIv: z.string().optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/order/pre-check", input);
   },

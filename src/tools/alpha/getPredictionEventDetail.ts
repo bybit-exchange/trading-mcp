@@ -10,6 +10,7 @@ export const getPredictionEventDetail = {
     slug: z.string().optional(),
     hasMoreMarkets: z.boolean().default(false).optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/alpha/prediction/event-detail", input);
   },

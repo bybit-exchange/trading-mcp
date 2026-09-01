@@ -9,6 +9,7 @@ export const getPredictionGroupStageDetail = {
     eventType: z.enum(["1"]),
     stageCode: z.enum(["Groups", "R32", "R16", "QF", "SF", "Final"]),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/alpha/prediction/sports/group-stage-detail", input);
   },

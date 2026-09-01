@@ -9,6 +9,7 @@ export const spotMarginSetLeverage = {
     leverage: z.string(),
     currency: z.string().optional(),
   }),
+  annotations: {"readOnlyHint":false,"destructiveHint":false,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/spot-margin-trade/set-leverage", input);
   },

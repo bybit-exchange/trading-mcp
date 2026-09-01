@@ -19,6 +19,7 @@ export const getFMartLimit = {
     need_to_slippage: z.boolean().optional(),
     app_name: z.string().optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/fmartingalebot/getlimit", input);
   },

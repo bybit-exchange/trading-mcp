@@ -8,6 +8,7 @@ export const setDefaultDepositToAccount = {
   inputSchema: z.object({
     accountType: z.enum(["UNIFIED", "FUND"]),
   }),
+  annotations: {"readOnlyHint":false,"destructiveHint":false,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/asset/deposit/deposit-to-account", input);
   },

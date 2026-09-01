@@ -10,6 +10,7 @@ export const executeQuote = {
     quoteId: z.string(),
     quoteSide: z.enum(["Buy", "Sell"]),
   }),
+  annotations: {"readOnlyHint":false,"destructiveHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/rfq/execute-quote", input);
   },

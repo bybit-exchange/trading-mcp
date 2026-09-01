@@ -9,6 +9,7 @@ export const setPriceLimit = {
     category: z.enum(["linear", "inverse", "spot"]),
     modifyEnable: z.boolean(),
   }),
+  annotations: {"readOnlyHint":false,"destructiveHint":false,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/account/set-limit-px-action", input);
   },

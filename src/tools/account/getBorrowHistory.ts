@@ -4,7 +4,7 @@ import { restClient } from '../../client/rest-client.js';
 
 export const getBorrowHistory = {
   name: 'getBorrowHistory',
-  description: "Query interest and borrowing records for the unified account. Supports filtering\nby currency and time range with pagination.\n\nRate limit: 5 req/s\n\nAgent hint: Use this to review borrowing costs and interest history. Filter by currency\n(USDC, USDT, BTC, ETH). Default returns 30 days if no time range is specified.\nMax 30-day span. Use cursor for pagination, limit max 50 per page.",
+  description: "Get interest records, sorted in reverse order of creation time. Supports up to 2 years of data.\n\n**Time range rules:**\n- Without both `startTime` and `endTime`: returns last 30 days by default\n- Only `startTime` provided: returns from startTime to startTime + 30 days\n- Only `endTime` provided: returns from endTime - 30 days to endTime\n- Both provided: endTime - startTime must be ≤ 30 days",
   inputSchema: z.object({
     currency: z.string().optional(),
     startTime: z.number().int().optional(),
@@ -12,6 +12,7 @@ export const getBorrowHistory = {
     limit: z.number().int().min(1).max(50).default(20).optional(),
     cursor: z.string().optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.getAuth("/v5/account/borrow-history", input);
   },

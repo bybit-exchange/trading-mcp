@@ -10,6 +10,7 @@ export const getChatMessages = {
     currentPage: z.string().optional(),
     size: z.string(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     const result = await restClient.postAuth("/v5/p2p/order/message/listpage", input) as any;
         result?.result?.result?.forEach((m: any) => {

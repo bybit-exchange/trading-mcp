@@ -8,6 +8,7 @@ export const stopStrategy = {
   inputSchema: z.object({
     strategyId: z.string(),
   }),
+  annotations: {"readOnlyHint":false,"destructiveHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/strategy/stop", input);
   },

@@ -9,6 +9,7 @@ export const querySubMembersV5 = {
     pageSize: z.number().int().min(1).max(100).default(100).optional(),
     nextCursor: z.number().int().min(0).default(0).optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     const result = await restClient.getAuth("/v5/user/submembers", input) as any;
         result?.result?.subMembers?.forEach((m: any) => { delete m.remark; });

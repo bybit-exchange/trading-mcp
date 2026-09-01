@@ -11,6 +11,7 @@ export const postCryptoLoanFixedRepayCollateral = {
     collateralCoin: z.string(),
     amount: z.string(),
   }),
+  annotations: {"readOnlyHint":false,"destructiveHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/crypto-loan-fixed/repay-collateral", input);
   },

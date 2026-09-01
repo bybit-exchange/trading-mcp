@@ -8,6 +8,7 @@ export const getUserPayment = {
   inputSchema: z.object({
 
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/p2p/user/payment/list", input);
   },

@@ -4,19 +4,20 @@ import { restClient } from '../../client/rest-client.js';
 
 export const getTransactionLog = {
   name: 'getTransactionLog',
-  description: "Query unified account wallet transaction logs. Supports filtering by category,\ncurrency, transaction type, and time range. Returns up to 2 years of historical data.\n\nRate limit: 5 req/s\n\nAgent hint: Use this to retrieve detailed wallet transaction history. Filter by category\n(spot/linear/option/inverse), currency, or type. Time range defaults to last 24h.\nMax 7-day span when both startTime and endTime are given. Use cursor for pagination.\nLimit max is 50 per page.",
+  description: "Query transaction logs in your Unified account. Supports up to 2 years of data.\n\n**Notes:**\n- During periods of extreme market volatility, this interface may experience increased latency or temporary delays in data delivery.\n\n**Time range rules:**\n- Without both `startTime` and `endTime`: returns last 24 hours by default\n- Only `startTime` provided: returns from startTime to startTime + 24 hours\n- Only `endTime` provided: returns from endTime - 24 hours to endTime\n- Both provided: endTime - startTime must be ≤ 7 days",
   inputSchema: z.object({
     accountType: z.enum(["UNIFIED"]).optional(),
     category: z.enum(["spot", "linear", "option", "inverse"]).optional(),
     currency: z.string().optional(),
     baseCoin: z.string().optional(),
-    type: z.string().optional(),
-    transSubType: z.enum(["movePosition"]).optional(),
+    type: z.enum(["TRADE", "SETTLEMENT", "DELIVERY", "LIQUIDATION", "PART_LIQUIDATION", "ADL", "CLOSEPNL", "POSITION_TAKE_OVER", "TRANSFER_IN", "TRANSFER_OUT", "INSURANCE_FUND", "FEE_REFUND", "INTEREST", "FIXED_INTEREST", "FIXED_INTEREST_REFUND", "BONUS", "BONUS_RECOLLECT", "BONUS_TRANSFER_IN", "BONUS_TRANSFER_OUT", "AIRDROP", "AIRDROP_OUT", "AIRDROP_EFTD", "AIRDROP_OUT_EFTD", "AIRDROP_FIAT", "AIRDROP_OUT_FIAT", "OTC_TRADE", "CURRENCY_BUY", "CURRENCY_SELL", "CURRENCY_BUY_MANUEL", "CURRENCY_SELL_MANUEL", "AUTO_DEDUCTION", "PERP_SYMBOL_SETTLE", "SPREAD_FEE_OUT", "MANUAL_LOANS_BORROW", "MANUAL_LOANS_REPAY", "AUTO_LOANS_BORROW", "AUTO_LOANS_REPAY", "SPOT_REPAYMENT_BUY", "SPOT_REPAYMENT_SELL", "LOANS_ASSET_REDEMPTION", "LOANS_PLEDGE_ASSET", "LOANS_BORROW_FUNDS", "LOANS_REPAY_FUNDS", "INSTITUTION_LOAN_IN", "INSTITUTION_PAYBACK_PRINCIPAL_OUT", "INSTITUTION_PAYBACK_INTEREST_OUT", "INSTITUTION_EXCHANGE_SELL", "INSTITUTION_EXCHANGE_BUY", "INSTITUTION_LIQ_PRINCIPAL_OUT", "INSTITUTION_LIQ_INTEREST_OUT", "INSTITUTION_LOAN_TRANSFER_IN", "INSTITUTION_LOAN_TRANSFER_OUT", "INSTITUTION_LOAN_WITHOUT_WITHDRAW", "INSTITUTION_LOAN_RESERVE_IN", "INSTITUTION_LOAN_RESERVE_OUT", "PREMARKET_TRANSFER_IN", "PREMARKET_TRANSFER_OUT", "PREMARKET_DELIVERY_SELL_NEW_COIN", "PREMARKET_DELIVERY_BUY_NEW_COIN", "PREMARKET_DELIVERY_PLEDGE_PAY_SELLER", "PREMARKET_DELIVERY_PLEDGE_BACK", "PREMARKET_ROLLBACK_PLEDGE_BACK", "PREMARKET_ROLLBACK_PLEDGE_PENALTY_TO_BUYER", "TOKENS_SUBSCRIPTION", "TOKENS_REDEMPTION", "FLEXIBLE_STAKING_SUBSCRIPTION", "FLEXIBLE_STAKING_REDEMPTION", "FLEXIBLE_STAKING_REFUND", "FIXED_STAKING_SUBSCRIPTION", "FIXED_STAKING_REFUND", "ONCHAINEARN_SUBSCRIPTION", "ONCHAINEARN_REFUND", "ONCHAINEARN_REDEMPTION", "ONCHAINEARN_REDEMPTION_PRINCIPAL", "ONCHAINEARN_LST", "DEFI_INVESTMENT_SUBSCRIPTION", "DEFI_INVESTMENT_REFUND", "DEFI_INVESTMENT_REDEMPTION", "STRUCTURE_PRODUCT_SUBSCRIPTION", "STRUCTURE_PRODUCT_REFUND", "CLASSIC_WEALTH_MANAGEMENT_SUBSCRIPTION", "PREMIUM_WEALTH_MANAGEMENT_SUBSCRIPTION", "PREMIUM_WEALTH_MANAGEMENT_REFUND", "LIQUIDITY_MINING_SUBSCRIPTION", "LIQUIDITY_MINING_REFUND", "PWM_SUBSCRIPTION", "PWM_REFUND", "CUSTODY_LOCK", "CUSTODY_UNLOCK", "CUSTODY_UNLOCK_REFUND", "CUSTODY_NETWORK_FEE", "CUSTODY_SETTLE_FEE", "PLATFORM_TOKEN_MNT_LIQRECALLEDMMNT", "PLATFORM_TOKEN_MNT_LIQRETURNEDMNT", "PEF_TRANSFER_IN", "PEF_TRANSFER_OUT", "PEF_PROFIT_SHARE"]).optional(),
+    transSubType: z.string().optional(),
     startTime: z.number().int().optional(),
     endTime: z.number().int().optional(),
     limit: z.number().int().min(1).max(50).default(20).optional(),
     cursor: z.string().optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.getAuth("/v5/account/transaction-log", input);
   },

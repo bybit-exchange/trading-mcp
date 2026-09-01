@@ -12,6 +12,7 @@ export const amendSpreadOrder = {
     qty: z.string().optional(),
     price: z.string().optional(),
   }),
+  annotations: {"readOnlyHint":false,"destructiveHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/spread/order/amend", input);
   },

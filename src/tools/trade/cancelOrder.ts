@@ -12,6 +12,7 @@ export const cancelOrder = {
     orderLinkId: z.string().optional(),
     orderFilter: z.enum(["Order", "tpslOrder", "StopOrder"]).default("Order").optional(),
   }),
+  annotations: {"readOnlyHint":false,"destructiveHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/order/cancel", input);
   },

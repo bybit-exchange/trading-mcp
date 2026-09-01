@@ -9,6 +9,7 @@ export const getSpreadOrderbook = {
     symbol: z.string(),
     limit: z.number().int().min(1).max(25).default(1).optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.get("/v5/spread/orderbook", input);
   },

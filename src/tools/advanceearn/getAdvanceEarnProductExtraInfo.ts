@@ -9,6 +9,7 @@ export const getAdvanceEarnProductExtraInfo = {
     category: z.enum(["DualAssets", "SmartLeverage", "DoubleWin", "DiscountBuy"]),
     productId: z.number().int().optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.get("/v5/earn/advance/product-extra-info", input);
   },

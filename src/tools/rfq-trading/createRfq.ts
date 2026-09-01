@@ -12,6 +12,7 @@ export const createRfq = {
     strategyType: z.string().default("custom").optional(),
     list: z.array(z.object({ category: z.enum(["spot", "linear", "option"]), symbol: z.string(), side: z.enum(["Buy", "Sell"]), qty: z.string() })),
   }),
+  annotations: {"readOnlyHint":false,"destructiveHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/rfq/create-rfq", input);
   },

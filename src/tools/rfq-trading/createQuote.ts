@@ -13,6 +13,7 @@ export const createQuote = {
     quoteBuyList: z.array(z.object({ category: z.enum(["spot", "linear", "option"]), symbol: z.string(), price: z.string() })).optional(),
     quoteSellList: z.array(z.object({ category: z.enum(["spot", "linear", "option"]), symbol: z.string(), price: z.string() })).optional(),
   }),
+  annotations: {"readOnlyHint":false,"destructiveHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/rfq/create-quote", input);
   },

@@ -10,6 +10,7 @@ export const accountRepay = {
     amount: z.string().optional(),
     repaymentType: z.enum(["ALL", "FIXED", "FLEXIBLE"]).optional(),
   }),
+  annotations: {"readOnlyHint":false,"destructiveHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/account/repay", input);
   },

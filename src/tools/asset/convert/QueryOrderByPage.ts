@@ -11,6 +11,7 @@ export const QueryOrderByPage = {
     toCoin: z.string().optional(),
     fromCoin: z.string().optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.getAuth("/v5/asset/exchange/order-record", input);
   },

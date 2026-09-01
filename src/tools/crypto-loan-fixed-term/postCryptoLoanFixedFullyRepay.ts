@@ -9,6 +9,7 @@ export const postCryptoLoanFixedFullyRepay = {
     loanId: z.string(),
     loanCurrency: z.string(),
   }),
+  annotations: {"readOnlyHint":false,"destructiveHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/crypto-loan-fixed/fully-repay", input);
   },

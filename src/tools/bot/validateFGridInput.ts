@@ -24,6 +24,7 @@ export const validateFGridInput = {
     move_up_price: z.string().optional(),
     move_down_price: z.string().optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/fgridbot/validate", input);
   },

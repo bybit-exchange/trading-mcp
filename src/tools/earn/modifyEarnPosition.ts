@@ -11,6 +11,7 @@ export const modifyEarnPosition = {
     positionId: z.number().int(),
     autoReinvest: z.enum(["0", "1"]),
   }),
+  annotations: {"readOnlyHint":false,"destructiveHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/earn/position/modify", input);
   },

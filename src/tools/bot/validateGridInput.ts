@@ -21,6 +21,7 @@ export const validateGridInput = {
     enable_trailing: z.boolean().default(false).optional(),
     limit_up_price: z.string().optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/grid/validate-input", input);
   },

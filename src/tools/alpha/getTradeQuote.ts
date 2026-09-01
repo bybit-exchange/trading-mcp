@@ -12,6 +12,7 @@ export const getTradeQuote = {
     toTokenCode: z.string(),
     quoteMode: z.enum(["0", "1", "2"]).default("0").optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/alpha/trade/quote", input);
   },

@@ -8,6 +8,7 @@ export const getAffiliateUserInfo = {
   inputSchema: z.object({
     uid: z.string(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.getAuth("/v5/user/aff-customer-info", input);
   },

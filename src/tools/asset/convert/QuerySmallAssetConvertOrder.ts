@@ -13,6 +13,7 @@ export const QuerySmallAssetConvertOrder = {
     startTime: z.string().optional(),
     endTime: z.string().optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.getAuth("/v5/asset/covert/small-balance-history", input);
   },

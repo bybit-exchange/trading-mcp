@@ -15,6 +15,7 @@ export const accountCoinBalanceQuery = {
     withTransferSafeAmount: z.enum(["0", "1"]).default("0").optional(),
     withLtvTransferSafeAmount: z.enum(["0", "1"]).default("0").optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.getAuth("/v5/asset/transfer/query-account-coin-balance", input);
   },

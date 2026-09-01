@@ -11,6 +11,7 @@ export const queryFundingDetailApi = {
     limit: z.string().optional(),
     cursor: z.string().optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.getAuth("/v5/asset/fundinghistory", input);
   },

@@ -8,6 +8,7 @@ export const getSpreadTickers = {
   inputSchema: z.object({
     symbol: z.string(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.get("/v5/spread/tickers", input);
   },

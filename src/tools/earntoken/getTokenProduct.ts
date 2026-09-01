@@ -8,6 +8,7 @@ export const getTokenProduct = {
   inputSchema: z.object({
     coin: z.enum(["BYUSDT"]),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.get("/v5/earn/token/product", input);
   },

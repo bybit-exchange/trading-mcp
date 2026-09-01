@@ -14,6 +14,7 @@ export const getAffiliateUserList = {
     startDate: z.string().optional(),
     endDate: z.string().optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.getAuth("/v5/affiliate/aff-user-list", input);
   },

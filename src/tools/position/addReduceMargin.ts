@@ -11,6 +11,7 @@ export const addReduceMargin = {
     margin: z.string(),
     positionIdx: z.enum(["0", "1", "2"]).optional(),
   }),
+  annotations: {"readOnlyHint":false,"destructiveHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/position/add-margin", input);
   },

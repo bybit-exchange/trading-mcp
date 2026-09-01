@@ -9,6 +9,7 @@ export const confirmNewRiskLimit = {
     category: z.enum(["linear", "inverse"]),
     symbol: z.string(),
   }),
+  annotations: {"readOnlyHint":false,"destructiveHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/position/confirm-pending-mmr", input);
   },

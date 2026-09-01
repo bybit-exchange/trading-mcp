@@ -8,6 +8,7 @@ export const closeFGridBot = {
   inputSchema: z.object({
     bot_id: z.number().int(),
   }),
+  annotations: {"readOnlyHint":false,"destructiveHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/fgridbot/close", input);
   },

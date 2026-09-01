@@ -13,6 +13,7 @@ export const subscribeKline = {
     messageCount: z.number().int().min(1).default(1).optional(),
     timeoutMs: z.number().int().min(100).default(5000).optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     const topic = `kline.${input.interval}.${input.symbol}`;
     const category = (input.category as WsCategory) ?? 'linear';

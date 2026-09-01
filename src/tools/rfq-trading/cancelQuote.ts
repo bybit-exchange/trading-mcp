@@ -10,6 +10,7 @@ export const cancelQuote = {
     rfqId: z.string().optional(),
     quoteLinkId: z.string().optional(),
   }),
+  annotations: {"readOnlyHint":false,"destructiveHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/rfq/cancel-quote", input);
   },

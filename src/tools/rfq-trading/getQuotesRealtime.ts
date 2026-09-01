@@ -11,6 +11,7 @@ export const getQuotesRealtime = {
     quoteLinkId: z.string().optional(),
     traderType: z.enum(["quote", "request"]).default("quote").optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.getAuth("/v5/rfq/quote-realtime", input);
   },

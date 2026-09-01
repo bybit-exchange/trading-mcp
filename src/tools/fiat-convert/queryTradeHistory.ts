@@ -11,6 +11,7 @@ export const queryTradeHistory = {
     startTime: z.string().optional(),
     endTime: z.string().optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.getAuth("/v5/fiat/query-trade-history", input);
   },

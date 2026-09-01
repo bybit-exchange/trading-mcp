@@ -9,6 +9,7 @@ export const getLPPayTokenList = {
     chainCode: z.string().optional(),
     tokenAddress: z.string().optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/alpha/lp/pay-token-list", input);
   },

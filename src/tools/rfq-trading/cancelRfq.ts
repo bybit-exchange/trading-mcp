@@ -9,6 +9,7 @@ export const cancelRfq = {
     rfqId: z.string().optional(),
     rfqLinkId: z.string().optional(),
   }),
+  annotations: {"readOnlyHint":false,"destructiveHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/rfq/cancel-rfq", input);
   },

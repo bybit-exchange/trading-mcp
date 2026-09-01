@@ -8,6 +8,7 @@ export const getWithdrawableAmountByCoin = {
   inputSchema: z.object({
     coin: z.string(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.getAuth("/v5/asset/withdraw/withdrawable-amount", input);
   },

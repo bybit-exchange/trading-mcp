@@ -14,6 +14,7 @@ export const getLaunchpoolUserActivityLog = {
     pageSize: z.number().int().min(1).max(10).default(10).optional(),
     current: z.number().int().min(1).max(100).default(1).optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/spot-x/launchpool/user/activity-log", input);
   },

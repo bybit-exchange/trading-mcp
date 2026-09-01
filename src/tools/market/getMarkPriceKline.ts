@@ -13,6 +13,7 @@ export const getMarkPriceKline = {
     end: z.number().int().optional(),
     limit: z.number().int().min(1).max(1000).default(200).optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.get("/v5/market/mark-price-kline", input);
   },

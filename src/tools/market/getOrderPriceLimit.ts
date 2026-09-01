@@ -9,6 +9,7 @@ export const getOrderPriceLimit = {
     category: z.enum(["spot", "linear", "inverse"]).default("linear").optional(),
     symbol: z.string(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.get("/v5/market/price-limit", input);
   },

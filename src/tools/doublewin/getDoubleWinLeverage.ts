@@ -11,6 +11,7 @@ export const getDoubleWinLeverage = {
     lowerPrice: z.string(),
     upperPrice: z.string(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.getAuth("/v5/earn/advance/double-win-leverage", input);
   },

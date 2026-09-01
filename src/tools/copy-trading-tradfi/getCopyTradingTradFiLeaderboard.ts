@@ -8,6 +8,7 @@ export const getCopyTradingTradFiLeaderboard = {
   inputSchema: z.object({
 
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.get("/v5/copy-mt5/recommend-provider-list", input);
   },

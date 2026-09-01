@@ -20,6 +20,7 @@ export const startSubscription = {
     maxMessages: z.number().int().min(1).max(5000).default(500).optional()
       .describe('单个订阅的消息缓冲上限，超出时丢弃最旧的消息（默认 500）'),
   }),
+  annotations: { readOnlyHint: false, destructiveHint: false, openWorldHint: true },
   handler: async (input: Record<string, unknown>) => {
     const id = subscriptionManager.start({
       category: input.category as WsCategory,

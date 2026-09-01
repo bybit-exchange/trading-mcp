@@ -8,6 +8,7 @@ export const quickRepayment = {
   inputSchema: z.object({
     coin: z.string().optional(),
   }),
+  annotations: {"readOnlyHint":false,"destructiveHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/account/quick-repayment", input);
   },

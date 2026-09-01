@@ -23,6 +23,7 @@ export const wsAmendOrder = {
   tpLimitPrice: z.string().describe("Limit price after take-profit triggers (Partial mode only).").optional(),
   slLimitPrice: z.string().describe("Limit price after stop-loss triggers (Partial mode only).").optional(),
   }),
+  annotations: {"readOnlyHint":false,"destructiveHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return wsClient.tradeRequest({ op: 'order.amend', args: [input] });
   },

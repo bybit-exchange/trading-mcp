@@ -14,6 +14,7 @@ export const createSpreadOrder = {
     orderLinkId: z.string().optional(),
     timeInForce: z.enum(["GTC", "IOC", "FOK", "PostOnly"]).optional(),
   }),
+  annotations: {"readOnlyHint":false,"destructiveHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/spread/order/create", input);
   },

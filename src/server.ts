@@ -17,6 +17,8 @@ let allTools: Array<{
   name: string;
   description: string;
   inputSchema: ZodTypeAny;
+  /** MCP tool annotations (readOnlyHint/destructiveHint/openWorldHint) baked in by the generator. */
+  annotations?: Record<string, boolean>;
   handler: (input: Record<string, unknown>) => Promise<unknown>;
 }> = [];
 
@@ -45,6 +47,9 @@ export async function startServer(): Promise<void> {
       name: tool.name,
       description: tool.description,
       inputSchema: zodToJsonSchema(tool.inputSchema, { target: 'openApi3' }),
+      // Pass through generator-baked annotations. These are hints only; a host must choose to
+      // honor them. Omitted for hand-written tools that don't declare any.
+      ...(tool.annotations ? { annotations: tool.annotations } : {}),
     })),
   }));
 

@@ -37,6 +37,7 @@ export const wsCreateOrder = {
   slOrderType: z.enum(["Market", "Limit"]).describe("Order type for stop-loss.").optional(),
   rpiTakerAccess: z.boolean().describe("Whether OpenAPI orders can take RPI orders.").optional(),
   }),
+  annotations: {"readOnlyHint":false,"destructiveHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return wsClient.tradeRequest({ op: 'order.create', args: [input] });
   },

@@ -8,6 +8,7 @@ export const stopSubscription = {
     subscriptionId: z.string()
       .describe('由 startSubscription 返回的订阅 ID'),
   }),
+  annotations: { readOnlyHint: false, destructiveHint: true, openWorldHint: true },
   handler: async (input: Record<string, unknown>) => {
     subscriptionManager.stop(input.subscriptionId as string);
     return { subscriptionId: input.subscriptionId, status: 'closed' };

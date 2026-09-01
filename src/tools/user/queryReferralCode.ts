@@ -8,6 +8,7 @@ export const queryReferralCode = {
   inputSchema: z.object({
 
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.getAuth("/v5/user/invitation/code", input);
   },

@@ -9,6 +9,7 @@ export const cancelSpreadOrder = {
     orderId: z.string().optional(),
     orderLinkId: z.string().optional(),
   }),
+  annotations: {"readOnlyHint":false,"destructiveHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/spread/order/cancel", input);
   },

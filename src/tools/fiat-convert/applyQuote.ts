@@ -13,6 +13,7 @@ export const applyQuote = {
     requestAmount: z.string(),
     requestCoinType: z.enum(["fiat", "crypto"]).default("fiat").optional(),
   }),
+  annotations: {"readOnlyHint":false,"destructiveHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/fiat/quote-apply", input);
   },

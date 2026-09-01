@@ -23,6 +23,7 @@ export const setTradingStop = {
     slOrderType: z.enum(["Market", "Limit"]).optional(),
     positionIdx: z.enum(["0", "1", "2"]),
   }),
+  annotations: {"readOnlyHint":false,"destructiveHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/position/trading-stop", input);
   },

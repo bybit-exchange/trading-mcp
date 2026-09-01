@@ -12,6 +12,7 @@ export const wsCancelOrder = {
   orderLinkId: z.string().describe("User-defined order ID. Either `orderId` or `orderLinkId` is required.").optional(),
   orderFilter: z.enum(["Order", "tpslOrder", "StopOrder"]).describe("Order type filter (spot only). `Order`=normal, `tpslOrder`=TP/SL, `StopOrder`=conditional").optional(),
   }),
+  annotations: {"readOnlyHint":false,"destructiveHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return wsClient.tradeRequest({ op: 'order.cancel', args: [input] });
   },

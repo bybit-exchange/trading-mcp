@@ -8,6 +8,7 @@ export const getComboDetail = {
   inputSchema: z.object({
     bot_id: z.number().int(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/fcombobot/detail", input);
   },

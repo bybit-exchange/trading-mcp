@@ -19,6 +19,7 @@ export const updateAd = {
     quantity: z.string(),
     paymentPeriod: z.string(),
   }),
+  annotations: {"readOnlyHint":false,"destructiveHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/p2p/item/update", input);
   },

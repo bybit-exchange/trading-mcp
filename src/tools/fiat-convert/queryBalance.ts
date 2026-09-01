@@ -9,6 +9,7 @@ export const queryBalance = {
     accountCategory: z.enum(["fiat", "crypto"]).default("fiat").optional(),
     currency: z.string().optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.getAuth("/v5/fiat/balance-query", input);
   },

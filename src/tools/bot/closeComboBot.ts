@@ -9,6 +9,7 @@ export const closeComboBot = {
     bot_id: z.number().int(),
     stop_type: z.enum(["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"]).optional(),
   }),
+  annotations: {"readOnlyHint":false,"destructiveHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/fcombobot/close", input);
   },

@@ -8,6 +8,7 @@ export const postCryptoLoanFixedBorrowOrderCancel = {
   inputSchema: z.object({
     orderId: z.string(),
   }),
+  annotations: {"readOnlyHint":false,"destructiveHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/crypto-loan-fixed/borrow-order-cancel", input);
   },

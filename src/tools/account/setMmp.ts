@@ -12,6 +12,7 @@ export const setMmp = {
     qtyLimit: z.string(),
     deltaLimit: z.string(),
   }),
+  annotations: {"readOnlyHint":false,"destructiveHint":false,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/account/mmp-modify", input);
   },

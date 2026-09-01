@@ -13,6 +13,7 @@ export const getHistoricalVolatility = {
     startTime: z.number().int().optional(),
     endTime: z.number().int().optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.get("/v5/market/historical-volatility", input);
   },

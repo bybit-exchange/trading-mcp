@@ -8,6 +8,7 @@ export const getTokenPosition = {
   inputSchema: z.object({
     coin: z.enum(["BYUSDT"]),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.getAuth("/v5/earn/token/position", input);
   },

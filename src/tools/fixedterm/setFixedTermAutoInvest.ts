@@ -11,6 +11,7 @@ export const setFixedTermAutoInvest = {
     positionId: z.string(),
     status: z.enum(["Enable", "Disable"]),
   }),
+  annotations: {"readOnlyHint":false,"destructiveHint":false,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/earn/fixed-term/position/auto-invest", input);
   },

@@ -9,6 +9,7 @@ export const queryTrade = {
     tradeNo: z.string().optional(),
     merchantRequestId: z.string().optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.getAuth("/v5/fiat/trade-query", input);
   },

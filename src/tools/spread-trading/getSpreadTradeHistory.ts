@@ -14,6 +14,7 @@ export const getSpreadTradeHistory = {
     limit: z.number().int().min(1).max(50).default(20).optional(),
     cursor: z.string().optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.getAuth("/v5/spread/execution/list", input);
   },

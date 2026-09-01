@@ -12,6 +12,7 @@ export const getCryptoLoanFixedBorrowOrderQuote = {
     sort: z.enum(["1", "2"]).optional(),
     limit: z.number().int().optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.get("/v5/crypto-loan-fixed/borrow-order-quote", input);
   },

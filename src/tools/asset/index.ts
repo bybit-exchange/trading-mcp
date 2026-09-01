@@ -1,6 +1,7 @@
 // asset/index.ts — auto-generated, do not edit
 import { accountCoinBalanceQuery } from './accountCoinBalanceQuery.js';
 import { getAssetOverview } from './getAssetOverview.js';
+import { getCoinGreeks } from './getCoinGreeks.js';
 import { getDeliveryRecord } from './getDeliveryRecord.js';
 import { getPortfolioMargin } from './getPortfolioMargin.js';
 import { getSettlementRecord } from './getSettlementRecord.js';
@@ -19,6 +20,7 @@ import { assetWithdrawTools } from './withdraw/index.js';
 export const assetTools = [
   accountCoinBalanceQuery,
   getAssetOverview,
+  getCoinGreeks,
   getDeliveryRecord,
   getPortfolioMargin,
   getSettlementRecord,

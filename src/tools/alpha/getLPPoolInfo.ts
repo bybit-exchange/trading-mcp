@@ -8,6 +8,7 @@ export const getLPPoolInfo = {
   inputSchema: z.object({
     poolAddress: z.string(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/alpha/lp/pool-info", input);
   },

@@ -17,6 +17,7 @@ import { doublewinTools } from './doublewin/index.js';
 import { earnTools } from './earn/index.js';
 import { earnrwaTools } from './earnrwa/index.js';
 import { earntokenTools } from './earntoken/index.js';
+import { feeRateTools } from './fee-rate/index.js';
 import { fiatConvertTools } from './fiat-convert/index.js';
 import { fixedtermTools } from './fixedterm/index.js';
 import { holdtoearnTools } from './holdtoearn/index.js';
@@ -59,6 +60,7 @@ export const allTools = [
   ...earnTools,
   ...earnrwaTools,
   ...earntokenTools,
+  ...feeRateTools,
   ...fiatConvertTools,
   ...fixedtermTools,
   ...holdtoearnTools,

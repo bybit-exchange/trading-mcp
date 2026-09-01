@@ -8,6 +8,7 @@ export const listEarnCoupons = {
   inputSchema: z.object({
     category: z.enum(["FlexibleSaving", "DualAssets"]),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.getAuth("/v5/earn/coupons", input);
   },

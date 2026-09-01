@@ -11,6 +11,7 @@ export const subscribeEarnDualAssets = {
     messageCount: z.number().int().min(1).default(1).optional(),
     timeoutMs: z.number().int().min(100).default(5000).optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     const topic = "earn.dualassets.offers";
     const category = 'linear' as WsCategory;

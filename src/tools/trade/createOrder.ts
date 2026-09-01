@@ -41,6 +41,7 @@ export const createOrder = {
     bboLevel: z.enum(["1", "2", "3", "4", "5"]).optional(),
     rpiTakerAccess: z.boolean().default(false).optional(),
   }),
+  annotations: {"readOnlyHint":false,"destructiveHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/order/create", input);
   },

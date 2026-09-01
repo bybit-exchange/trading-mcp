@@ -44,6 +44,7 @@ export const queryCardAssetRecords = {
     cardToken: z.string().optional(),
     orderNo: z.string().optional(),
   }),
+  annotations: { readOnlyHint: true, openWorldHint: true },
   handler: async (input: Record<string, unknown>) => {
     const result = (await restClient.postAuth(
       '/v5/card/transaction/query-asset-records',

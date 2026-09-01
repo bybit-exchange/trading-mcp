@@ -4,7 +4,7 @@ import { restClient } from '../../client/rest-client.js';
 
 export const getOrderHistory = {
   name: 'getOrderHistory',
-  description: "Query historical order records. Supports up to 2 years of data.\n\n- Max time span between `startTime` and `endTime` is 7 days\n- If both time params omitted, returns last 7 days\n- Pagination via `cursor` token\n- Use `orderFilter` to target specific order types\n- Use `orderStatus` to filter by terminal status\n\nAgent hint: Use this endpoint to query completed/cancelled/expired orders. For currently active orders, use getOpenOrders instead.\nTradFi: use category=spot for xStock order history, category=linear for equity/commodity perpetual order history.",
+  description: "Query order history. As order creation/cancellation is **asynchronous**, the data returned from this endpoint may delay. To get real-time order information, you could query the open order endpoint or rely on the websocket stream (recommended).\n- Unified account covers: Spot / USDT perpetual / USDC contract / Inverse contract / Options\n- Classic account covers: Spot / USDT perpetual / Inverse contract\n\n**Rules:**\n- **Last 7 days**: supports querying all closed statuses except \"Cancelled\", \"Rejected\", \"Deactivated\"\n- **Last 24 hours**: supports querying \"Cancelled\", \"Rejected\", \"Deactivated\" orders\n- **Beyond 7 days**: only supports querying orders with final filled statuses (Filled, PartiallyFilledCanceled)\n\n**Time range rules:**\n- Without both `startTime` and `endTime`: returns last 7 days by default\n- Only `startTime` provided: returns from startTime to startTime + 7 days\n- Only `endTime` provided: returns from endTime - 7 days to endTime\n- Both provided: endTime - startTime must be ≤ 7 days\n\nAgent hint: TradFi: use category=spot for xStock order history, category=linear for equity/commodity perpetual order history.",
   inputSchema: z.object({
     category: z.enum(["spot", "linear", "inverse", "option"]),
     symbol: z.string().optional(),
@@ -12,13 +12,14 @@ export const getOrderHistory = {
     settleCoin: z.string().optional(),
     orderId: z.string().optional(),
     orderLinkId: z.string().optional(),
-    orderFilter: z.enum(["Order", "StopOrder", "tpslOrder", "OcoOrder", "BidirectionalTpslOrder"]).optional(),
+    orderFilter: z.enum(["Order", "StopOrder", "tpslOrder", "OcoOrder", "BidirectionalTpslOrder"]).default("Order").optional(),
     orderStatus: z.string().optional(),
     startTime: z.number().int().optional(),
     endTime: z.number().int().optional(),
     limit: z.number().int().min(1).max(50).default(20).optional(),
     cursor: z.string().optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.getAuth("/v5/order/history", input);
   },

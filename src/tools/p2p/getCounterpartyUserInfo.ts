@@ -9,6 +9,7 @@ export const getCounterpartyUserInfo = {
     originalUid: z.string().optional(),
     orderId: z.string().optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/p2p/user/order/personal/info", input);
   },
