@@ -5,10 +5,10 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Node.js 20.6+](https://img.shields.io/badge/node-20.6+-blue.svg)](https://nodejs.org/)
 [![MCP](https://img.shields.io/badge/MCP-compatible-purple.svg)](https://modelcontextprotocol.io)
-[![Tools](https://img.shields.io/badge/Tools-390-orange.svg)](#-available-tool-categories)
+[![Tools](https://img.shields.io/badge/Tools-382-orange.svg)](#-available-tool-categories)
 [![Bybit V5 API](https://img.shields.io/badge/Bybit-V5%20API-green.svg)](https://bybit-exchange.github.io/docs/v5/intro)
 
-**A production-ready MCP server for Bybit — 390 tools covering market data, trading, positions, account management, assets, loans, earn products, and real-time WebSocket streams**
+**A production-ready MCP server for Bybit — 382 tools covering market data, trading, positions, account management, assets, loans, earn products, and real-time WebSocket streams**
 
 [Quick Start](#-quick-start) •
 [Features](#-features) •
@@ -29,7 +29,7 @@ Bybit MCP Server enables AI assistants like **Claude**, **Cursor**, **VS Code**,
 
 ### Why Bybit MCP?
 
-- **Complete V5 Coverage** — 390 tools across market data, trading, positions, account, asset, loans, earn, copy trading, WebSocket, and WS-trade categories
+- **Complete V5 Coverage** — 382 tools across market data, trading, positions, account, asset, loans, earn, copy trading, WebSocket, and WS-trade categories
 - **Secure by Design** — API credentials are read from environment variables at runtime, never hardcoded
 - **Read-Only Mode** — All 22 market data tools work without any API key
 - **Real-Time Streams** — 27 WebSocket tools for live orderbook, tickers, positions, and more
@@ -345,12 +345,10 @@ Run **Developer: Reload Window** from the Command Palette (`Cmd+Shift+P` / `Ctrl
 
 | Category | Auth | Tools | Description |
 |----------|------|------:|-------------|
-| `market` | No | 23 | Klines, orderbook, tickers, funding rates, open interest, volatility, risk limits, long/short ratio, delivery price, insurance pool, tokenized-stock trading calendar and market session status, and more |
+| `market` | No | 22 | Klines, orderbook, tickers, funding rates, open interest, volatility, risk limits, long/short ratio, delivery price, insurance pool, and more |
 | `account` | Yes | 25 | Wallet balance, transaction log, fee rates, margin mode, collateral switch (single/batch), hedging mode, price limit, MMP modify and reset, option Greeks, DCP config, SMP group, account instruments, withdrawal info, UTA borrow/repay with borrow history, and UTA2.0-to-Pro account upgrade |
 | `trade` | Yes | 12 | Create, amend, cancel orders, batch order operations, open orders, order history, spot borrow quota, DCP, and order pre-check |
-| `order` | Yes | 3 | Tokenized stocks trading: place and cancel stock orders, query order detail |
-| `convert` | Yes | 3 | Tokenized stocks conversion: convertible pair list, submit mint/redeem conversion between equity and token, conversion order detail |
-| `position` | Yes | 13 | Position list, leverage, position mode, trading stop, auto-add margin, add/reduce margin, closed PnL, closed positions, move positions, risk limit confirmation, futures symbol leverage info, and tokenized-stock positions |
+| `position` | Yes | 12 | Position list, leverage, position mode, trading stop, auto-add margin, add/reduce margin, closed PnL, closed positions, move positions, risk limit confirmation, and futures symbol leverage info |
 | `rfq-trading` | Yes | 15 | Create/cancel RFQs and quotes, execute quotes, accept non-LP quotes, RFQ config, realtime and historical RFQs/quotes, trade history, public trades |
 | `spread-trading` | Mixed | 12 | Spread instruments, orderbook, tickers, recent trades, create/amend/cancel spread orders, open orders, order history, trade history, max order quantity |
 | `asset` | Yes | 35 | Asset overview, portfolio margin, delivery/settlement records, aggregated parent+sub account assets, funding history, coin/chain info, transfer & coin-balance queries, deposit record/address queries, withdraw record/address and withdrawable-amount queries, currency convert (quote/execute/history) and dust conversion |
@@ -388,7 +386,7 @@ Run **Developer: Reload Window** from the Command Palette (`Cmd+Shift+P` / `Ctrl
 | `wstrade` | Yes | 6 | WebSocket trade operations via /v5/trade: place order, cancel order, amend order, batch place, batch cancel, batch amend |
 | `subscription` | Yes | 4 | WebSocket subscription lifecycle: start/stop a subscription, list active subscriptions, read buffered messages |
 
-**Total: 390 tools**
+**Total: 382 tools**
 
 ---
 

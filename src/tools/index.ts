@@ -8,7 +8,6 @@ import { auroraTools } from './aurora/index.js';
 import { botTools } from './bot/index.js';
 import { brokerTools } from './broker/index.js';
 import { cardTools } from './card/index.js';
-import { convertTools } from './convert/index.js';
 import { copyTradingClassicTools } from './copy-trading-classic/index.js';
 import { copyTradingTradfiTools } from './copy-trading-tradfi/index.js';
 import { cryptoLoanFixedTermTools } from './crypto-loan-fixed-term/index.js';
@@ -25,7 +24,6 @@ import { institutionalLoanTools } from './institutional-loan/index.js';
 import { launchpoolTools } from './launchpool/index.js';
 import { liquidityminingTools } from './liquiditymining/index.js';
 import { marketTools } from './market/index.js';
-import { orderTools } from './order/index.js';
 import { p2pTools } from './p2p/index.js';
 import { positionTools } from './position/index.js';
 import { puzzleTools } from './puzzle/index.js';
@@ -52,7 +50,6 @@ export const allTools = [
   ...botTools,
   ...brokerTools,
   ...cardTools,
-  ...convertTools,
   ...copyTradingClassicTools,
   ...copyTradingTradfiTools,
   ...cryptoLoanFixedTermTools,
@@ -69,7 +66,6 @@ export const allTools = [
   ...launchpoolTools,
   ...liquidityminingTools,
   ...marketTools,
-  ...orderTools,
   ...p2pTools,
   ...positionTools,
   ...puzzleTools,

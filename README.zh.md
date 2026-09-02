@@ -5,10 +5,10 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Node.js 20.6+](https://img.shields.io/badge/node-20.6+-blue.svg)](https://nodejs.org/)
 [![MCP](https://img.shields.io/badge/MCP-compatible-purple.svg)](https://modelcontextprotocol.io)
-[![Tools](https://img.shields.io/badge/Tools-390-orange.svg)](#-工具分类)
+[![Tools](https://img.shields.io/badge/Tools-382-orange.svg)](#-工具分类)
 [![Bybit V5 API](https://img.shields.io/badge/Bybit-V5%20API-green.svg)](https://bybit-exchange.github.io/docs/v5/intro)
 
-**生产就绪的 Bybit MCP 服务器 — 390 个工具，覆盖行情数据、交易下单、仓位管理、账户管理、资产查询、借贷、理财和 WebSocket 实时推送**
+**生产就绪的 Bybit MCP 服务器 — 382 个工具，覆盖行情数据、交易下单、仓位管理、账户管理、资产查询、借贷、理财和 WebSocket 实时推送**
 
 [快速开始](#-快速开始) •
 [功能特性](#-功能特性) •
@@ -29,7 +29,7 @@ Bybit MCP 服务器让 **Claude**、**Cursor**、**VS Code** 等支持 MCP 协�
 
 ### 为什么选择 Bybit MCP？
 
-- **完整的 V5 覆盖** — 390 个工具，涵盖行情、交易、仓位、账户、资产、借贷、理财、跟单、WebSocket 和 WS 交易等类别
+- **完整的 V5 覆盖** — 382 个工具，涵盖行情、交易、仓位、账户、资产、借贷、理财、跟单、WebSocket 和 WS 交易等类别
 - **安全设计** — API 凭证从环境变量读取，不会硬编码在任何地方
 - **免鉴权行情** — 22 个行情工具无需 API Key 即可使用
 - **实时数据流** — 27 个 WebSocket 工具，支持订单薄、Ticker、仓位等实时推送
@@ -345,12 +345,10 @@ RSA 模式（自生成 API Key）：
 
 | 分类 | 是否需要鉴权 | 工具数 | 说明 |
 |------|------------|------:|------|
-| `market` | 否 | 23 | K 线、订单薄、Ticker、资金费率、持仓量、历史波动率、风险限额、多空比、交割价格、保险基金、代币化股票交易日历与市场状态等 |
+| `market` | 否 | 22 | K 线、订单薄、Ticker、资金费率、持仓量、历史波动率、风险限额、多空比、交割价格、保险基金等 |
 | `account` | 是 | 25 | 钱包余额、交易日志、手续费率、保证金模式、抵押品开关（单个/批量）、对冲模式、限价操作、MMP 修改与重置、期权希腊值、断线保护、防自成交分组、账户合约、可提金额、UTA 借还款与借款历史，以及 UTA2.0 升级为 Pro |
 | `trade` | 是 | 12 | 下单、改单、撤单、批量下单/改单/撤单、实时订单查询、历史订单、现货借贷额度、断线撤单、下单预检查 |
-| `order` | 是 | 3 | 代币化股票交易：股票下单、撤单、订单详情查询 |
-| `convert` | 是 | 3 | 代币化股票兑换：可兑换交易对列表、提交正股与 Token 之间的 Mint/Redeem 兑换、兑换订单详情 |
-| `position` | 是 | 13 | 持仓查询、设置杠杆、切换仓位模式、止盈止损、自动追加保证金、手动增减保证金、已平仓盈亏、已平仓仓位、移仓及移仓历史、确认新风险限额、合约符号杠杆信息查询、代币化股票持仓 |
+| `position` | 是 | 12 | 持仓查询、设置杠杆、切换仓位模式、止盈止损、自动追加保证金、手动增减保证金、已平仓盈亏、已平仓仓位、移仓及移仓历史、确认新风险限额、合约符号杠杆信息查询 |
 | `rfq-trading` | 是 | 15 | 创建/取消询价单和报价、执行报价、接受非LP报价、RFQ 配置、实时及历史询价/报价、成交记录、公开成交 |
 | `spread-trading` | 混合 | 12 | 价差合约信息、深度、行情、最新成交、下单、改单、撤单、撤全部、实时订单、历史订单、成交记录、最大下单数量 |
 | `asset` | 是 | 35 | 资产总览、组合保证金、交割/结算记录、母子账户聚合资产、资金流水、币种链信息、划转与账户币种余额查询、充值记录/地址查询、提币记录/地址与可提金额查询、闪兑（报价/执行/历史）与小额资产兑换 |
@@ -388,7 +386,7 @@ RSA 模式（自生成 API Key）：
 | `wstrade` | 是 | 6 | WebSocket 交易操作（/v5/trade 端点）：下单、撤单、改单、批量下单、批量撤单、批量改单 |
 | `subscription` | 是 | 4 | WebSocket 订阅生命周期管理：启动/停止订阅、列出活跃订阅、读取缓冲消息 |
 
-**合计：390 个工具**
+**合计：382 个工具**
 
 ---
 
