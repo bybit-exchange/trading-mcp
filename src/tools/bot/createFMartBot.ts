@@ -18,7 +18,7 @@ export const createFMartBot = {
     sl_percent: z.string().optional(),
     entry_price: z.string().optional(),
     source: z.enum(["F_MART_SOURCE_UNSPECIFIED", "F_MART_SOURCE_TRADING_BOT_PAGE", "F_MART_SOURCE_DERIVATIVES_PAGE"]).optional(),
-    followed_bot_id: z.number().int().default(0),
+    followed_bot_id: z.number().int().default(0).optional(),
     block_source: z.enum(["BLOCK_SOURCE_UNSPECIFIED", "BLOCK_SOURCE_MAIN_PAGE_CREATE_BLOCK", "BLOCK_SOURCE_AI_CREATE_BLOCK", "BLOCK_SOURCE_RANK_LIST", "BLOCK_SOURCE_PAGE_AI_BLOCK"]).optional(),
     create_type: z.enum(["CREATE_TYPE_UNSPECIFIED", "CREATE_TYPE_COPY", "CREATE_TYPE_AUTO", "CREATE_TYPE_MANUAL"]).optional(),
     init_bonus: z.string().optional(),

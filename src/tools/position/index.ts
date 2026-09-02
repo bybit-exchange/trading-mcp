@@ -6,6 +6,7 @@ import { getClosePosition } from './getClosePosition.js';
 import { getMovePositionHistory } from './getMovePositionHistory.js';
 import { getPositionInfo } from './getPositionInfo.js';
 import { getPositionSymbolInfo } from './getPositionSymbolInfo.js';
+import { getStocksPositions } from './getStocksPositions.js';
 import { movePosition } from './movePosition.js';
 import { setAutoAddMargin } from './setAutoAddMargin.js';
 import { setLeverage } from './setLeverage.js';
@@ -20,6 +21,7 @@ export const positionTools = [
   getMovePositionHistory,
   getPositionInfo,
   getPositionSymbolInfo,
+  getStocksPositions,
   movePosition,
   setAutoAddMargin,
   setLeverage,

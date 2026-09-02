@@ -8,7 +8,7 @@ export const getAccountInstruments = {
   inputSchema: z.object({
     category: z.enum(["spot", "linear", "inverse"]),
     symbol: z.string().optional(),
-    limit: z.number().int().min(1).max(200).default(200),
+    limit: z.number().int().min(1).max(200).default(200).optional(),
     cursor: z.string().optional(),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},

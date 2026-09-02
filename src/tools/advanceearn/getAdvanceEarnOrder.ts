@@ -12,7 +12,7 @@ export const getAdvanceEarnOrder = {
     orderLinkId: z.string().optional(),
     startTime: z.number().int().optional(),
     endTime: z.number().int().optional(),
-    limit: z.number().int().min(1).max(20).default(20),
+    limit: z.number().int().min(1).max(20).default(20).optional(),
     cursor: z.string().optional(),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},

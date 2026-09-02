@@ -8,8 +8,8 @@ export const subscribeExecutionFast = {
   description: "订阅快速成交推送（需要鉴权）",
   inputSchema: z.object({
 
-    messageCount: z.number().int().min(1).default(1),
-    timeoutMs: z.number().int().min(100).default(5000),
+    messageCount: z.number().int().min(1).default(1).optional(),
+    timeoutMs: z.number().int().min(100).default(5000).optional(),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {

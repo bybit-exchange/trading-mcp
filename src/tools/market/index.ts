@@ -10,6 +10,7 @@ import { getInstrumentsInfo } from './getInstrumentsInfo.js';
 import { getInsurancePool } from './getInsurancePool.js';
 import { getLongShortRatio } from './getLongShortRatio.js';
 import { getMarketKline } from './getMarketKline.js';
+import { getMarketSession } from './getMarketSession.js';
 import { getMarkPriceKline } from './getMarkPriceKline.js';
 import { getNewDeliveryPrice } from './getNewDeliveryPrice.js';
 import { getOpenInterest } from './getOpenInterest.js';
@@ -34,6 +35,7 @@ export const marketTools = [
   getInsurancePool,
   getLongShortRatio,
   getMarketKline,
+  getMarketSession,
   getMarkPriceKline,
   getNewDeliveryPrice,
   getOpenInterest,

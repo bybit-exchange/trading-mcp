@@ -11,7 +11,7 @@ export const queryInternalDepositRecords = {
     endTime: z.number().int().optional(),
     coin: z.string().optional(),
     cursor: z.string().optional(),
-    limit: z.number().int().min(1).max(50).default(50),
+    limit: z.number().int().min(1).max(50).default(50).optional(),
     status: z.string().optional(),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},

@@ -10,7 +10,7 @@ export const getSpreadOpenOrders = {
     baseCoin: z.string().optional(),
     orderId: z.string().optional(),
     orderLinkId: z.string().optional(),
-    limit: z.number().int().min(1).max(50).default(20),
+    limit: z.number().int().min(1).max(50).default(20).optional(),
     cursor: z.string().optional(),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},

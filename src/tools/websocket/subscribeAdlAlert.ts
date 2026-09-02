@@ -8,8 +8,8 @@ export const subscribeAdlAlert = {
   description: "订阅 ADL 预警推送",
   inputSchema: z.object({
     coin: z.string(),
-    messageCount: z.number().int().min(1).default(1),
-    timeoutMs: z.number().int().min(100).default(5000),
+    messageCount: z.number().int().min(1).default(1).optional(),
+    timeoutMs: z.number().int().min(100).default(5000).optional(),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {

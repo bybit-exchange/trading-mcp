@@ -11,7 +11,7 @@ export const getLongShortRatio = {
     period: z.enum(["5min", "15min", "30min", "1h", "4h", "1d"]),
     startTime: z.string().optional(),
     endTime: z.string().optional(),
-    limit: z.number().int().min(1).max(500).default(50),
+    limit: z.number().int().min(1).max(500).default(50).optional(),
     cursor: z.string().optional(),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},

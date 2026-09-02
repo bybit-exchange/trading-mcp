@@ -9,9 +9,9 @@ export const subscribeOrderbook = {
   inputSchema: z.object({
     depth: z.enum(["1", "50", "200", "1000"]),
     symbol: z.string(),
-    category: z.enum(["linear", "spot", "inverse", "option"]).default("linear"),
-    messageCount: z.number().int().min(1).default(1),
-    timeoutMs: z.number().int().min(100).default(5000),
+    category: z.enum(["linear", "spot", "inverse", "option"]).default("linear").optional(),
+    messageCount: z.number().int().min(1).default(1).optional(),
+    timeoutMs: z.number().int().min(100).default(5000).optional(),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {

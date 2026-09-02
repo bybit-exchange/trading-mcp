@@ -10,7 +10,7 @@ export const cancelOrder = {
     symbol: z.string(),
     orderId: z.string().optional(),
     orderLinkId: z.string().optional(),
-    orderFilter: z.enum(["Order", "tpslOrder", "StopOrder"]).default("Order"),
+    orderFilter: z.enum(["Order", "tpslOrder", "StopOrder"]).default("Order").optional(),
   }),
   annotations: {"readOnlyHint":false,"destructiveHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {

@@ -18,7 +18,7 @@ export const validateGridInput = {
     quote_investment: z.string().optional(),
     invest_mode: z.enum(["0", "1", "2"]).optional(),
     ts_percent: z.string().optional(),
-    enable_trailing: z.boolean().default(false),
+    enable_trailing: z.boolean().default(false).optional(),
     limit_up_price: z.string().optional(),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},

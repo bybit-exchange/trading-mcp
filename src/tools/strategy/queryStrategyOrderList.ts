@@ -11,7 +11,7 @@ export const queryStrategyOrderList = {
     symbol: z.string().optional(),
     BeginTimeE0: z.number().int().optional(),
     EndTimeE0: z.number().int().optional(),
-    pageSize: z.number().int().min(1).max(50).default(20),
+    pageSize: z.number().int().min(1).max(50).default(20).optional(),
     cursor: z.string().optional(),
     StrategyType: z.enum(["twap", "chaseOrder", "iceberg", "pov"]).optional(),
   }),

@@ -9,7 +9,7 @@ export const getPredictionPriceHistory = {
     tokenIds: z.array(z.string()).optional(),
     eventId: z.string().optional(),
     interval: z.enum(["1H", "6H", "1D", "1W", "1M", "ALL"]),
-    fidelity: z.number().int().default(0),
+    fidelity: z.number().int().default(0).optional(),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {

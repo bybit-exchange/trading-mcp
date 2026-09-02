@@ -11,9 +11,9 @@ export const accountCoinBalanceQuery = {
     memberId: z.number().int().optional(),
     toMemberId: z.number().int().optional(),
     toAccountType: z.string().optional(),
-    withBonus: z.enum(["0", "1"]).default("0"),
-    withTransferSafeAmount: z.enum(["0", "1"]).default("0"),
-    withLtvTransferSafeAmount: z.enum(["0", "1"]).default("0"),
+    withBonus: z.enum(["0", "1"]).default("0").optional(),
+    withTransferSafeAmount: z.enum(["0", "1"]).default("0").optional(),
+    withLtvTransferSafeAmount: z.enum(["0", "1"]).default("0").optional(),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {

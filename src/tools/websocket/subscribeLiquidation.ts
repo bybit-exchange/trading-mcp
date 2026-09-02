@@ -8,9 +8,9 @@ export const subscribeLiquidation = {
   description: "订阅强平数据",
   inputSchema: z.object({
     symbol: z.string(),
-    category: z.enum(["linear", "inverse"]).default("linear"),
-    messageCount: z.number().int().min(1).default(1),
-    timeoutMs: z.number().int().min(100).default(5000),
+    category: z.enum(["linear", "inverse"]).default("linear").optional(),
+    messageCount: z.number().int().min(1).default(1).optional(),
+    timeoutMs: z.number().int().min(100).default(5000).optional(),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {

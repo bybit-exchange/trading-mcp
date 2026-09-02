@@ -10,7 +10,7 @@ export const getInstrumentsInfo = {
     symbol: z.string().optional(),
     status: z.enum(["Trading", "PreLaunch", "Delivering"]).optional(),
     baseCoin: z.string().optional(),
-    limit: z.number().int().min(1).max(1000).default(500),
+    limit: z.number().int().min(1).max(1000).default(500).optional(),
     cursor: z.string().optional(),
     symbolType: z.enum(["linear", "option", "spot", "xstocks", "stock", "commodity"]).optional(),
   }),

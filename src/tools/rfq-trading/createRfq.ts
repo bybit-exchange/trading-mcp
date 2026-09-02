@@ -8,8 +8,8 @@ export const createRfq = {
   inputSchema: z.object({
     counterparties: z.array(z.string()),
     rfqLinkId: z.string().optional(),
-    anonymous: z.boolean().default(false),
-    strategyType: z.string().default("custom"),
+    anonymous: z.boolean().default(false).optional(),
+    strategyType: z.string().default("custom").optional(),
     list: z.array(z.object({ category: z.enum(["spot", "linear", "option"]), symbol: z.string(), side: z.enum(["Buy", "Sell"]), qty: z.string() })),
   }),
   annotations: {"readOnlyHint":false,"destructiveHint":true,"openWorldHint":true},

@@ -8,8 +8,8 @@ export const queryWithdrawAddresses = {
   inputSchema: z.object({
     coin: z.string().optional(),
     chain: z.string().optional(),
-    addressType: z.enum(["0", "1", "2"]).default("0"),
-    limit: z.number().int().min(1).max(50).default(50),
+    addressType: z.enum(["0", "1", "2"]).default("0").optional(),
+    limit: z.number().int().min(1).max(50).default(50).optional(),
     cursor: z.string().optional(),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},

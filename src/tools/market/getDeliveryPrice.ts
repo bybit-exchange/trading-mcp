@@ -10,7 +10,7 @@ export const getDeliveryPrice = {
     symbol: z.string().optional(),
     baseCoin: z.string().optional(),
     settleCoin: z.string().optional(),
-    limit: z.number().int().min(1).max(200).default(50),
+    limit: z.number().int().min(1).max(200).default(50).optional(),
     cursor: z.string().optional(),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},

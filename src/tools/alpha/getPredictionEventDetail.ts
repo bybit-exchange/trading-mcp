@@ -8,7 +8,7 @@ export const getPredictionEventDetail = {
   inputSchema: z.object({
     eventId: z.string().optional(),
     slug: z.string().optional(),
-    hasMoreMarkets: z.boolean().default(false),
+    hasMoreMarkets: z.boolean().default(false).optional(),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
