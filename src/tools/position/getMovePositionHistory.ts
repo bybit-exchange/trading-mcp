@@ -12,7 +12,7 @@ export const getMovePositionHistory = {
     endTime: z.number().int().optional(),
     status: z.enum(["Processing", "Filled", "Rejected"]).optional(),
     blockTradeId: z.string().optional(),
-    limit: z.string().default("20").optional(),
+    limit: z.string().default("20"),
     cursor: z.string().optional(),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},

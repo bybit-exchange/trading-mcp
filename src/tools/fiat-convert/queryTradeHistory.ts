@@ -6,8 +6,8 @@ export const queryTradeHistory = {
   name: 'queryTradeHistory',
   description: "Query historical trade records with pagination support.\n\n**Query Parameters:**\n- Time range filtering supported\n- Pagination support\n- Maximum 100 records per page\n\nResults are sorted by creation time in descending order (newest first).\n\n**Use Cases:**\n- Generate trade reports for users\n- Reconciliation and auditing\n- Export trade history for accounting",
   inputSchema: z.object({
-    index: z.number().int().min(1).default(1).optional(),
-    limit: z.number().int().min(1).max(100).default(20).optional(),
+    index: z.number().int().min(1).default(1),
+    limit: z.number().int().min(1).max(100).default(20),
     startTime: z.string().optional(),
     endTime: z.string().optional(),
   }),

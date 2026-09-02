@@ -8,8 +8,8 @@ export const subscribeExecution = {
   description: "Subscribe to real-time execution (trade fill) updates for your account.",
   inputSchema: z.object({
     category: z.enum(["spot", "linear", "inverse", "option"]).optional(),
-    messageCount: z.number().int().min(1).default(1).optional(),
-    timeoutMs: z.number().int().min(100).default(5000).optional(),
+    messageCount: z.number().int().min(1).default(1),
+    timeoutMs: z.number().int().min(100).default(5000),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {

@@ -10,7 +10,7 @@ export const getFundingRateHistory = {
     symbol: z.string(),
     startTime: z.number().int().optional(),
     endTime: z.number().int().optional(),
-    limit: z.number().int().min(1).max(200).default(200).optional(),
+    limit: z.number().int().min(1).max(200).default(200),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {

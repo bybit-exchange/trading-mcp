@@ -8,7 +8,7 @@ export const getAssetOverview = {
   inputSchema: z.object({
     accountType: z.string().optional(),
     memberId: z.string().optional(),
-    valuationCurrency: z.string().default("USD").optional(),
+    valuationCurrency: z.string().default("USD"),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {

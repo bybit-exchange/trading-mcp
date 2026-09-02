@@ -9,8 +9,8 @@ export const queryFixedBorrowMarket = {
     orderCurrency: z.string(),
     term: z.string().optional(),
     orderBy: z.enum(["apy", "term", "quantity"]),
-    sort: z.enum(["0", "1"]).default("0").optional(),
-    limit: z.number().int().default(10).optional(),
+    sort: z.enum(["0", "1"]).default("0"),
+    limit: z.number().int().default(10),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {

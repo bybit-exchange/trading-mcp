@@ -11,7 +11,7 @@ export const applyQuote = {
     toCoin: z.string(),
     toCoinType: z.enum(["fiat", "crypto"]),
     requestAmount: z.string(),
-    requestCoinType: z.enum(["fiat", "crypto"]).default("fiat").optional(),
+    requestCoinType: z.enum(["fiat", "crypto"]).default("fiat"),
   }),
   annotations: {"readOnlyHint":false,"destructiveHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {

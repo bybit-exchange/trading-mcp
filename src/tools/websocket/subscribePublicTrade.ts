@@ -8,9 +8,9 @@ export const subscribePublicTrade = {
   description: "订阅实时成交数据",
   inputSchema: z.object({
     symbol: z.string(),
-    category: z.enum(["linear", "spot", "inverse", "option"]).default("linear").optional(),
-    messageCount: z.number().int().min(1).default(1).optional(),
-    timeoutMs: z.number().int().min(100).default(5000).optional(),
+    category: z.enum(["linear", "spot", "inverse", "option"]).default("linear"),
+    messageCount: z.number().int().min(1).default(1),
+    timeoutMs: z.number().int().min(100).default(5000),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {

@@ -11,7 +11,7 @@ export const getOpenInterest = {
     intervalTime: z.enum(["5min", "15min", "30min", "1h", "4h", "1d"]),
     startTime: z.number().int().optional(),
     endTime: z.number().int().optional(),
-    limit: z.number().int().min(1).max(200).default(50).optional(),
+    limit: z.number().int().min(1).max(200).default(50),
     cursor: z.string().optional(),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},

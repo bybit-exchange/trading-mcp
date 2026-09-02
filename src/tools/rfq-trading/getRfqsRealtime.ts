@@ -8,7 +8,7 @@ export const getRfqsRealtime = {
   inputSchema: z.object({
     rfqId: z.string().optional(),
     rfqLinkId: z.string().optional(),
-    traderType: z.enum(["quote", "request"]).default("quote").optional(),
+    traderType: z.enum(["quote", "request"]).default("quote"),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {

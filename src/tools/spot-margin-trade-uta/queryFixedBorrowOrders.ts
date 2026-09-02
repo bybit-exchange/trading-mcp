@@ -10,7 +10,7 @@ export const queryFixedBorrowOrders = {
     orderCurrency: z.string().optional(),
     state: z.enum(["1", "2", "3", "4"]).optional(),
     term: z.string().optional(),
-    limit: z.string().default("10").optional(),
+    limit: z.string().default("10"),
     cursor: z.string().optional(),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},

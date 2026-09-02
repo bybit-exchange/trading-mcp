@@ -9,7 +9,7 @@ export const userAssetInfoQuery = {
     accountType: z.string(),
     coin: z.string().optional(),
     memberId: z.number().int().optional(),
-    withBonus: z.enum(["0", "1"]).default("0").optional(),
+    withBonus: z.enum(["0", "1"]).default("0"),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {

@@ -10,7 +10,7 @@ export const getTokenDailyYield = {
     startTime: z.number().int().optional(),
     endTime: z.number().int().optional(),
     cursor: z.string().optional(),
-    limit: z.number().int().min(1).max(100).default(5).optional(),
+    limit: z.number().int().min(1).max(100).default(5),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {

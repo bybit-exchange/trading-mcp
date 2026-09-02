@@ -18,7 +18,7 @@ export const createFGridBot = {
     stop_loss_per: z.string().optional(),
     entry_price: z.string().optional(),
     source: z.enum(["0", "1", "2", "3"]).optional(),
-    followed_grid_id: z.number().int().default(0).optional(),
+    followed_grid_id: z.number().int().default(0),
     toolsDiscoveryParameter: z.object({ strategy_id: z.string().optional() }).optional(),
     stop_loss_price: z.string().optional(),
     take_profit_price: z.string().optional(),

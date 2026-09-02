@@ -8,8 +8,8 @@ export const createQuote = {
   inputSchema: z.object({
     rfqId: z.string(),
     quoteLinkId: z.string().optional(),
-    anonymous: z.boolean().default(false).optional(),
-    expireIn: z.number().int().min(10).max(120).default(60).optional(),
+    anonymous: z.boolean().default(false),
+    expireIn: z.number().int().min(10).max(120).default(60),
     quoteBuyList: z.array(z.object({ category: z.enum(["spot", "linear", "option"]), symbol: z.string(), price: z.string() })).optional(),
     quoteSellList: z.array(z.object({ category: z.enum(["spot", "linear", "option"]), symbol: z.string(), price: z.string() })).optional(),
   }),

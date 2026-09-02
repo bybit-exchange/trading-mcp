@@ -10,7 +10,7 @@ export const getPositionInfo = {
     symbol: z.string().optional(),
     baseCoin: z.string().optional(),
     settleCoin: z.string().optional(),
-    limit: z.number().int().min(1).max(200).default(20).optional(),
+    limit: z.number().int().min(1).max(200).default(20),
     cursor: z.string().optional(),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},

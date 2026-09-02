@@ -8,7 +8,7 @@ export const getSpreadInstrumentsInfo = {
   inputSchema: z.object({
     symbol: z.string().optional(),
     baseCoin: z.string().optional(),
-    limit: z.number().int().min(1).max(500).default(200).optional(),
+    limit: z.number().int().min(1).max(500).default(200),
     cursor: z.string().optional(),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},

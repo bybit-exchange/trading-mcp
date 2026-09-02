@@ -17,7 +17,7 @@ export const createComboBot = {
     source: z.enum(["0", "1", "2"]).optional(),
     block_source: z.enum(["0", "1", "2", "3", "4"]).optional(),
     create_type: z.enum(["0", "1", "2", "3"]).optional(),
-    followed_bot_id: z.number().int().default(0).optional(),
+    followed_bot_id: z.number().int().default(0),
     init_bonus: z.string().optional(),
     trailing_stop_percent: z.string().optional(),
     channel: z.string().optional(),

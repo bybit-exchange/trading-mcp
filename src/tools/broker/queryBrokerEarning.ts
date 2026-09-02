@@ -10,7 +10,7 @@ export const queryBrokerEarning = {
     begin: z.string().optional(),
     end: z.string().optional(),
     uid: z.string().optional(),
-    limit: z.number().int().min(1).max(1000).default(1000).optional(),
+    limit: z.number().int().min(1).max(1000).default(1000),
     cursor: z.string().optional(),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},

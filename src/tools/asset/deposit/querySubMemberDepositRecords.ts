@@ -12,7 +12,7 @@ export const querySubMemberDepositRecords = {
     coin: z.string().optional(),
     startTime: z.number().int().optional(),
     endTime: z.number().int().optional(),
-    limit: z.number().int().min(1).max(50).default(50).optional(),
+    limit: z.number().int().min(1).max(50).default(50),
     cursor: z.string().optional(),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},

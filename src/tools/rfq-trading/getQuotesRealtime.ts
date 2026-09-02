@@ -9,7 +9,7 @@ export const getQuotesRealtime = {
     rfqId: z.string().optional(),
     quoteId: z.string().optional(),
     quoteLinkId: z.string().optional(),
-    traderType: z.enum(["quote", "request"]).default("quote").optional(),
+    traderType: z.enum(["quote", "request"]).default("quote"),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {

@@ -10,6 +10,7 @@ export const getFeeRate = {
     symbol: z.string().optional(),
     baseCoin: z.string().optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.getAuth("/v5/account/fee-rate", input);
   },

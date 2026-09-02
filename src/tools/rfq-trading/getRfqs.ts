@@ -8,9 +8,9 @@ export const getRfqs = {
   inputSchema: z.object({
     rfqId: z.string().optional(),
     rfqLinkId: z.string().optional(),
-    traderType: z.enum(["quote", "request"]).default("quote").optional(),
+    traderType: z.enum(["quote", "request"]).default("quote"),
     status: z.enum(["Active", "Canceled", "Filled", "Expired", "Failed"]).optional(),
-    limit: z.number().int().min(1).max(100).default(50).optional(),
+    limit: z.number().int().min(1).max(100).default(50),
     cursor: z.string().optional(),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},

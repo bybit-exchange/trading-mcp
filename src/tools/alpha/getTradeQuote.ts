@@ -10,7 +10,7 @@ export const getTradeQuote = {
     fromTokenCode: z.string(),
     fromTokenAmount: z.string(),
     toTokenCode: z.string(),
-    quoteMode: z.enum(["0", "1", "2"]).default("0").optional(),
+    quoteMode: z.enum(["0", "1", "2"]).default("0"),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {

@@ -9,7 +9,7 @@ export const getDistributionRecord = {
     accountId: z.string(),
     awardId: z.string(),
     specCode: z.string(),
-    withUsedAmount: z.boolean().default(false).optional(),
+    withUsedAmount: z.boolean().default(false),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {

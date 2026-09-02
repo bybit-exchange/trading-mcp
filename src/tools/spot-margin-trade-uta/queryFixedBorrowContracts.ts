@@ -9,7 +9,7 @@ export const queryFixedBorrowContracts = {
     orderId: z.string().optional(),
     orderCurrency: z.string().optional(),
     term: z.string().optional(),
-    limit: z.string().default("10").optional(),
+    limit: z.string().default("10"),
     cursor: z.string().optional(),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},

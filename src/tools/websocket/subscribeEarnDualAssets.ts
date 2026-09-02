@@ -8,8 +8,8 @@ export const subscribeEarnDualAssets = {
   description: "订阅 Earn 双币理财产品推送",
   inputSchema: z.object({
 
-    messageCount: z.number().int().min(1).default(1).optional(),
-    timeoutMs: z.number().int().min(100).default(5000).optional(),
+    messageCount: z.number().int().min(1).default(1),
+    timeoutMs: z.number().int().min(100).default(5000),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {

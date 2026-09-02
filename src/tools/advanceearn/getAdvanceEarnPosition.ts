@@ -9,7 +9,7 @@ export const getAdvanceEarnPosition = {
     category: z.enum(["DualAssets", "SmartLeverage", "DoubleWin", "DiscountBuy"]),
     productId: z.number().int().optional(),
     coin: z.string().optional(),
-    limit: z.number().int().min(1).max(20).default(20).optional(),
+    limit: z.number().int().min(1).max(20).default(20),
     cursor: z.string().optional(),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},
