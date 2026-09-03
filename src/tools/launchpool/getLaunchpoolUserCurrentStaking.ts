@@ -8,6 +8,7 @@ export const getLaunchpoolUserCurrentStaking = {
   inputSchema: z.object({
 
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.getAuth("/v5/spot-x/launchpool/user/current-staking", input);
   },

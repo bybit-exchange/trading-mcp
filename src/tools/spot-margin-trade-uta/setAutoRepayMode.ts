@@ -9,6 +9,7 @@ export const setAutoRepayMode = {
     currency: z.string().optional(),
     autoRepayMode: z.enum(["1", "0"]),
   }),
+  annotations: {"readOnlyHint":false,"destructiveHint":false,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/spot-margin-trade/set-auto-repay-mode", input);
   },

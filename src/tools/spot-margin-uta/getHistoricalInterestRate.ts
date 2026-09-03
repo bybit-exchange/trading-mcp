@@ -11,6 +11,7 @@ export const getHistoricalInterestRate = {
     startTime: z.number().int().optional(),
     endTime: z.number().int().optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.getAuth("/v5/spot-margin-trade/interest-rate-history", input);
   },

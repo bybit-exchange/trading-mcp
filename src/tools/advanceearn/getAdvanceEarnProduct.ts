@@ -10,6 +10,7 @@ export const getAdvanceEarnProduct = {
     coin: z.string().optional(),
     duration: z.string().optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.get("/v5/earn/advance/product", input);
   },

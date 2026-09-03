@@ -12,6 +12,7 @@ export const CoinConvertLimitQuery = {
     toCoinType: z.enum(["0", "1"]).optional(),
     accountType: z.string(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.getAuth("/v5/asset/exchange/query-convert-limit", input);
   },

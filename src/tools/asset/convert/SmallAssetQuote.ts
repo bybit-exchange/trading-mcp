@@ -10,6 +10,7 @@ export const SmallAssetQuote = {
     toCoin: z.string(),
     fromCoinList: z.array(z.string()),
   }),
+  annotations: {"readOnlyHint":false,"destructiveHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/asset/covert/get-quote", input);
   },

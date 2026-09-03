@@ -8,6 +8,7 @@ export const getBizTokenList = {
   inputSchema: z.object({
     tokenTag: z.enum(["0", "1", "2"]).default("0").optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/alpha/trade/biz-token-list", input);
   },

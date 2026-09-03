@@ -13,6 +13,7 @@ export const queryFixedBorrowOrders = {
     limit: z.string().default("10").optional(),
     cursor: z.string().optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.getAuth("/v5/spot-margin-trade/fixedborrow-order-info", input);
   },

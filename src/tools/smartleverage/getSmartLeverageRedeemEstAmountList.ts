@@ -9,6 +9,7 @@ export const getSmartLeverageRedeemEstAmountList = {
     category: z.enum(["SmartLeverage", "DoubleWin"]),
     positionIds: z.array(z.number().int()),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.getAuth("/v5/earn/advance/get-redeem-est-amount-list", input);
   },

@@ -8,6 +8,7 @@ export const getAdlAlert = {
   inputSchema: z.object({
     symbol: z.string().optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.get("/v5/market/adlAlert", input);
   },

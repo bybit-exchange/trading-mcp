@@ -9,6 +9,7 @@ export const postCryptoLoanCommonMaxLoan = {
     currency: z.string(),
     collateralList: z.array(z.object({ ccy: z.string(), amount: z.string() })),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/crypto-loan-common/max-loan", input);
   },

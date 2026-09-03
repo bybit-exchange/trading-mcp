@@ -8,6 +8,7 @@ export const getTotalMembersAssets = {
   inputSchema: z.object({
     coin: z.string().optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.getAuth("/v5/asset/total-members-assets", input);
   },

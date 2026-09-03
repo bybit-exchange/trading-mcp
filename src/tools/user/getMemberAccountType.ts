@@ -8,6 +8,7 @@ export const getMemberAccountType = {
   inputSchema: z.object({
     memberIds: z.string().optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.getAuth("/v5/user/get-member-type", input);
   },

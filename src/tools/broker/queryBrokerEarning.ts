@@ -13,6 +13,7 @@ export const queryBrokerEarning = {
     limit: z.number().int().min(1).max(1000).default(1000).optional(),
     cursor: z.string().optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.getAuth("/v5/broker/earnings-info", input);
   },

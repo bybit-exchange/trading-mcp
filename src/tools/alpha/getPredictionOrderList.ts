@@ -14,6 +14,7 @@ export const getPredictionOrderList = {
     side: z.enum(["1", "2"]).optional(),
     days: z.number().int().max(90).optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/alpha/prediction/order-list", input);
   },

@@ -9,6 +9,7 @@ export const getCryptoLoanCommonLoanableData = {
     currency: z.string().optional(),
     vipLevel: z.string().optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.getAuth("/v5/crypto-loan-common/loanable-data", input);
   },

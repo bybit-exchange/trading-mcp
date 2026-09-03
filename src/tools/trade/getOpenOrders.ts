@@ -4,7 +4,7 @@ import { restClient } from '../../client/rest-client.js';
 
 export const getOpenOrders = {
   name: 'getOpenOrders',
-  description: "Query real-time unfilled or partially filled orders.\n\n- For linear/inverse: at least one of `symbol`, `baseCoin`, or `settleCoin` is required\n- Use `openOnly=1` to include recently terminated orders (up to 500 per category)\n- Supports pagination via `cursor`\n- May experience latency during extreme market volatility\n\nAgent hint: Use this endpoint to list currently active (open) orders. For historical orders, use getOrderHistory instead.\nTradFi: use category=spot to query open xStock orders, category=linear for equity/commodity perpetual orders.",
+  description: "Query unfilled or partially filled orders in **real-time**. To query older order records, please use the order history endpoint.\n- Unified account covers: Spot / USDT perpetual / USDC contract / Inverse contract / Options\n- Classic account covers: Spot / USDT perpetual / Inverse contract\n\n**Behaviour:**\n- Returns open (unfilled / partially filled) orders by default (`openOnly=0`)\n- Set `openOnly=1` to also return last 500 closed orders\n- When querying by `orderId` or `orderLinkId`, `openOnly` is ignored\n- Results are sorted by `createdTime` from newest to oldest\n- After server restarts, Unified-account closed orders should be queried via the order history endpoint\n\n**Priority of filter parameters:** `orderId` > `orderLinkId` > `symbol` > `baseCoin`\n\nAgent hint: TradFi: use category=spot to query open xStock orders, category=linear for equity/commodity perpetual orders.",
   inputSchema: z.object({
     category: z.enum(["spot", "linear", "inverse", "option"]),
     symbol: z.string().optional(),
@@ -17,6 +17,7 @@ export const getOpenOrders = {
     limit: z.number().int().min(1).max(50).default(20).optional(),
     cursor: z.string().optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.getAuth("/v5/order/realtime", input);
   },

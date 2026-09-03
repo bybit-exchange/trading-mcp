@@ -9,6 +9,7 @@ export const getLPPayTokenPrice = {
     tokenCode: z.array(z.string()),
     chainCode: z.string().optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/alpha/lp/pay-token-price", input);
   },

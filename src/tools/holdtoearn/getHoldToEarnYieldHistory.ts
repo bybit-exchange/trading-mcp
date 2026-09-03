@@ -11,6 +11,7 @@ export const getHoldToEarnYieldHistory = {
     limit: z.number().int().min(1).max(49).default(20).optional(),
     cursor: z.string().optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.getAuth("/v5/earn/hold-to-earn/yield-history", input);
   },

@@ -10,6 +10,7 @@ export const recEasyBotStrategy = {
     product: z.enum(["0", "1", "2"]),
     direction: z.enum(["0", "1", "2", "3"]),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/aurora/easy", input);
   },

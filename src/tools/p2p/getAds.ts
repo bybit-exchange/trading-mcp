@@ -12,6 +12,7 @@ export const getAds = {
     page: z.string().optional(),
     size: z.string().optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     const result = await restClient.postAuth("/v5/p2p/item/online", input) as any;
         result?.result?.items?.forEach((item: any) => { delete item.remark; });

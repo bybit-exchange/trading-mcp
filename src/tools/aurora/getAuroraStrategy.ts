@@ -8,6 +8,7 @@ export const getAuroraStrategy = {
   inputSchema: z.object({
     aurora_id: z.string(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/aurora/info", input);
   },

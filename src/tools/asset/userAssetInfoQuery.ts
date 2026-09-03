@@ -11,6 +11,7 @@ export const userAssetInfoQuery = {
     memberId: z.number().int().optional(),
     withBonus: z.enum(["0", "1"]).default("0").optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.getAuth("/v5/asset/transfer/query-account-coins-balance", input);
   },

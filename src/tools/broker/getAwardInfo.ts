@@ -8,6 +8,7 @@ export const getAwardInfo = {
   inputSchema: z.object({
     id: z.string(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/broker/award/info", input);
   },

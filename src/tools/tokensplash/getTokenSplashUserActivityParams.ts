@@ -9,6 +9,7 @@ export const getTokenSplashUserActivityParams = {
     projectId: z.string().optional(),
     activityCoin: z.string().optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.getAuth("/v5/spot-x/token-splash/user/activity-params", input);
   },

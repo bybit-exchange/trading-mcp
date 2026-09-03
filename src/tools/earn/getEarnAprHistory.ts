@@ -11,6 +11,7 @@ export const getEarnAprHistory = {
     startTime: z.number().int(),
     endTime: z.number().int(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.get("/v5/earn/apr-history", input);
   },

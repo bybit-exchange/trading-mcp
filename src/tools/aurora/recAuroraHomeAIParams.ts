@@ -8,6 +8,7 @@ export const recAuroraHomeAIParams = {
   inputSchema: z.object({
 
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/aurora/home", input);
   },

@@ -8,6 +8,7 @@ export const queryGridDetail = {
   inputSchema: z.object({
     grid_id: z.number().int(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/grid/query-grid-detail", input);
   },

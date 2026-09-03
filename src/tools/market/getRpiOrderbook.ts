@@ -10,6 +10,7 @@ export const getRpiOrderbook = {
     symbol: z.string(),
     limit: z.number().int().min(1).max(50),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.get("/v5/market/rpi_orderbook", input);
   },

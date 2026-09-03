@@ -15,6 +15,7 @@ export const getAdvanceEarnOrder = {
     limit: z.number().int().min(1).max(20).default(20).optional(),
     cursor: z.string().optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.getAuth("/v5/earn/advance/order", input);
   },

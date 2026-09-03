@@ -17,6 +17,7 @@ export const readMessages = {
     clearAfterRead: z.boolean().default(true).optional()
       .describe('读取后是否清空缓冲区（默认 true）'),
   }),
+  annotations: { readOnlyHint: false, destructiveHint: true, openWorldHint: false },
   handler: async (input: Record<string, unknown>) => {
     return subscriptionManager.read(
       input.subscriptionId as string,

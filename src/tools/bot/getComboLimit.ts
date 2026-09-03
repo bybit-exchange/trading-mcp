@@ -18,6 +18,7 @@ export const getComboLimit = {
     app_name: z.string().optional(),
     trailing_stop_percent: z.string().optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/fcombobot/getlimit", input);
   },

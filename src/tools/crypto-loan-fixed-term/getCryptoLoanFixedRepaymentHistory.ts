@@ -11,6 +11,7 @@ export const getCryptoLoanFixedRepaymentHistory = {
     limit: z.number().int().optional(),
     cursor: z.number().int().optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.getAuth("/v5/crypto-loan-fixed/repayment-history", input);
   },

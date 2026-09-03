@@ -8,6 +8,7 @@ export const querySubMembers = {
   inputSchema: z.object({
 
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     const result = await restClient.getAuth("/v5/user/query-sub-members", input) as any;
         result?.result?.subMembers?.forEach((m: any) => { delete m.remark; });

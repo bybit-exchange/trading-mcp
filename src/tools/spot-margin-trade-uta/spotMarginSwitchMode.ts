@@ -8,6 +8,7 @@ export const spotMarginSwitchMode = {
   inputSchema: z.object({
     spotMarginMode: z.enum(["0", "1"]),
   }),
+  annotations: {"readOnlyHint":false,"destructiveHint":false,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/spot-margin-trade/switch-mode", input);
   },

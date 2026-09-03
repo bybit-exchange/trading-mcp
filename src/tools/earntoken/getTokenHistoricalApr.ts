@@ -9,6 +9,7 @@ export const getTokenHistoricalApr = {
     coin: z.enum(["BYUSDT"]),
     range: z.enum(["1", "2", "3"]),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.get("/v5/earn/token/history-apr", input);
   },

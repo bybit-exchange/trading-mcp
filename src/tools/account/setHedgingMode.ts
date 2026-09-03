@@ -8,6 +8,7 @@ export const setHedgingMode = {
   inputSchema: z.object({
     setHedgingMode: z.enum(["ON", "OFF"]),
   }),
+  annotations: {"readOnlyHint":false,"destructiveHint":false,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/account/set-hedging-mode", input);
   },

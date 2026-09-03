@@ -9,6 +9,7 @@ export const getVipMarginData = {
     vipLevel: z.string().optional(),
     currency: z.string().optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.get("/v5/spot-margin-trade/data", input);
   },

@@ -14,6 +14,7 @@ export const getMyAds = {
     size: z.string().optional(),
     currencyId: z.string().optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/p2p/item/personal/list", input);
   },

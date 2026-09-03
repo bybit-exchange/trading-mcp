@@ -15,6 +15,7 @@ export const getMovePositionHistory = {
     limit: z.string().default("20").optional(),
     cursor: z.string().optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.getAuth("/v5/position/move-history", input);
   },

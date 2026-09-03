@@ -14,6 +14,7 @@ export const getLPOrderList = {
     pageIndex: z.number().int().min(1).default(1).optional(),
     poolAddress: z.string().optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/alpha/lp/order-list", input);
   },

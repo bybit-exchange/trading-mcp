@@ -10,6 +10,7 @@ export const getSpreadMaxQty = {
     side: z.enum(["1", "2"]),
     orderPrice: z.string(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.getAuth("/v5/spread/max-qty", input);
   },

@@ -10,6 +10,7 @@ export const getPredictionPositionHistory = {
     pageIndex: z.number().int().optional(),
     direction: z.enum(["prev", "next"]).optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/alpha/prediction/position-history", input);
   },

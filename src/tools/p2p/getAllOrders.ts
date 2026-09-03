@@ -14,6 +14,7 @@ export const getAllOrders = {
     tokenId: z.string().optional(),
     side: z.number().int().optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/p2p/order/simplifyList", input);
   },

@@ -13,6 +13,7 @@ export const getRwaNavChart = {
     (d) => d.startTime === undefined || d.endTime === undefined || (d.endTime - d.startTime) <= 15_552_000_000,
     { message: 'endTime - startTime must not exceed 180 days' }
   ),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.get("/v5/earn/rwa/nav-chart", input);
   },

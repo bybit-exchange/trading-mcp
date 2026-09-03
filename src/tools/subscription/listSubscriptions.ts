@@ -5,6 +5,7 @@ export const listSubscriptions = {
   name: 'listSubscriptions',
   description: '列出当前所有活跃订阅及其状态和缓冲消息数。用于调试和监控。',
   inputSchema: z.object({}),
+  annotations: { readOnlyHint: true, openWorldHint: false },
   handler: async (_input: Record<string, unknown>) => {
     const subs = subscriptionManager.list();
     return { count: subs.length, subscriptions: subs };

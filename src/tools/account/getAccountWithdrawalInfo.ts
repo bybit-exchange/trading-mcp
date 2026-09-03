@@ -8,6 +8,7 @@ export const getAccountWithdrawalInfo = {
   inputSchema: z.object({
     coinName: z.string(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.getAuth("/v5/account/withdrawal", input);
   },

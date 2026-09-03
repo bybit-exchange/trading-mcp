@@ -11,6 +11,7 @@ export const switchPositionMode = {
     coin: z.string().optional(),
     mode: z.enum(["0", "3"]),
   }),
+  annotations: {"readOnlyHint":false,"destructiveHint":false,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/position/switch-mode", input);
   },

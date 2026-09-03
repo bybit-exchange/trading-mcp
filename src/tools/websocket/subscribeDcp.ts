@@ -11,6 +11,7 @@ export const subscribeDcp = {
     messageCount: z.number().int().min(1).default(1).optional(),
     timeoutMs: z.number().int().min(100).default(5000).optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     const topic = "dcp";
     const category = 'private' as WsCategory;

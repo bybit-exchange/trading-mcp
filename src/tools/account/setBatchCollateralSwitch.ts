@@ -8,6 +8,7 @@ export const setBatchCollateralSwitch = {
   inputSchema: z.object({
     request: z.array(z.object({ coin: z.string(), collateralSwitch: z.enum(["ON", "OFF"]) })),
   }),
+  annotations: {"readOnlyHint":false,"destructiveHint":false,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/account/set-collateral-switch-batch", input);
   },

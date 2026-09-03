@@ -8,6 +8,7 @@ export const getCryptoLoanFlexibleAvailableInventory = {
   inputSchema: z.object({
     currency: z.string(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.getAuth("/v5/crypto-loan-flexible/available-inventory", input);
   },

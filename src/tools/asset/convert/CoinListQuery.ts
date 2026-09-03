@@ -10,6 +10,7 @@ export const CoinListQuery = {
     side: z.enum(["0", "1"]).optional(),
     coin: z.string().optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.getAuth("/v5/asset/exchange/query-coin-list", input);
   },

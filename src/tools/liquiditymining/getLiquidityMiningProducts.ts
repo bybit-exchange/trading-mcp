@@ -9,6 +9,7 @@ export const getLiquidityMiningProducts = {
     baseCoin: z.string().optional(),
     quoteCoin: z.string().optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.get("/v5/earn/liquidity-mining/product", input);
   },

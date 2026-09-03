@@ -12,6 +12,7 @@ export const getRecentPublicTrades = {
     optionType: z.enum(["Call", "Put"]).optional(),
     limit: z.number().int().min(1).max(1000).optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.get("/v5/market/recent-trade", input);
   },

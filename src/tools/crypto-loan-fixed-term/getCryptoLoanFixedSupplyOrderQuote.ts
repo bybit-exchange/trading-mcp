@@ -12,6 +12,7 @@ export const getCryptoLoanFixedSupplyOrderQuote = {
     sort: z.number().int().optional(),
     limit: z.number().int().optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.get("/v5/crypto-loan-fixed/supply-order-quote", input);
   },

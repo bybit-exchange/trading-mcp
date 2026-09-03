@@ -9,6 +9,7 @@ export const QuerySmallAssetList = {
     accountType: z.string(),
     fromCoin: z.string().optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.getAuth("/v5/asset/covert/small-balance-list", input);
   },

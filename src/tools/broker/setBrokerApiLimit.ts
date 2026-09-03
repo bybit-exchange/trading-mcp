@@ -8,6 +8,7 @@ export const setBrokerApiLimit = {
   inputSchema: z.object({
     list: z.array(z.object({ uids: z.string(), bizType: z.enum(["SPOT", "DERIVATIVES", "OPTIONS"]), rate: z.number().int() })).optional(),
   }),
+  annotations: {"readOnlyHint":false,"destructiveHint":false,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/broker/apilimit/set", input);
   },

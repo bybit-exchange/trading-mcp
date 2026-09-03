@@ -8,6 +8,7 @@ export const getOrderDetail = {
   inputSchema: z.object({
     orderId: z.string(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/p2p/order/info", input);
   },

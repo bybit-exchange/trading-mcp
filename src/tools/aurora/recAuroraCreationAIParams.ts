@@ -9,6 +9,7 @@ export const recAuroraCreationAIParams = {
     biz_type: z.enum(["0", "1", "2", "3", "4", "5", "6", "7", "8"]),
     symbol: z.string(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/aurora/creation", input);
   },

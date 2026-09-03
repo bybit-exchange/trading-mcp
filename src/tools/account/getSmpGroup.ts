@@ -8,6 +8,7 @@ export const getSmpGroup = {
   inputSchema: z.object({
 
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.getAuth("/v5/account/smp-group", input);
   },

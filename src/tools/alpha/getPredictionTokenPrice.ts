@@ -8,6 +8,7 @@ export const getPredictionTokenPrice = {
   inputSchema: z.object({
     tokenIds: z.array(z.string()),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/alpha/prediction/token-price", input);
   },

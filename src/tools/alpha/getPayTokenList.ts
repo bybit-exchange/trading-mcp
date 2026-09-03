@@ -9,6 +9,7 @@ export const getPayTokenList = {
     chainCode: z.string(),
     tokenAddress: z.string(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/alpha/trade/pay-token-list", input);
   },

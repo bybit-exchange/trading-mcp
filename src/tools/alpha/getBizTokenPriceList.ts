@@ -8,6 +8,7 @@ export const getBizTokenPriceList = {
   inputSchema: z.object({
     tokenAddressInfo: z.array(z.object({ chainCode: z.string(), tokenAddress: z.string() })),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/alpha/trade/biz-token-price-list", input);
   },

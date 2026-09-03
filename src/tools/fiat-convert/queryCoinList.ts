@@ -8,6 +8,7 @@ export const queryCoinList = {
   inputSchema: z.object({
     side: z.enum(["0", "1"]).optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.getAuth("/v5/fiat/query-coin-list", input);
   },

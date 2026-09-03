@@ -10,6 +10,7 @@ export const querySubMemberDepositAddress = {
     chainType: z.string(),
     subMemberId: z.string(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.getAuth("/v5/asset/deposit/query-sub-member-address", input);
   },

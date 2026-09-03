@@ -8,6 +8,7 @@ export const getPredictionSideMarketList = {
   inputSchema: z.object({
     eventType: z.enum(["1"]),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/alpha/prediction/side-market-list", input);
   },

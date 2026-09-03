@@ -8,6 +8,7 @@ export const getHoldToEarnProduct = {
   inputSchema: z.object({
 
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.get("/v5/earn/hold-to-earn/product", input);
   },

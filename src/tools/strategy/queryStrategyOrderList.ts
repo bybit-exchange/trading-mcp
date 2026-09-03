@@ -15,6 +15,7 @@ export const queryStrategyOrderList = {
     cursor: z.string().optional(),
     StrategyType: z.enum(["twap", "chaseOrder", "iceberg", "pov"]).optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.getAuth("/v5/strategy/order-list", input);
   },

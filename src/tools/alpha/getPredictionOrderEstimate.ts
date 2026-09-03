@@ -13,6 +13,7 @@ export const getPredictionOrderEstimate = {
     orderType: z.enum(["1"]),
     payTokenCode: z.string().optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/alpha/prediction/order-estimate", input);
   },

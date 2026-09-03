@@ -9,6 +9,7 @@ export const transferCoinListQuery = {
     fromAccountType: z.string(),
     toAccountType: z.string(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.getAuth("/v5/asset/transfer/query-transfer-coin-list", input);
   },

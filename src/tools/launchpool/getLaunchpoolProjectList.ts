@@ -12,6 +12,7 @@ export const getLaunchpoolProjectList = {
     cursor: z.string().optional(),
     limit: z.number().int().min(1).max(10).default(10).optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.get("/v5/spot-x/launchpool/project/list", input);
   },

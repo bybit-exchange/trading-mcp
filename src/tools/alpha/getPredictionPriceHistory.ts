@@ -11,6 +11,7 @@ export const getPredictionPriceHistory = {
     interval: z.enum(["1H", "6H", "1D", "1W", "1M", "ALL"]),
     fidelity: z.number().int().default(0).optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/alpha/prediction/price-history", input);
   },

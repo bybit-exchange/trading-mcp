@@ -12,6 +12,7 @@ export const queryFixedBorrowMarket = {
     sort: z.enum(["0", "1"]).default("0").optional(),
     limit: z.number().int().default(10).optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.getAuth("/v5/spot-margin-trade/fixedborrow-order-quote", input);
   },

@@ -9,6 +9,7 @@ export const setDcp = {
     product: z.enum(["OPTIONS", "DERIVATIVES", "SPOT"]).default("OPTIONS").optional(),
     timeWindow: z.number().int().min(3).max(300),
   }),
+  annotations: {"readOnlyHint":false,"destructiveHint":false,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/order/disconnected-cancel-all", input);
   },

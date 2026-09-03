@@ -9,12 +9,12 @@ import { getIndexPriceKline } from './getIndexPriceKline.js';
 import { getInstrumentsInfo } from './getInstrumentsInfo.js';
 import { getInsurancePool } from './getInsurancePool.js';
 import { getLongShortRatio } from './getLongShortRatio.js';
-import { getMarkPriceKline } from './getMarkPriceKline.js';
 import { getMarketKline } from './getMarketKline.js';
+import { getMarkPriceKline } from './getMarkPriceKline.js';
 import { getNewDeliveryPrice } from './getNewDeliveryPrice.js';
 import { getOpenInterest } from './getOpenInterest.js';
-import { getOrderPriceLimit } from './getOrderPriceLimit.js';
 import { getOrderbook } from './getOrderbook.js';
+import { getOrderPriceLimit } from './getOrderPriceLimit.js';
 import { getPremiumIndexPriceKline } from './getPremiumIndexPriceKline.js';
 import { getRecentPublicTrades } from './getRecentPublicTrades.js';
 import { getRiskLimit } from './getRiskLimit.js';
@@ -33,12 +33,12 @@ export const marketTools = [
   getInstrumentsInfo,
   getInsurancePool,
   getLongShortRatio,
-  getMarkPriceKline,
   getMarketKline,
+  getMarkPriceKline,
   getNewDeliveryPrice,
   getOpenInterest,
-  getOrderPriceLimit,
   getOrderbook,
+  getOrderPriceLimit,
   getPremiumIndexPriceKline,
   getRecentPublicTrades,
   getRiskLimit,

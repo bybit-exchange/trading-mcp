@@ -9,6 +9,7 @@ export const getFeeGroupInfo = {
     productType: z.enum(["contract"]),
     groupId: z.enum(["1", "2", "3", "4", "5", "6", "7", "8"]).optional(),
   }),
+  annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.get("/v5/market/fee-group-info", input);
   },

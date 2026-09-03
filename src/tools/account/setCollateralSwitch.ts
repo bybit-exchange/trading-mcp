@@ -9,6 +9,7 @@ export const setCollateralSwitch = {
     coin: z.string(),
     collateralSwitch: z.enum(["ON", "OFF"]),
   }),
+  annotations: {"readOnlyHint":false,"destructiveHint":false,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/account/set-collateral-switch", input);
   },
