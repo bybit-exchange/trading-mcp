@@ -6,15 +6,17 @@ import { commonHeaders } from '../version.js';
  * WebSocket base URLs by channel category.
  * Public channels are split by product type (determined at call time via `category`).
  */
+const WS_BASE = process.env.BYBIT_WS_BASE_URL || 'wss://stream.bybit.com';
+
 const WS_MAINNET = {
-  linear: 'wss://stream.bybit.com/v5/public/linear',
-  spot: 'wss://stream.bybit.com/v5/public/spot',
-  inverse: 'wss://stream.bybit.com/v5/public/inverse',
-  option: 'wss://stream.bybit.com/v5/public/option',
-  private: 'wss://stream.bybit.com/v5/private',
-  spread: 'wss://stream.bybit.com/v5/public/spread',
-  misc: 'wss://stream.bybit.com/v5/public/misc/status',
-  trade: 'wss://stream.bybit.com/v5/trade',
+  linear: `${WS_BASE}/v5/public/linear`,
+  spot: `${WS_BASE}/v5/public/spot`,
+  inverse: `${WS_BASE}/v5/public/inverse`,
+  option: `${WS_BASE}/v5/public/option`,
+  private: `${WS_BASE}/v5/private`,
+  spread: `${WS_BASE}/v5/public/spread`,
+  misc: `${WS_BASE}/v5/public/misc/status`,
+  trade: `${WS_BASE}/v5/trade`,
 } as const;
 
 const WS_TESTNET = {

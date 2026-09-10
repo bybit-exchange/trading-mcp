@@ -2,7 +2,7 @@ import { buildAuthHeaders, resolveSignConfig, toQueryString } from '../utils/aut
 import { rateLimiter } from '../utils/rate-limiter.js';
 import { commonHeaders } from '../version.js';
 
-const MAINNET = 'https://api.bybit.com';
+const MAINNET = process.env.BYBIT_BASE_URL || 'https://api.bybit.com';
 const TESTNET = 'https://api-testnet.bybit.com';
 const REQUEST_TIMEOUT_MS = 10_000;
 
