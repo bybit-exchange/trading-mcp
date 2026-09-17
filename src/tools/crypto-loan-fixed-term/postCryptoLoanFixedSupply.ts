@@ -4,7 +4,7 @@ import { restClient } from '../../client/rest-client.js';
 
 export const postCryptoLoanFixedSupply = {
   name: 'postCryptoLoanFixedSupply',
-  description: "Lend crypto to earn fixed interest.\n\n**Rate limit:** 1 request per UID",
+  description: "Lend crypto to earn fixed interest.\n\n**Rate limit:** 1 request per UID\n\nAgent hint: Error 148049 (\"This service is not available in your region\") is a regulatory region restriction, NOT a parameter problem. Do not retry, do not adjust parameters, and do not suggest a different currency or term — report to the user that crypto loan is unavailable in their region.",
   inputSchema: z.object({
     orderCurrency: z.string(),
     orderAmount: z.string(),

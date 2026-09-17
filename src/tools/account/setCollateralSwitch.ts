@@ -4,7 +4,7 @@ import { restClient } from '../../client/rest-client.js';
 
 export const setCollateralSwitch = {
   name: 'setCollateralSwitch',
-  description: "Enable or disable specified coin as collateral",
+  description: "Enable or disable specified coin as collateral\n\nAgent hint: Error handling: 182012 means collateral services are unavailable in the user's region due to regulatory requirements — a region restriction, NOT a parameter problem, so do not retry and do not try a different coin. 182011 means the coin's collateral amount has reached the platform limit — suggest enabling collateral on another asset, or transferring in another supported asset as collateral.",
   inputSchema: z.object({
     coin: z.string(),
     collateralSwitch: z.enum(["ON", "OFF"]),
