@@ -1,0 +1,31 @@
+src/tools/account/setBatchCollateralSwitch.ts
+  s_e823846bd4211d::t_8e34bf7631d2d5 7
+src/tools/account/setCollateralSwitch.ts
+  s_e823846bd4211d::t_c14dee94eb731d 7
+src/tools/crypto-loan-fixed-term/postCryptoLoanFixedBorrow.ts
+  s_e823846bd4211d::t_3ffa0504086d8c 7
+src/tools/crypto-loan-fixed-term/postCryptoLoanFixedSupply.ts
+  s_e823846bd4211d::t_7d6602cba0ce15 7
+src/tools/crypto-loan-flexible/postCryptoLoanFlexibleBorrow.ts
+  s_e823846bd4211d::t_92afb69bb9c750 7
+src/tools/crypto-loan-new/postCryptoLoanCommonAdjustLtv.ts
+  s_e823846bd4211d::t_31a3167436b9ed 7
+src/tools/user/querySubMembersV5.ts
+  s_e823846bd4211d::t_82092d6279485b 7
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2-bit.1+5a7225d",
+  "base_commit_sha": "ec19521692aedc8096659534c7ad56039008cca1",
+  "prompts": {},
+  "sessions": {
+    "s_e823846bd4211d": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "59356e16-120a-4a2f-b79a-3290b7646772",
+        "model": "unknown"
+      },
+      "human_author": "paul.yang <paul.yang@bybit.com>"
+    }
+  }
+}
