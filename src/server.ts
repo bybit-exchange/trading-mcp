@@ -38,7 +38,7 @@ allTools = [
 
 export async function startServer(): Promise<void> {
   const server = new Server(
-    { name: 'trading-mcp', version: '2.1.20' },
+    { name: 'trading-mcp', version: '2.1.21' },
     { capabilities: { tools: {} } },
   );
 
