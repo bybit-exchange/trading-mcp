@@ -1,0 +1,24 @@
+README.md
+  h_df8eef7955e0ba 33,40-41
+README.zh.md
+  h_df8eef7955e0ba 33,40-41
+src/tools/market/getOptionBaseCoins.ts
+  h_df8eef7955e0ba 7
+src/tools/strategy/createIcebergStrategy.ts
+  h_df8eef7955e0ba 7,22,24-25
+src/tools/strategy/createPovStrategy.ts
+  h_df8eef7955e0ba 7,12-13,16,23-24,26
+src/tools/strategy/queryStrategyList.ts
+  h_df8eef7955e0ba 7
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2-bit.1+5a7225d",
+  "base_commit_sha": "fba47a9cdccc157c5ad4859ed56b0c686487bc01",
+  "prompts": {},
+  "humans": {
+    "h_df8eef7955e0ba": {
+      "author": "paul.yang <paul.yang@bybit.com>"
+    }
+  }
+}
