@@ -30,12 +30,14 @@ Bybit MCP Server enables AI assistants like **Claude**, **Cursor**, **VS Code**,
 ### Why Bybit MCP?
 
 - **Complete V5 Coverage** — 384 tools across market data, trading, positions, account, asset, loans, earn, copy trading, WebSocket, and WS-trade categories
-- **Strategy Trading** — POV for spot and derivatives, quantity or value budgets, Iceberg splitting into up to 200 child orders
+- **Strategy Trading** — POV for spot and derivatives with required quantity or value limits, Iceberg splitting into up to 200 child orders
 - **Secure by Design** — API credentials are read from environment variables at runtime, never hardcoded
 - **Read-Only Mode** — All 23 market data tools work without any API key
 - **Real-Time Streams** — 27 WebSocket tools for live orderbook, tickers, positions, and more
 - **Zero-Install Start** — Run instantly with `npx bybit-official-trading-server@latest`
 - **Universal Compatibility** — Works with Claude Desktop, Cursor, VS Code, and any MCP client
+
+POV execution requires a 5–3600 second interval and a positive quantity or value limit. A duration may add a time limit; it cannot replace the quantity or value limit. OneTime execution is unavailable through MCP because the API ignores those limits in that mode.
 
 ---
 
