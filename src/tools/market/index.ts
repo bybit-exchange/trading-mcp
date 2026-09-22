@@ -13,6 +13,7 @@ import { getMarketKline } from './getMarketKline.js';
 import { getMarkPriceKline } from './getMarkPriceKline.js';
 import { getNewDeliveryPrice } from './getNewDeliveryPrice.js';
 import { getOpenInterest } from './getOpenInterest.js';
+import { getOptionBaseCoins } from './getOptionBaseCoins.js';
 import { getOrderbook } from './getOrderbook.js';
 import { getOrderPriceLimit } from './getOrderPriceLimit.js';
 import { getPremiumIndexPriceKline } from './getPremiumIndexPriceKline.js';
@@ -37,6 +38,7 @@ export const marketTools = [
   getMarkPriceKline,
   getNewDeliveryPrice,
   getOpenInterest,
+  getOptionBaseCoins,
   getOrderbook,
   getOrderPriceLimit,
   getPremiumIndexPriceKline,

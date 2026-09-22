@@ -5,10 +5,10 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Node.js 20.6+](https://img.shields.io/badge/node-20.6+-blue.svg)](https://nodejs.org/)
 [![MCP](https://img.shields.io/badge/MCP-compatible-purple.svg)](https://modelcontextprotocol.io)
-[![Tools](https://img.shields.io/badge/Tools-382-orange.svg)](#-工具分类)
+[![Tools](https://img.shields.io/badge/Tools-384-orange.svg)](#-工具分类)
 [![Bybit V5 API](https://img.shields.io/badge/Bybit-V5%20API-green.svg)](https://bybit-exchange.github.io/docs/v5/intro)
 
-**生产就绪的 Bybit MCP 服务器 — 382 个工具，覆盖行情数据、交易下单、仓位管理、账户管理、资产查询、借贷、理财和 WebSocket 实时推送**
+**生产就绪的 Bybit MCP 服务器 — 384 个工具，覆盖行情数据、交易下单、仓位管理、账户管理、资产查询、借贷、理财和 WebSocket 实时推送**
 
 [快速开始](#-快速开始) •
 [功能特性](#-功能特性) •
@@ -29,12 +29,15 @@ Bybit MCP 服务器让 **Claude**、**Cursor**、**VS Code** 等支持 MCP 协�
 
 ### 为什么选择 Bybit MCP？
 
-- **完整的 V5 覆盖** — 382 个工具，涵盖行情、交易、仓位、账户、资产、借贷、理财、跟单、WebSocket 和 WS 交易等类别
+- **完整的 V5 覆盖** — 384 个工具，涵盖行情、交易、仓位、账户、资产、借贷、理财、跟单、WebSocket 和 WS 交易等类别
+- **策略交易** — 现货与衍生品 POV，必须设置数量或金额上限，冰山最多拆分 200 笔子单
 - **安全设计** — API 凭证从环境变量读取，不会硬编码在任何地方
-- **免鉴权行情** — 22 个行情工具无需 API Key 即可使用
+- **免鉴权行情** — 23 个行情工具无需 API Key 即可使用
 - **实时数据流** — 27 个 WebSocket 工具，支持订单薄、Ticker、仓位等实时推送
 - **零安装启动** — 通过 `npx bybit-official-trading-server@latest` 即刻运行
 - **全平台兼容** — 支持 Claude Desktop、Cursor、VS Code 及所有 MCP 客户端
+
+POV 必须设置 5–3600 秒的执行间隔，以及正数的数量或金额上限。运行时长可以作为额外的停止条件，但不能替代数量或金额上限。MCP 暂不支持 OneTime 单次执行，因为 API 在该模式下会忽略这些上限。
 
 ---
 
@@ -45,6 +48,7 @@ Bybit MCP 服务器让 **Claude**、**Cursor**、**VS Code** 等支持 MCP 协�
 <td width="50%">
 
 ### 行情数据
+- **期权市场** — 查询可用期权标的并按资产类型筛选
 - **价格与 Ticker** — 现货和衍生品实时报价
 - **订单薄** — 可配置深度的快照数据
 - **K 线** — 历史 OHLCV 蜡烛图数据
@@ -345,7 +349,7 @@ RSA 模式（自生成 API Key）：
 
 | 分类 | 是否需要鉴权 | 工具数 | 说明 |
 |------|------------|------:|------|
-| `market` | 否 | 22 | K 线、订单薄、Ticker、资金费率、持仓量、历史波动率、风险限额、多空比、交割价格、保险基金等 |
+| `market` | 否 | 23 | K 线、订单薄、Ticker、资金费率、持仓量、历史波动率、风险限额、多空比、交割价格、保险基金、期权标的与资产类型筛选 |
 | `account` | 是 | 25 | 钱包余额、交易日志、手续费率、保证金模式、抵押品开关（单个/批量）、对冲模式、限价操作、MMP 修改与重置、期权希腊值、断线保护、防自成交分组、账户合约、可提金额、UTA 借还款与借款历史，以及 UTA2.0 升级为 Pro |
 | `trade` | 是 | 12 | 下单、改单、撤单、批量下单/改单/撤单、实时订单查询、历史订单、现货借贷额度、断线撤单、下单预检查 |
 | `position` | 是 | 12 | 持仓查询、设置杠杆、切换仓位模式、止盈止损、自动追加保证金、手动增减保证金、已平仓盈亏、已平仓仓位、移仓及移仓历史、确认新风险限额、合约符号杠杆信息查询 |
@@ -359,7 +363,7 @@ RSA 模式（自生成 API Key）：
 | `aurora` | 是 | 5 | Aurora AI 策略推荐：首页、创建页、探索页、一键 EasyBot 推荐，以及单个策略详情查询 |
 | `copy-trading-classic` | 是 | 2 | 经典跟单：推荐榜单、创建跟单绑定 |
 | `copy-trading-tradfi` | 是 | 2 | TradFi 跟单（MT5）：推荐榜单、创建跟单绑定 |
-| `strategy` | 是 | 6 | TWAP、Chase Limit、Iceberg 策略订单 — 创建、列表、子订单列表、停止 |
+| `strategy` | 是 | 7 | TWAP、追价、冰山与 POV 策略，按数量或金额下单，现货 POV，冰山最多拆分 200 笔子单，列表查询与停止 |
 | `spot-margin-uta` | 是 | 4 | 现货杠杆（UTA）行情数据：VIP 保证金数据、分层抵押率、历史利率、仓位档位 |
 | `spot-margin-trade-uta` | 混合 | 16 | 现货杠杆（UTA）交易：切换模式、设置杠杆、交易状态、最大可借、币种状态、可还款额度、自动还款模式（查询/设置）、定期借贷（借款/续期、行情/订单/合约）、借贷负债，以及定期/活期可借额度 |
 | `crypto-loan-new` | 混合 | 7 | 质押借币（通用）：可借与抵押品数据、最大抵押额、最大可借、调整 LTV、持仓、调整历史 |
@@ -386,7 +390,7 @@ RSA 模式（自生成 API Key）：
 | `wstrade` | 是 | 6 | WebSocket 交易操作（/v5/trade 端点）：下单、撤单、改单、批量下单、批量撤单、批量改单 |
 | `subscription` | 是 | 4 | WebSocket 订阅生命周期管理：启动/停止订阅、列出活跃订阅、读取缓冲消息 |
 
-**合计：382 个工具**
+**合计：384 个工具**
 
 ---
 
