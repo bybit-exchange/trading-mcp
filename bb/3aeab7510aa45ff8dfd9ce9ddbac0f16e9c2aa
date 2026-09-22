@@ -1,0 +1,39 @@
+README.md
+  s_64feb2f191668c::t_27120350b6a203 8,11,32-33,35,49,350,364,391
+README.zh.md
+  s_64feb2f191668c::t_840325a5b6c874 8,11,32-33,35,49,350,364,391
+package-lock.json
+  s_64feb2f191668c::t_da7b0909ca10f9 2-3,8-10,18,25,31,1060,1794
+package.json
+  s_64feb2f191668c::t_447169ff0602f0 3
+src/server.ts
+  s_64feb2f191668c::t_0f6a6671e97545 41
+src/tools/market/getOptionBaseCoins.ts
+  s_64feb2f191668c::t_6d6786d6353d8d 1-15
+src/tools/market/index.ts
+  s_64feb2f191668c::t_5c3492d2e26b84 16,41
+src/tools/strategy/createIcebergStrategy.ts
+  s_64feb2f191668c::t_d71403595a0352 7,12-13,16-17,27-36
+src/tools/strategy/createPovStrategy.ts
+  s_64feb2f191668c::t_6522c3fa2fd107 1-48
+src/tools/strategy/index.ts
+  s_64feb2f191668c::t_d48a8c8be190ca 4,13
+src/version.ts
+  s_64feb2f191668c::t_5d1592c6f0809c 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2-bit.1+5a7225d",
+  "base_commit_sha": "bb3aeab7510aa45ff8dfd9ce9ddbac0f16e9c2aa",
+  "prompts": {},
+  "sessions": {
+    "s_64feb2f191668c": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0c81a-bbf4-7ae1-80de-ba3db452e194",
+        "model": "gpt-6-astra"
+      },
+      "human_author": "paul.yang <paul.yang@bybit.com>"
+    }
+  }
+}
