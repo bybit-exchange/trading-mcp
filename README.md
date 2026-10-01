@@ -5,10 +5,10 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Node.js 20.6+](https://img.shields.io/badge/node-20.6+-blue.svg)](https://nodejs.org/)
 [![MCP](https://img.shields.io/badge/MCP-compatible-purple.svg)](https://modelcontextprotocol.io)
-[![Tools](https://img.shields.io/badge/Tools-388-orange.svg)](#-available-tool-categories)
+[![Tools](https://img.shields.io/badge/Tools-392-orange.svg)](#-available-tool-categories)
 [![Bybit V5 API](https://img.shields.io/badge/Bybit-V5%20API-green.svg)](https://bybit-exchange.github.io/docs/v5/intro)
 
-**A production-ready MCP server for Bybit — 388 tools covering market data, trading, positions, account management, assets, loans, earn products, tax reports, and real-time WebSocket streams**
+**A production-ready MCP server for Bybit — 392 tools covering market data, trading, positions, account management, assets, loans, earn products, tax reports, and real-time WebSocket streams**
 
 [Quick Start](#-quick-start) •
 [Features](#-features) •
@@ -29,7 +29,7 @@ Bybit MCP Server enables AI assistants like **Claude**, **Cursor**, **VS Code**,
 
 ### Why Bybit MCP?
 
-- **Complete V5 Coverage** — 388 tools across market data, trading, positions, account, asset, loans, earn, tax reports, copy trading, WebSocket, and WS-trade categories
+- **Complete V5 Coverage** — 392 tools across market data, trading, positions, account, asset, loans, earn, tax reports, copy trading, WebSocket, and WS-trade categories
 - **Strategy Trading** — POV for spot and derivatives with required quantity or value limits, Iceberg splitting into up to 200 child orders
 - **Secure by Design** — API credentials are read from environment variables at runtime, never hardcoded
 - **Read-Only Mode** — All 23 market data tools work without any API key
@@ -66,7 +66,7 @@ POV execution requires a 5–3600 second interval and a positive quantity or val
 - **Collateral** — Settings, Greeks, MMP state
 - **Asset Overview** — Portfolio margin, delivery/settlement records
 - **Multi-Account** — Aggregated parent and sub-account assets
-- **Tax Reports** — Batch-create and query tax report export tasks
+- **Tax Reports** — Create, track, download, and batch-query tax report export tasks
 
 </td>
 </tr>
@@ -373,7 +373,7 @@ Run **Developer: Reload Window** from the Command Palette (`Cmd+Shift+P` / `Ctrl
 | `institutional-loan` | Mixed | 2 | Institutional lending product info, hedge product coin delta amount |
 | `fiat-convert` | Mixed | 7 | Fiat conversion: coin list, reference price, quote apply, trade execute, trade query, trade history, balance |
 | `earn` | Mixed | 11 | Earn product queries, stake/redeem orders, order history, positions, yield history, hourly yield, APR history, position modify, interest-rate coupons and reward cards, and Flexible Saving auto-savings settings |
-| `tax` | Yes | 2 | Batch-create tax report export tasks and query their child-task status |
+| `tax` | Yes | 6 | Create, track, download, and batch-query tax report export tasks, plus registration-time lookup |
 | `advanceearn` | Mixed | 5 | Advance Earn: product queries, place order, positions, order history, product extra info |
 | `smartleverage` | Yes | 1 | Smart Leverage: redeem estimation amount list |
 | `doublewin` | Yes | 1 | Double Win: leverage and expiry queries |
@@ -392,7 +392,7 @@ Run **Developer: Reload Window** from the Command Palette (`Cmd+Shift+P` / `Ctrl
 | `wstrade` | Yes | 6 | WebSocket trade operations via /v5/trade: place order, cancel order, amend order, batch place, batch cancel, batch amend |
 | `subscription` | Yes | 4 | WebSocket subscription lifecycle: start/stop a subscription, list active subscriptions, read buffered messages |
 
-**Total: 388 tools**
+**Total: 392 tools**
 
 ---
 
