@@ -1,0 +1,26 @@
+README.md
+  h_df8eef7955e0ba 8,11,32,69,376,395
+README.zh.md
+  h_df8eef7955e0ba 8,11,32,69,376,395
+src/tools/tax/createTaxReport.ts
+  h_df8eef7955e0ba 1-18
+src/tools/tax/getRegisterTime.ts
+  h_df8eef7955e0ba 1-15
+src/tools/tax/getTaxReportStatus.ts
+  h_df8eef7955e0ba 1-15
+src/tools/tax/getTaxReportUrl.ts
+  h_df8eef7955e0ba 1-15
+src/tools/tax/index.ts
+  h_df8eef7955e0ba 4-7,12-15
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2-bit.2+419f699",
+  "base_commit_sha": "46cc2b326d8b476eea345b4ffedee1a482064f80",
+  "prompts": {},
+  "humans": {
+    "h_df8eef7955e0ba": {
+      "author": "paul.yang <paul.yang@bybit.com>"
+    }
+  }
+}
