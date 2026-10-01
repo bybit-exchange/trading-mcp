@@ -5,10 +5,10 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Node.js 20.6+](https://img.shields.io/badge/node-20.6+-blue.svg)](https://nodejs.org/)
 [![MCP](https://img.shields.io/badge/MCP-compatible-purple.svg)](https://modelcontextprotocol.io)
-[![Tools](https://img.shields.io/badge/Tools-384-orange.svg)](#-工具分类)
+[![Tools](https://img.shields.io/badge/Tools-388-orange.svg)](#-工具分类)
 [![Bybit V5 API](https://img.shields.io/badge/Bybit-V5%20API-green.svg)](https://bybit-exchange.github.io/docs/v5/intro)
 
-**生产就绪的 Bybit MCP 服务器 — 384 个工具，覆盖行情数据、交易下单、仓位管理、账户管理、资产查询、借贷、理财和 WebSocket 实时推送**
+**生产就绪的 Bybit MCP 服务器 — 388 个工具，覆盖行情数据、交易下单、仓位管理、账户管理、资产查询、借贷、理财、税务报告和 WebSocket 实时推送**
 
 [快速开始](#-快速开始) •
 [功能特性](#-功能特性) •
@@ -29,7 +29,7 @@ Bybit MCP 服务器让 **Claude**、**Cursor**、**VS Code** 等支持 MCP 协�
 
 ### 为什么选择 Bybit MCP？
 
-- **完整的 V5 覆盖** — 384 个工具，涵盖行情、交易、仓位、账户、资产、借贷、理财、跟单、WebSocket 和 WS 交易等类别
+- **完整的 V5 覆盖** — 388 个工具，涵盖行情、交易、仓位、账户、资产、借贷、理财、税务报告、跟单、WebSocket 和 WS 交易等类别
 - **策略交易** — 现货与衍生品 POV，必须设置数量或金额上限，冰山最多拆分 200 笔子单
 - **安全设计** — API 凭证从环境变量读取，不会硬编码在任何地方
 - **免鉴权行情** — 23 个行情工具无需 API Key 即可使用
@@ -66,6 +66,7 @@ POV 必须设置 5–3600 秒的执行间隔，以及正数的数量或金额上
 - **抵押品** — 设置、期权希腊值、MMP 状态
 - **资产总览** — 组合保证金、交割/结算记录
 - **多账户** — 母子账户聚合资产查询
+- **税务报告** — 批量创建并查询税务报告导出任务
 
 </td>
 </tr>
@@ -371,7 +372,8 @@ RSA 模式（自生成 API Key）：
 | `crypto-loan-fixed-term` | 是 | 16 | 定期质押借币：借款/出借报价、下借款/出借单、取消订单、合约与订单信息、全额还款、抵押品还款、续期（含续期信息）、还款历史、可借库存查询 |
 | `institutional-loan` | 混合 | 2 | 机构借贷：借贷产品信息查询、对冲产品 coin delta 数量查询 |
 | `fiat-convert` | 混合 | 7 | 法币兑换：币种列表、参考价、报价申请、成交执行、成交查询、成交历史、余额查询 |
-| `earn` | 混合 | 9 | 基础理财：查询理财产品、申购/赎回、申购赎回记录、持仓查询、收益历史、小时收益、APR 历史、修改持仓、利率券与双币奖励卡列表 |
+| `earn` | 混合 | 11 | 基础理财：查询理财产品、申购/赎回、申购赎回记录、持仓查询、收益历史、小时收益、APR 历史、修改持仓、利率券与双币奖励卡列表，以及活期储蓄自动储蓄设置 |
+| `tax` | 是 | 2 | 批量创建税务报告导出任务并查询子任务状态 |
 | `advanceearn` | 混合 | 5 | 高级理财：查询产品、下单、持仓查询、订单查询、产品扩展信息 |
 | `smartleverage` | 是 | 1 | 智能杠杆：查询赎回预估金额 |
 | `doublewin` | 是 | 1 | 双赢：查询杠杆倍数与到期时间 |
@@ -390,7 +392,7 @@ RSA 模式（自生成 API Key）：
 | `wstrade` | 是 | 6 | WebSocket 交易操作（/v5/trade 端点）：下单、撤单、改单、批量下单、批量撤单、批量改单 |
 | `subscription` | 是 | 4 | WebSocket 订阅生命周期管理：启动/停止订阅、列出活跃订阅、读取缓冲消息 |
 
-**合计：384 个工具**
+**合计：388 个工具**
 
 ---
 
