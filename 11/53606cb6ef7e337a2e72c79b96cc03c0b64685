@@ -1,0 +1,30 @@
+README.md
+  h_df8eef7955e0ba 8,11,32,69,375-376,395
+README.zh.md
+  h_df8eef7955e0ba 8,11,32,69,375-376,395
+src/tools/earn/editEarnAutoSavings.ts
+  h_df8eef7955e0ba 1-17
+src/tools/earn/index.ts
+  h_df8eef7955e0ba 2,9,15,22
+src/tools/earn/listEarnAutoSavings.ts
+  h_df8eef7955e0ba 1-15
+src/tools/index.ts
+  h_df8eef7955e0ba 37,80
+src/tools/tax/batchCreateTaxReports.ts
+  h_df8eef7955e0ba 1-19
+src/tools/tax/batchQueryTaxReports.ts
+  h_df8eef7955e0ba 1-15
+src/tools/tax/index.ts
+  h_df8eef7955e0ba 1-8
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2-bit.2+419f699",
+  "base_commit_sha": "1153606cb6ef7e337a2e72c79b96cc03c0b64685",
+  "prompts": {},
+  "humans": {
+    "h_df8eef7955e0ba": {
+      "author": "paul.yang <paul.yang@bybit.com>"
+    }
+  }
+}
