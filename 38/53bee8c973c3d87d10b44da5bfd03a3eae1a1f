@@ -1,0 +1,18 @@
+package-lock.json
+  h_df8eef7955e0ba 13,477-479,1064-1066,1070,1072-1073,1075-1080,1082-1091,1352-1354,1485-1487,1490-1491,1510-1512,1693-1695,1705-1707,1756-1758,1805-1807,1809-1818,2159-2161,2164-2165,2381-2383,2387-2388,2641-2643,2646,2651-2668,2739-2741
+package.json
+  h_df8eef7955e0ba 39
+src/tools/earn/editEarnAutoSavings.ts
+  h_df8eef7955e0ba 12,16
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2-bit.2+419f699",
+  "base_commit_sha": "3853bee8c973c3d87d10b44da5bfd03a3eae1a1f",
+  "prompts": {},
+  "humans": {
+    "h_df8eef7955e0ba": {
+      "author": "paul.yang <paul.yang@bybit.com>"
+    }
+  }
+}
