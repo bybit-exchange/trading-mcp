@@ -1,0 +1,21 @@
+src/tools/tax/batchCreateTaxReports.ts
+  s_b2a424873a062b::t_33b4da8fbdf83f 14,17-18,20
+src/tools/tax/createTaxReport.ts
+  s_b2a424873a062b::t_e0f987ab675389 13,16-17,19
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2-bit.2+419f699",
+  "base_commit_sha": "1dc2cb664db3829c2da9903f18d0c21996bb152b",
+  "prompts": {},
+  "sessions": {
+    "s_b2a424873a062b": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0f65f-2b42-7803-81d8-126fb4ecacc1",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "paul.yang <paul.yang@bybit.com>"
+    }
+  }
+}
