@@ -1,6 +1,7 @@
 // getTaxReportUrl.ts — auto-generated, do not edit
 import { z } from 'zod';
 import { restClient } from '../../client/rest-client.js';
+import { sanitizeTaxDownloadInfoField } from '../../utils/tax-download.js';
 
 export const getTaxReportUrl = {
   name: 'getTaxReportUrl',
@@ -10,6 +11,9 @@ export const getTaxReportUrl = {
   }),
   annotations: {"readOnlyHint":false,"destructiveHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
-    return restClient.postAuth("/fht/compliance/tax/v3/private/url", input);
+    const result = await restClient.postAuth("/fht/compliance/tax/v3/private/url", input) as any;
+        if (result?.result?.url === undefined) throw new Error('Tax download response is missing a URL descriptor.');
+    result.result.url = sanitizeTaxDownloadInfoField(result.result.url);
+    return result;
   },
 };
