@@ -35,6 +35,8 @@ export const createIcebergStrategy = {
     { message: 'Value mode requires subPositionValue or orderCount' }
   ),
   annotations: {"readOnlyHint":false,"destructiveHint":true,"openWorldHint":true},
+  requiresApproval: true,
+  approvalTarget: "/v5/strategy/create",
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/strategy/create", (({ confirm: _confirm, ...rest }) => rest)(input));
   },

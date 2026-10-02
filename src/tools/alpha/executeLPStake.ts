@@ -24,6 +24,8 @@ export const executeLPStake = {
     { message: 'Use either rangeLower/rangeUpper OR priceLower/priceUpper, not both' }
   ),
   annotations: {"readOnlyHint":false,"destructiveHint":true,"openWorldHint":true},
+  requiresApproval: true,
+  approvalTarget: "/v5/alpha/lp/stake",
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/alpha/lp/stake", (({ confirm: _confirm, ...rest }) => rest)(input));
   },

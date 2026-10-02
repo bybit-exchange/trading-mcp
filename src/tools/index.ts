@@ -34,6 +34,7 @@ import { spotMarginUtaTools } from './spot-margin-uta/index.js';
 import { spreadTradingTools } from './spread-trading/index.js';
 import { strategyTools } from './strategy/index.js';
 import { subscriptionTools } from './subscription/index.js';
+import { taxTools } from './tax/index.js';
 import { tokensplashTools } from './tokensplash/index.js';
 import { tradeTools } from './trade/index.js';
 import { userTools } from './user/index.js';
@@ -76,6 +77,7 @@ export const allTools = [
   ...spreadTradingTools,
   ...strategyTools,
   ...subscriptionTools,
+  ...taxTools,
   ...tokensplashTools,
   ...tradeTools,
   ...userTools,
