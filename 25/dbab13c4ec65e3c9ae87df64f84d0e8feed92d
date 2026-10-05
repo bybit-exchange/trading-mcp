@@ -1,0 +1,64 @@
+README.md
+  h_df8eef7955e0ba 170
+README.zh.md
+  h_df8eef7955e0ba 170
+src/tools/account/resetMmp.ts
+  h_df8eef7955e0ba 12-13
+src/tools/account/setBatchCollateralSwitch.ts
+  h_df8eef7955e0ba 12-13
+src/tools/account/setCollateralSwitch.ts
+  h_df8eef7955e0ba 13-14
+src/tools/account/setHedgingMode.ts
+  h_df8eef7955e0ba 12-13
+src/tools/account/setMarginMode.ts
+  h_df8eef7955e0ba 12-13
+src/tools/account/setMmp.ts
+  h_df8eef7955e0ba 16-17
+src/tools/account/setPriceLimit.ts
+  h_df8eef7955e0ba 13-14
+src/tools/asset/convert/QuoteApply.ts
+  h_df8eef7955e0ba 21-22
+src/tools/asset/convert/SmallAssetQuote.ts
+  h_df8eef7955e0ba 14-15
+src/tools/asset/deposit/setDefaultDepositToAccount.ts
+  h_df8eef7955e0ba 12-13
+src/tools/broker/setBrokerApiLimit.ts
+  h_df8eef7955e0ba 12-13
+src/tools/fiat-convert/applyQuote.ts
+  h_df8eef7955e0ba 17-18
+src/tools/fixedterm/setFixedTermAutoInvest.ts
+  h_df8eef7955e0ba 15-16
+src/tools/liquiditymining/claimLiquidityInterest.ts
+  h_df8eef7955e0ba 12-13
+src/tools/position/setAutoAddMargin.ts
+  h_df8eef7955e0ba 15-16
+src/tools/position/setLeverage.ts
+  h_df8eef7955e0ba 15-16
+src/tools/position/switchPositionMode.ts
+  h_df8eef7955e0ba 15-16
+src/tools/spot-margin-trade-uta/setAutoRepayMode.ts
+  h_df8eef7955e0ba 13-14
+src/tools/spot-margin-trade-uta/spotMarginSetLeverage.ts
+  h_df8eef7955e0ba 13-14
+src/tools/spot-margin-trade-uta/spotMarginSwitchMode.ts
+  h_df8eef7955e0ba 12-13
+src/tools/tax/getRegisterTime.ts
+  h_df8eef7955e0ba 12-13
+src/tools/tax/getTaxReportStatus.ts
+  h_df8eef7955e0ba 12-13
+src/tools/tax/getTaxReportUrl.ts
+  h_df8eef7955e0ba 13-14
+src/tools/trade/setDcp.ts
+  h_df8eef7955e0ba 13-14
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2-bit.2+419f699",
+  "base_commit_sha": "25dbab13c4ec65e3c9ae87df64f84d0e8feed92d",
+  "prompts": {},
+  "humans": {
+    "h_df8eef7955e0ba": {
+      "author": "paul.yang <paul.yang@bybit.com>"
+    }
+  }
+}
