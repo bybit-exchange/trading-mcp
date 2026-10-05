@@ -9,6 +9,8 @@ export const resetMmp = {
     baseCoin: z.string(),
   }),
   annotations: {"readOnlyHint":false,"destructiveHint":false,"openWorldHint":true},
+  requiresApproval: true,
+  approvalTarget: "/v5/account/mmp-reset",
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/account/mmp-reset", input);
   },

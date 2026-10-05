@@ -167,7 +167,7 @@ Market data tools work without credentials. Authenticated tools require `BYBIT_A
 
 ## Usage with Claude Desktop
 
-> **First-time setup:** Claude Desktop will show an authorization prompt the first time each tool is called. Click **"Always allow"** to permanently approve it — you won't be asked again.
+> **First-time setup:** Claude Desktop may offer **"Always allow"** for tool access. Each write operation still requires a separate approval form. Use a trusted MCP client: the server relies on its approval response.
 
 **1. Find your config file**
 

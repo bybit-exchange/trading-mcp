@@ -9,6 +9,8 @@ export const getTaxReportStatus = {
     queryId: z.string(),
   }),
   annotations: {"readOnlyHint":false,"destructiveHint":true,"openWorldHint":true},
+  requiresApproval: true,
+  approvalTarget: "/fht/compliance/tax/v3/private/status",
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/fht/compliance/tax/v3/private/status", input);
   },

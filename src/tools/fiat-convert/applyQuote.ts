@@ -14,6 +14,8 @@ export const applyQuote = {
     requestCoinType: z.enum(["fiat", "crypto"]).default("fiat").optional(),
   }),
   annotations: {"readOnlyHint":false,"destructiveHint":true,"openWorldHint":true},
+  requiresApproval: true,
+  approvalTarget: "/v5/fiat/quote-apply",
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/fiat/quote-apply", input);
   },

@@ -9,6 +9,8 @@ export const spotMarginSwitchMode = {
     spotMarginMode: z.enum(["0", "1"]),
   }),
   annotations: {"readOnlyHint":false,"destructiveHint":false,"openWorldHint":true},
+  requiresApproval: true,
+  approvalTarget: "/v5/spot-margin-trade/switch-mode",
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/spot-margin-trade/switch-mode", input);
   },

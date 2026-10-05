@@ -9,6 +9,8 @@ export const getRegisterTime = {
 
   }),
   annotations: {"readOnlyHint":false,"destructiveHint":true,"openWorldHint":true},
+  requiresApproval: true,
+  approvalTarget: "/fht/compliance/tax/v3/private/registertime",
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/fht/compliance/tax/v3/private/registertime", input);
   },

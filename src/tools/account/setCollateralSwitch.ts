@@ -10,6 +10,8 @@ export const setCollateralSwitch = {
     collateralSwitch: z.enum(["ON", "OFF"]),
   }),
   annotations: {"readOnlyHint":false,"destructiveHint":false,"openWorldHint":true},
+  requiresApproval: true,
+  approvalTarget: "/v5/account/set-collateral-switch",
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/account/set-collateral-switch", input);
   },

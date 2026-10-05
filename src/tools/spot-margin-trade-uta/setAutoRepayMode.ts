@@ -10,6 +10,8 @@ export const setAutoRepayMode = {
     autoRepayMode: z.enum(["1", "0"]),
   }),
   annotations: {"readOnlyHint":false,"destructiveHint":false,"openWorldHint":true},
+  requiresApproval: true,
+  approvalTarget: "/v5/spot-margin-trade/set-auto-repay-mode",
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/spot-margin-trade/set-auto-repay-mode", input);
   },

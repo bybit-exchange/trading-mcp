@@ -12,6 +12,8 @@ export const switchPositionMode = {
     mode: z.enum(["0", "3"]),
   }),
   annotations: {"readOnlyHint":false,"destructiveHint":false,"openWorldHint":true},
+  requiresApproval: true,
+  approvalTarget: "/v5/position/switch-mode",
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/position/switch-mode", input);
   },

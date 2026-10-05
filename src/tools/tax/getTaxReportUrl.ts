@@ -10,6 +10,8 @@ export const getTaxReportUrl = {
     queryId: z.string(),
   }),
   annotations: {"readOnlyHint":false,"destructiveHint":true,"openWorldHint":true},
+  requiresApproval: true,
+  approvalTarget: "/fht/compliance/tax/v3/private/url",
   handler: async (input: Record<string, unknown>) => {
     const result = await restClient.postAuth("/fht/compliance/tax/v3/private/url", input) as any;
         if (result?.result?.url === undefined) throw new Error('Tax download response is missing a URL descriptor.');
