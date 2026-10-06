@@ -1,0 +1,20 @@
+package-lock.json
+  h_df8eef7955e0ba 3,9
+package.json
+  h_df8eef7955e0ba 3
+src/server.ts
+  h_df8eef7955e0ba 45
+src/version.ts
+  h_df8eef7955e0ba 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2-bit.2+419f699",
+  "base_commit_sha": "3cc45d0832fb371458626295c7b0f2a04f8cfe20",
+  "prompts": {},
+  "humans": {
+    "h_df8eef7955e0ba": {
+      "author": "paul.yang <paul.yang@bybit.com>"
+    }
+  }
+}
