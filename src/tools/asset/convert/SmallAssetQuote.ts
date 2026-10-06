@@ -11,6 +11,8 @@ export const SmallAssetQuote = {
     fromCoinList: z.array(z.string()),
   }),
   annotations: {"readOnlyHint":false,"destructiveHint":true,"openWorldHint":true},
+  requiresApproval: true,
+  approvalTarget: "/v5/asset/covert/get-quote",
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/asset/covert/get-quote", input);
   },

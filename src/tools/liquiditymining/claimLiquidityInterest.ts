@@ -9,6 +9,8 @@ export const claimLiquidityInterest = {
     productId: z.string(),
   }),
   annotations: {"readOnlyHint":false,"destructiveHint":true,"openWorldHint":true},
+  requiresApproval: true,
+  approvalTarget: "/v5/earn/liquidity-mining/claim-interest",
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/earn/liquidity-mining/claim-interest", input);
   },

@@ -10,6 +10,8 @@ export const setPriceLimit = {
     modifyEnable: z.boolean(),
   }),
   annotations: {"readOnlyHint":false,"destructiveHint":false,"openWorldHint":true},
+  requiresApproval: true,
+  approvalTarget: "/v5/account/set-limit-px-action",
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/account/set-limit-px-action", input);
   },

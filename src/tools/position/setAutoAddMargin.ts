@@ -12,6 +12,8 @@ export const setAutoAddMargin = {
     positionIdx: z.enum(["0", "1", "2"]).optional(),
   }),
   annotations: {"readOnlyHint":false,"destructiveHint":false,"openWorldHint":true},
+  requiresApproval: true,
+  approvalTarget: "/v5/position/set-auto-add-margin",
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/position/set-auto-add-margin", input);
   },

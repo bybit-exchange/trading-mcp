@@ -10,6 +10,8 @@ export const setDcp = {
     timeWindow: z.number().int().min(3).max(300),
   }),
   annotations: {"readOnlyHint":false,"destructiveHint":false,"openWorldHint":true},
+  requiresApproval: true,
+  approvalTarget: "/v5/order/disconnected-cancel-all",
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/order/disconnected-cancel-all", input);
   },

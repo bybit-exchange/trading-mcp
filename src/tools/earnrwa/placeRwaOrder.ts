@@ -22,6 +22,8 @@ export const placeRwaOrder = {
     { message: 'redeemShares is required when orderType=Redeem' }
   ),
   annotations: {"readOnlyHint":false,"destructiveHint":true,"openWorldHint":true},
+  requiresApproval: true,
+  approvalTarget: "/v5/earn/rwa/place-order",
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/earn/rwa/place-order", (({ confirm: _confirm, ...rest }) => rest)(input));
   },

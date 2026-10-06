@@ -9,6 +9,8 @@ export const setMarginMode = {
     setMarginMode: z.enum(["ISOLATED_MARGIN", "REGULAR_MARGIN", "PORTFOLIO_MARGIN"]),
   }),
   annotations: {"readOnlyHint":false,"destructiveHint":false,"openWorldHint":true},
+  requiresApproval: true,
+  approvalTarget: "/v5/account/set-margin-mode",
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/account/set-margin-mode", input);
   },

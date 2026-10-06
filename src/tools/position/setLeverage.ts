@@ -12,6 +12,8 @@ export const setLeverage = {
     sellLeverage: z.string(),
   }),
   annotations: {"readOnlyHint":false,"destructiveHint":false,"openWorldHint":true},
+  requiresApproval: true,
+  approvalTarget: "/v5/position/set-leverage",
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/position/set-leverage", input);
   },

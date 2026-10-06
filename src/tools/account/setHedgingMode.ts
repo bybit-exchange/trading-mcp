@@ -9,6 +9,8 @@ export const setHedgingMode = {
     setHedgingMode: z.enum(["ON", "OFF"]),
   }),
   annotations: {"readOnlyHint":false,"destructiveHint":false,"openWorldHint":true},
+  requiresApproval: true,
+  approvalTarget: "/v5/account/set-hedging-mode",
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/account/set-hedging-mode", input);
   },

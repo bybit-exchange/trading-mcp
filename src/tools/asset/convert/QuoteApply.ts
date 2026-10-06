@@ -18,6 +18,8 @@ export const QuoteApply = {
     paramValue: z.string().optional(),
   }),
   annotations: {"readOnlyHint":false,"destructiveHint":true,"openWorldHint":true},
+  requiresApproval: true,
+  approvalTarget: "/v5/asset/exchange/quote-apply",
   handler: async (input: Record<string, unknown>) => {
     return restClient.postAuth("/v5/asset/exchange/quote-apply", input);
   },
