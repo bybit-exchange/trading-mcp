@@ -1,0 +1,25 @@
+package-lock.json
+  s_8be193592fa21b::t_4c6b46d82d2388 3,9,2146-2148,2156-2159
+package.json
+  s_8be193592fa21b::t_cfe63350ed1085 3
+src/server.ts
+  s_8be193592fa21b::t_00f4f9350d02e8 45
+src/version.ts
+  s_8be193592fa21b::t_dba9c09c69962b 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2-bit.2+419f699",
+  "base_commit_sha": "b7f4ed6a3a71c9a60c7d415b00fa39e1509ffe0b",
+  "prompts": {},
+  "sessions": {
+    "s_8be193592fa21b": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0fab5-2edc-7e90-902b-86deca74ac24",
+        "model": "gpt-5.6-luna"
+      },
+      "human_author": "paul.yang <paul.yang@bybit.com>"
+    }
+  }
+}
