@@ -1,0 +1,14 @@
+src/tools/tokensplash/getTokenSplashUserActivityParams.ts
+  h_df8eef7955e0ba 7
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2-bit.2+419f699",
+  "base_commit_sha": "609d0957adfb41782a057d31d5c2daeee4b589c6",
+  "prompts": {},
+  "humans": {
+    "h_df8eef7955e0ba": {
+      "author": "paul.yang <paul.yang@bybit.com>"
+    }
+  }
+}
