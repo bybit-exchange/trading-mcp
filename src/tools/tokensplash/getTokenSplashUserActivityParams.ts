@@ -6,8 +6,8 @@ export const getTokenSplashUserActivityParams = {
   name: 'getTokenSplashUserActivityParams',
   description: "Returns the authenticated user's participation and trade-task progress for\nToken Splash activities that are still in the reward-distribution window.\n\nOnly activities where the user has registered AND that have not yet reached\ntheir announcement time are included. Deposit-only task types are excluded.\n\nAI agent can use this to show a user their current trading progress and\nestimated reward across active Token Splash activities.\n\nAgent hint: Use this endpoint to fetch the current user's trade progress in Token Splash\nactivities. Filter by projectId or activityCoin to narrow results.\nThe tradeTask object shows how much has been traded, what is required,\nand the estimated reward so far.\nIn each tradeTask, tradeToken is the token counted by the trade task (the activity token ID for on-chain tasks, or the configured trade token otherwise). tradeUnit is the stablecoin used to denominate trade value. Interpret tradeRequiredAmount and tradedAmount in tradeUnit, not as tradeToken quantities.",
   inputSchema: z.object({
-    projectId: z.string().optional(),
-    activityCoin: z.string().optional(),
+    projectId: z.string().max(64).optional(),
+    activityCoin: z.string().max(20).optional(),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},
   handler: async (input: Record<string, unknown>) => {
