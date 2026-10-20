@@ -1,0 +1,40 @@
+README.md
+  h_df8eef7955e0ba 8,11,32-33,81,362,397
+README.zh.md
+  h_df8eef7955e0ba 8,11,32-33,81,362,397
+package-lock.json
+  h_df8eef7955e0ba 3,9
+package.json
+  h_df8eef7955e0ba 3
+src/client/rest-client.ts
+  h_df8eef7955e0ba 29-32
+src/server.ts
+  h_df8eef7955e0ba 45
+src/tools/index.ts
+  h_df8eef7955e0ba 30,74
+src/tools/referral/getReferralCampaignRewards.ts
+  h_df8eef7955e0ba 1-15
+src/tools/referral/getReferralCommissionRecords.ts
+  h_df8eef7955e0ba 1-20
+src/tools/referral/getReferralUserIdentityProfile.ts
+  h_df8eef7955e0ba 1-15
+src/tools/referral/getReferralUserInvitations.ts
+  h_df8eef7955e0ba 1-20
+src/tools/referral/index.ts
+  h_df8eef7955e0ba 1-12
+src/utils/rate-limiter.ts
+  h_df8eef7955e0ba 21-24
+src/version.ts
+  h_df8eef7955e0ba 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2-bit.2+419f699",
+  "base_commit_sha": "3d75f3b7bab23c95b96dddb39c38caa8c401f72b",
+  "prompts": {},
+  "humans": {
+    "h_df8eef7955e0ba": {
+      "author": "paul.yang <paul.yang@bybit.com>"
+    }
+  }
+}
