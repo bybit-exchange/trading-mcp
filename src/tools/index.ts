@@ -27,6 +27,7 @@ import { marketTools } from './market/index.js';
 import { p2pTools } from './p2p/index.js';
 import { positionTools } from './position/index.js';
 import { puzzleTools } from './puzzle/index.js';
+import { referralTools } from './referral/index.js';
 import { rfqTradingTools } from './rfq-trading/index.js';
 import { smartleverageTools } from './smartleverage/index.js';
 import { spotMarginTradeUtaTools } from './spot-margin-trade-uta/index.js';
@@ -70,6 +71,7 @@ export const allTools = [
   ...p2pTools,
   ...positionTools,
   ...puzzleTools,
+  ...referralTools,
   ...rfqTradingTools,
   ...smartleverageTools,
   ...spotMarginTradeUtaTools,

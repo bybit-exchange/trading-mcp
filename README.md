@@ -5,10 +5,10 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Node.js 20.6+](https://img.shields.io/badge/node-20.6+-blue.svg)](https://nodejs.org/)
 [![MCP](https://img.shields.io/badge/MCP-compatible-purple.svg)](https://modelcontextprotocol.io)
-[![Tools](https://img.shields.io/badge/Tools-392-orange.svg)](#-available-tool-categories)
+[![Tools](https://img.shields.io/badge/Tools-396-orange.svg)](#-available-tool-categories)
 [![Bybit V5 API](https://img.shields.io/badge/Bybit-V5%20API-green.svg)](https://bybit-exchange.github.io/docs/v5/intro)
 
-**A production-ready MCP server for Bybit — 392 tools covering market data, trading, positions, account management, assets, loans, earn products, tax reports, and real-time WebSocket streams**
+**A production-ready MCP server for Bybit — 396 tools covering market data, trading, positions, account management, assets, loans, earn products, referral queries, tax reports, and real-time WebSocket streams**
 
 [Quick Start](#-quick-start) •
 [Features](#-features) •
@@ -29,7 +29,8 @@ Bybit MCP Server enables AI assistants like **Claude**, **Cursor**, **VS Code**,
 
 ### Why Bybit MCP?
 
-- **Complete V5 Coverage** — 392 tools across market data, trading, positions, account, asset, loans, earn, tax reports, copy trading, WebSocket, and WS-trade categories
+- **Complete V5 Coverage** — 396 tools across market data, trading, positions, account, asset, loans, earn, referrals, tax reports, copy trading, WebSocket, and WS-trade categories
+- **Referral Queries** — View campaign reward rules, your referral identity, invitations, and commission records
 - **Strategy Trading** — POV for spot and derivatives with required quantity or value limits, Iceberg splitting into up to 200 child orders
 - **Secure by Design** — API credentials are read from environment variables at runtime, never hardcoded
 - **Read-Only Mode** — All 23 market data tools work without any API key
@@ -77,7 +78,7 @@ POV execution requires a 5–3600 second interval and a positive quantity or val
 - **API Key Info** — Permissions, VIP level, rate limits
 - **Sub-Account Management** — List and query sub-accounts
 - **Member Types** — Account type queries per member
-- **Referral & Affiliate** — Invitation and referral queries
+- **Referral & Affiliate** — Campaign rewards, identity, invitations, and commission queries
 
 </td>
 <td width="50%">
@@ -358,6 +359,7 @@ Run **Developer: Reload Window** from the Command Palette (`Cmd+Shift+P` / `Ctrl
 | `spread-trading` | Mixed | 12 | Spread instruments, orderbook, tickers, recent trades, create/amend/cancel spread orders, open orders, order history, trade history, max order quantity |
 | `asset` | Yes | 35 | Asset overview, portfolio margin, delivery/settlement records, aggregated parent+sub account assets, funding history, coin/chain info, transfer & coin-balance queries, deposit record/address queries, withdraw record/address and withdrawable-amount queries, currency convert (quote/execute/history) and dust conversion |
 | `user` | Yes | 8 | Read-only user & sub-account info: API key info & permissions, sub-account and escrow sub-account listings, member account type, referral code and referral (invited-user) queries |
+| `referral` | Yes | 4 | Read-only campaign reward rules, referral identity, invitation records, and commission records |
 | `affiliate` | Yes | 2 | Affiliate user list and per-user referral information |
 | `broker` | Yes | 8 | Broker earnings and account info, award info/distribution/records, API rate-limit set and query (cap & per-UID) |
 | `bot` | Yes | 18 | Futures combo bot, futures grid bot, futures martingale bot, spot grid bot, spot DCA bot — create, close, detail, validate, and parameter limits |
@@ -392,7 +394,7 @@ Run **Developer: Reload Window** from the Command Palette (`Cmd+Shift+P` / `Ctrl
 | `wstrade` | Yes | 6 | WebSocket trade operations via /v5/trade: place order, cancel order, amend order, batch place, batch cancel, batch amend |
 | `subscription` | Yes | 4 | WebSocket subscription lifecycle: start/stop a subscription, list active subscriptions, read buffered messages |
 
-**Total: 392 tools**
+**Total: 396 tools**
 
 ---
 

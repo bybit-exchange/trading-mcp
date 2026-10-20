@@ -18,6 +18,10 @@ const ENDPOINT_LIMITS: Record<string, number> = {
   '/v5/market/kline': 50,
   '/v5/market/orderbook': 50,
   '/v5/market/tickers': 20,
+  '/v5/referral/campaign/rewards': 5,
+  '/v5/referral/commission/records': 5,
+  '/v5/referral/user/identity-profile': 5,
+  '/v5/referral/user/invitations': 5,
 };
 
 export class RateLimiter {
