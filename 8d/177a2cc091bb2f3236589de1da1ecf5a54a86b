@@ -1,0 +1,19 @@
+src/utils/rate-limiter.ts
+  s_0cadfba3079bb1::t_327833dc77f852 1-2,6,23-25,34,53-56,75-93
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2-bit.2+419f699",
+  "base_commit_sha": "8d177a2cc091bb2f3236589de1da1ecf5a54a86b",
+  "prompts": {},
+  "sessions": {
+    "s_0cadfba3079bb1": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a13479-c769-7511-95bc-37cc99133038",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "paul.yang <paul.yang@bybit.com>"
+    }
+  }
+}
