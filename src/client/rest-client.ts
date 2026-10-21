@@ -26,9 +26,10 @@ async function handleResponse(res: Response): Promise<unknown> {
     const body = await res.text().catch(() => '');
     throw new Error(`HTTP ${res.status} ${res.statusText}: ${body.slice(0, 300)}`);
   }
-  const data = (await res.json()) as { retCode?: number; retMsg?: string };
-  if (data.retCode !== undefined && data.retCode !== 0) {
-    throw new Error(`Bybit API error ${data.retCode}: ${data.retMsg ?? 'unknown'}`);
+  const data = (await res.json()) as { retCode?: number; retMsg?: string; ret_code?: number; ret_msg?: string };
+  const code = data.retCode ?? data.ret_code;
+  if (code !== undefined && code !== 0) {
+    throw new Error(`Bybit API error ${code}: ${data.retMsg ?? data.ret_msg ?? 'unknown'}`);
   }
   return data;
 }

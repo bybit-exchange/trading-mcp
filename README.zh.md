@@ -5,10 +5,10 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Node.js 20.6+](https://img.shields.io/badge/node-20.6+-blue.svg)](https://nodejs.org/)
 [![MCP](https://img.shields.io/badge/MCP-compatible-purple.svg)](https://modelcontextprotocol.io)
-[![Tools](https://img.shields.io/badge/Tools-392-orange.svg)](#-工具分类)
+[![Tools](https://img.shields.io/badge/Tools-396-orange.svg)](#-工具分类)
 [![Bybit V5 API](https://img.shields.io/badge/Bybit-V5%20API-green.svg)](https://bybit-exchange.github.io/docs/v5/intro)
 
-**生产就绪的 Bybit MCP 服务器 — 392 个工具，覆盖行情数据、交易下单、仓位管理、账户管理、资产查询、借贷、理财、税务报告和 WebSocket 实时推送**
+**生产就绪的 Bybit MCP 服务器 — 396 个工具，覆盖行情数据、交易下单、仓位管理、账户管理、资产查询、借贷、理财、邀请返佣查询、税务报告和 WebSocket 实时推送**
 
 [快速开始](#-快速开始) •
 [功能特性](#-功能特性) •
@@ -29,7 +29,8 @@ Bybit MCP 服务器让 **Claude**、**Cursor**、**VS Code** 等支持 MCP 协�
 
 ### 为什么选择 Bybit MCP？
 
-- **完整的 V5 覆盖** — 392 个工具，涵盖行情、交易、仓位、账户、资产、借贷、理财、税务报告、跟单、WebSocket 和 WS 交易等类别
+- **完整的 V5 覆盖** — 396 个工具，涵盖行情、交易、仓位、账户、资产、借贷、理财、邀请返佣、税务报告、跟单、WebSocket 和 WS 交易等类别
+- **邀请返佣查询** — 查看活动奖励规则、本人邀请身份、邀请记录和返佣记录
 - **策略交易** — 现货与衍生品 POV，必须设置数量或金额上限，冰山最多拆分 200 笔子单
 - **安全设计** — API 凭证从环境变量读取，不会硬编码在任何地方
 - **免鉴权行情** — 23 个行情工具无需 API Key 即可使用
@@ -77,7 +78,7 @@ POV 必须设置 5–3600 秒的执行间隔，以及正数的数量或金额上
 - **API Key 信息** — 权限、VIP 等级、频率限制
 - **子账户管理** — 列表查询与详情
 - **账户类型** — 各成员账户类型查询
-- **邀请与返佣** — 邀请码和返佣查询
+- **邀请与返佣** — 活动奖励、邀请身份、邀请记录和返佣查询
 
 </td>
 <td width="50%">
@@ -358,6 +359,7 @@ RSA 模式（自生成 API Key）：
 | `spread-trading` | 混合 | 12 | 价差合约信息、深度、行情、最新成交、下单、改单、撤单、撤全部、实时订单、历史订单、成交记录、最大下单数量 |
 | `asset` | 是 | 35 | 资产总览、组合保证金、交割/结算记录、母子账户聚合资产、资金流水、币种链信息、划转与账户币种余额查询、充值记录/地址查询、提币记录/地址与可提金额查询、闪兑（报价/执行/历史）与小额资产兑换 |
 | `user` | 是 | 8 | 只读的用户与子账户信息：API Key 信息与权限、子账户及托管子账户列表、成员账户类型、邀请码与被邀请用户查询 |
+| `referral` | 是 | 4 | 只读查询活动奖励规则、邀请身份、邀请记录及返佣记录 |
 | `affiliate` | 是 | 2 | 联盟返佣：返佣用户列表、单个用户返佣信息 |
 | `broker` | 是 | 8 | 经纪商：收益与账户信息、奖励信息/发放/记录、API 限速设置与查询（上限及按 UID） |
 | `bot` | 是 | 18 | 期货组合Bot、期货网格Bot、期货马丁Bot、现货网格Bot、现货DCA定投Bot — 创建、关闭、详情、校验、参数限制 |
@@ -392,7 +394,7 @@ RSA 模式（自生成 API Key）：
 | `wstrade` | 是 | 6 | WebSocket 交易操作（/v5/trade 端点）：下单、撤单、改单、批量下单、批量撤单、批量改单 |
 | `subscription` | 是 | 4 | WebSocket 订阅生命周期管理：启动/停止订阅、列出活跃订阅、读取缓冲消息 |
 
-**合计：392 个工具**
+**合计：396 个工具**
 
 ---
 
