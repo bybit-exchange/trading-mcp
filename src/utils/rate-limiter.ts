@@ -1,6 +1,9 @@
+import { performance } from 'node:perf_hooks';
+
 /**
  * Simple token-bucket rate limiter keyed by endpoint path.
  * Default: 10 requests / second per endpoint (configurable per path).
+ * Referral paths use a strict rolling window matching their one-second limit.
  */
 
 interface Bucket {
@@ -11,13 +14,15 @@ interface Bucket {
 }
 
 const DEFAULT_MAX_TOKENS = 10;
-const DEFAULT_REFILL_INTERVAL_MS = 100; // 10 req/s → 1 token per 100 ms
 
 // Per-endpoint overrides (rps → interval)
 const ENDPOINT_LIMITS: Record<string, number> = {
   '/v5/market/kline': 50,
   '/v5/market/orderbook': 50,
   '/v5/market/tickers': 20,
+};
+
+const ROLLING_WINDOW_LIMITS: Record<string, number> = {
   '/v5/referral/campaign/rewards': 5,
   '/v5/referral/commission/records': 5,
   '/v5/referral/user/identity-profile': 5,
@@ -26,6 +31,7 @@ const ENDPOINT_LIMITS: Record<string, number> = {
 
 export class RateLimiter {
   private buckets = new Map<string, Bucket>();
+  private requestTimes = new Map<string, number[]>();
 
   private getBucket(endpoint: string): Bucket {
     if (!this.buckets.has(endpoint)) {
@@ -44,6 +50,10 @@ export class RateLimiter {
    * Waits until a token is available for the given endpoint.
    */
   async acquire(endpoint: string): Promise<void> {
+    const windowLimit = ROLLING_WINDOW_LIMITS[endpoint];
+    if (windowLimit !== undefined) {
+      return this.acquireRollingWindow(endpoint, windowLimit);
+    }
     const bucket = this.getBucket(endpoint);
     while (true) {
       const now = Date.now();
@@ -60,6 +70,25 @@ export class RateLimiter {
         return;
       }
       await new Promise((r) => setTimeout(r, bucket.refillIntervalMs));
+    }
+  }
+
+  private async acquireRollingWindow(endpoint: string, limit: number): Promise<void> {
+    let times = this.requestTimes.get(endpoint);
+    if (!times) {
+      times = [];
+      this.requestTimes.set(endpoint, times);
+    }
+    while (true) {
+      // Monotonic time prevents wall-clock corrections from freeing slots early.
+      const now = performance.now();
+      while (times.length > 0 && times[0] <= now - 1000) times.shift();
+      if (times.length < limit) {
+        times.push(now);
+        return;
+      }
+      // Check again after waking; concurrent callers must compete for real slots.
+      await new Promise((resolve) => setTimeout(resolve, Math.ceil(times[0] + 1000 - now)));
     }
   }
 }
