@@ -1,0 +1,25 @@
+src/client/rest-client.ts
+  s_0cadfba3079bb1::t_6d7b2a0ec5ea12 4,10,13,39-42,46,48,50,54-55,59-60,64,66,68,72-75,78,80,87,91-92,96-97,104,106,108
+src/utils/approval.ts
+  s_0cadfba3079bb1::t_5039889276ab01 20,32,34,64,66
+src/utils/rate-limiter.ts
+  s_0cadfba3079bb1::t_b75ea87a8fa5ea 54-55,58,62,76,80,87,96,101-116
+src/utils/tool-context.ts
+  s_0cadfba3079bb1::t_4f250f2f0fd2b2 1-4
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2-bit.2+419f699",
+  "base_commit_sha": "91179b547d2355ae68307dc0753ff171138ae016",
+  "prompts": {},
+  "sessions": {
+    "s_0cadfba3079bb1": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a13479-c769-7511-95bc-37cc99133038",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "paul.yang <paul.yang@bybit.com>"
+    }
+  }
+}
