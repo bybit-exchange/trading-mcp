@@ -1,6 +1,7 @@
 // QueryResult.ts — auto-generated, do not edit
 import { z } from 'zod';
 import { restClient } from '../../../client/rest-client.js';
+import type { ToolExecutionContext } from '../../../utils/tool-context.js';
 
 export const QueryResult = {
   name: 'QueryResult',
@@ -10,7 +11,7 @@ export const QueryResult = {
     accountType: z.string(),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},
-  handler: async (input: Record<string, unknown>) => {
-    return restClient.getAuth("/v5/asset/exchange/convert-result-query", input);
+  handler: async (input: Record<string, unknown>, context: ToolExecutionContext = {}) => {
+    return restClient.getAuth("/v5/asset/exchange/convert-result-query", input, context);
   },
 };

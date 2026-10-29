@@ -17,7 +17,7 @@ interface ApprovalServer {
       properties: Record<string, { type: 'boolean'; title: string; description: string }>;
       required: string[];
     };
-  }): Promise<ElicitResult>;
+  }, options?: { signal?: AbortSignal }): Promise<ElicitResult>;
 }
 
 /**
@@ -29,7 +29,9 @@ export async function requireUserApproval(
   server: ApprovalServer,
   tool: ApprovalTool,
   input: Record<string, unknown>,
+  signal?: AbortSignal,
 ): Promise<void> {
+  signal?.throwIfAborted();
   if (!tool.requiresApproval) return;
 
   if (!server.getClientCapabilities()?.elicitation?.form) {
@@ -59,8 +61,9 @@ export async function requireUserApproval(
       },
       required: ['approve'],
     },
-  });
+  }, { signal });
 
+  signal?.throwIfAborted();
   if (response.action !== 'accept' || response.content?.approve !== true) {
     throw new Error('High-risk tool execution was not explicitly approved by the user.');
   }

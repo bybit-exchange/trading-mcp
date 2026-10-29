@@ -1,6 +1,7 @@
 // getLaunchpoolUserActivityLog.ts — auto-generated, do not edit
 import { z } from 'zod';
 import { restClient } from '../../client/rest-client.js';
+import type { ToolExecutionContext } from '../../utils/tool-context.js';
 
 export const getLaunchpoolUserActivityLog = {
   name: 'getLaunchpoolUserActivityLog',
@@ -15,7 +16,7 @@ export const getLaunchpoolUserActivityLog = {
     current: z.number().int().min(1).max(100).default(1).optional(),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},
-  handler: async (input: Record<string, unknown>) => {
-    return restClient.postAuth("/v5/spot-x/launchpool/user/activity-log", input);
+  handler: async (input: Record<string, unknown>, context: ToolExecutionContext = {}) => {
+    return restClient.postAuth("/v5/spot-x/launchpool/user/activity-log", input, context);
   },
 };

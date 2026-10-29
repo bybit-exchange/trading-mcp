@@ -1,6 +1,7 @@
 // getPredictionGroupStageDetail.ts — auto-generated, do not edit
 import { z } from 'zod';
 import { restClient } from '../../client/rest-client.js';
+import type { ToolExecutionContext } from '../../utils/tool-context.js';
 
 export const getPredictionGroupStageDetail = {
   name: 'getPredictionGroupStageDetail',
@@ -10,7 +11,7 @@ export const getPredictionGroupStageDetail = {
     stageCode: z.enum(["Groups", "R32", "R16", "QF", "SF", "Final"]),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},
-  handler: async (input: Record<string, unknown>) => {
-    return restClient.postAuth("/v5/alpha/prediction/sports/group-stage-detail", input);
+  handler: async (input: Record<string, unknown>, context: ToolExecutionContext = {}) => {
+    return restClient.postAuth("/v5/alpha/prediction/sports/group-stage-detail", input, context);
   },
 };

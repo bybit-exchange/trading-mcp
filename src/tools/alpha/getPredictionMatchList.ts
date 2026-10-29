@@ -1,6 +1,7 @@
 // getPredictionMatchList.ts — auto-generated, do not edit
 import { z } from 'zod';
 import { restClient } from '../../client/rest-client.js';
+import type { ToolExecutionContext } from '../../utils/tool-context.js';
 
 export const getPredictionMatchList = {
   name: 'getPredictionMatchList',
@@ -9,7 +10,7 @@ export const getPredictionMatchList = {
     eventType: z.enum(["1"]),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},
-  handler: async (input: Record<string, unknown>) => {
-    return restClient.postAuth("/v5/alpha/prediction/sports/match-list", input);
+  handler: async (input: Record<string, unknown>, context: ToolExecutionContext = {}) => {
+    return restClient.postAuth("/v5/alpha/prediction/sports/match-list", input, context);
   },
 };

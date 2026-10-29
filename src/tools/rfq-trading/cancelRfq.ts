@@ -1,6 +1,7 @@
 // cancelRfq.ts — auto-generated, do not edit
 import { z } from 'zod';
 import { restClient } from '../../client/rest-client.js';
+import type { ToolExecutionContext } from '../../utils/tool-context.js';
 
 export const cancelRfq = {
   name: 'cancelRfq',
@@ -13,7 +14,7 @@ export const cancelRfq = {
   annotations: {"readOnlyHint":false,"destructiveHint":true,"openWorldHint":true},
   requiresApproval: true,
   approvalTarget: "/v5/rfq/cancel-rfq",
-  handler: async (input: Record<string, unknown>) => {
-    return restClient.postAuth("/v5/rfq/cancel-rfq", (({ confirm: _confirm, ...rest }) => rest)(input));
+  handler: async (input: Record<string, unknown>, context: ToolExecutionContext = {}) => {
+    return restClient.postAuth("/v5/rfq/cancel-rfq", (({ confirm: _confirm, ...rest }) => rest)(input), context);
   },
 };

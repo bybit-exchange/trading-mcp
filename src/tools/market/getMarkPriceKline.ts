@@ -1,6 +1,7 @@
 // getMarkPriceKline.ts — auto-generated, do not edit
 import { z } from 'zod';
 import { restClient } from '../../client/rest-client.js';
+import type { ToolExecutionContext } from '../../utils/tool-context.js';
 
 export const getMarkPriceKline = {
   name: 'getMarkPriceKline',
@@ -14,7 +15,7 @@ export const getMarkPriceKline = {
     limit: z.number().int().min(1).max(1000).default(200).optional(),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},
-  handler: async (input: Record<string, unknown>) => {
-    return restClient.get("/v5/market/mark-price-kline", input);
+  handler: async (input: Record<string, unknown>, context: ToolExecutionContext = {}) => {
+    return restClient.get("/v5/market/mark-price-kline", input, context);
   },
 };

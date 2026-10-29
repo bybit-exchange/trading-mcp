@@ -1,6 +1,7 @@
 // getRwaNavChart.ts — auto-generated, do not edit
 import { z } from 'zod';
 import { restClient } from '../../client/rest-client.js';
+import type { ToolExecutionContext } from '../../utils/tool-context.js';
 
 export const getRwaNavChart = {
   name: 'getRwaNavChart',
@@ -14,7 +15,7 @@ export const getRwaNavChart = {
     { message: 'endTime - startTime must not exceed 180 days' }
   ),
   annotations: {"readOnlyHint":true,"openWorldHint":true},
-  handler: async (input: Record<string, unknown>) => {
-    return restClient.get("/v5/earn/rwa/nav-chart", input);
+  handler: async (input: Record<string, unknown>, context: ToolExecutionContext = {}) => {
+    return restClient.get("/v5/earn/rwa/nav-chart", input, context);
   },
 };

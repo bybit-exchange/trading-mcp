@@ -1,6 +1,7 @@
 // queryEscrowSubMembersV5.ts — auto-generated, do not edit
 import { z } from 'zod';
 import { restClient } from '../../client/rest-client.js';
+import type { ToolExecutionContext } from '../../utils/tool-context.js';
 
 export const queryEscrowSubMembersV5 = {
   name: 'queryEscrowSubMembersV5',
@@ -10,7 +11,7 @@ export const queryEscrowSubMembersV5 = {
     pageSize: z.number().int().min(1).max(100).default(100).optional(),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},
-  handler: async (input: Record<string, unknown>) => {
-    return restClient.getAuth("/v5/user/escrow_sub_members", input);
+  handler: async (input: Record<string, unknown>, context: ToolExecutionContext = {}) => {
+    return restClient.getAuth("/v5/user/escrow_sub_members", input, context);
   },
 };

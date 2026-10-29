@@ -1,6 +1,7 @@
 // getTokenHistoricalApr.ts — auto-generated, do not edit
 import { z } from 'zod';
 import { restClient } from '../../client/rest-client.js';
+import type { ToolExecutionContext } from '../../utils/tool-context.js';
 
 export const getTokenHistoricalApr = {
   name: 'getTokenHistoricalApr',
@@ -10,7 +11,7 @@ export const getTokenHistoricalApr = {
     range: z.enum(["1", "2", "3"]),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},
-  handler: async (input: Record<string, unknown>) => {
-    return restClient.get("/v5/earn/token/history-apr", input);
+  handler: async (input: Record<string, unknown>, context: ToolExecutionContext = {}) => {
+    return restClient.get("/v5/earn/token/history-apr", input, context);
   },
 };

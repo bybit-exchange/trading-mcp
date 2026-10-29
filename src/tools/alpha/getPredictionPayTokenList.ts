@@ -1,6 +1,7 @@
 // getPredictionPayTokenList.ts — auto-generated, do not edit
 import { z } from 'zod';
 import { restClient } from '../../client/rest-client.js';
+import type { ToolExecutionContext } from '../../utils/tool-context.js';
 
 export const getPredictionPayTokenList = {
   name: 'getPredictionPayTokenList',
@@ -9,7 +10,7 @@ export const getPredictionPayTokenList = {
 
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},
-  handler: async (input: Record<string, unknown>) => {
-    return restClient.getAuth("/v5/alpha/prediction/pay-token-list", input);
+  handler: async (input: Record<string, unknown>, context: ToolExecutionContext = {}) => {
+    return restClient.getAuth("/v5/alpha/prediction/pay-token-list", input, context);
   },
 };

@@ -1,6 +1,7 @@
 // querySubMembers.ts — auto-generated, do not edit
 import { z } from 'zod';
 import { restClient } from '../../client/rest-client.js';
+import type { ToolExecutionContext } from '../../utils/tool-context.js';
 
 export const querySubMembers = {
   name: 'querySubMembers',
@@ -9,8 +10,8 @@ export const querySubMembers = {
 
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},
-  handler: async (input: Record<string, unknown>) => {
-    const result = await restClient.getAuth("/v5/user/query-sub-members", input) as any;
+  handler: async (input: Record<string, unknown>, context: ToolExecutionContext = {}) => {
+    const result = await restClient.getAuth("/v5/user/query-sub-members", input, context) as any;
         result?.result?.subMembers?.forEach((m: any) => { delete m.remark; });
     return result;
   },

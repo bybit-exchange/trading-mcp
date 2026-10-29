@@ -1,6 +1,7 @@
 // validateGridInput.ts — auto-generated, do not edit
 import { z } from 'zod';
 import { restClient } from '../../client/rest-client.js';
+import type { ToolExecutionContext } from '../../utils/tool-context.js';
 
 export const validateGridInput = {
   name: 'validateGridInput',
@@ -22,7 +23,7 @@ export const validateGridInput = {
     limit_up_price: z.string().optional(),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},
-  handler: async (input: Record<string, unknown>) => {
-    return restClient.postAuth("/v5/grid/validate-input", input);
+  handler: async (input: Record<string, unknown>, context: ToolExecutionContext = {}) => {
+    return restClient.postAuth("/v5/grid/validate-input", input, context);
   },
 };

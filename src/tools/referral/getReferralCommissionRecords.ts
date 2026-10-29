@@ -1,6 +1,7 @@
 // getReferralCommissionRecords.ts — auto-generated, do not edit
 import { z } from 'zod';
 import { restClient } from '../../client/rest-client.js';
+import type { ToolExecutionContext } from '../../utils/tool-context.js';
 
 export const getReferralCommissionRecords = {
   name: 'getReferralCommissionRecords',
@@ -14,7 +15,7 @@ export const getReferralCommissionRecords = {
     productLine: z.union([z.literal(0), z.literal(1), z.literal(2), z.literal(3), z.literal(4), z.literal(6), z.literal(9)]).optional(),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},
-  handler: async (input: Record<string, unknown>) => {
-    return restClient.postAuth("/v5/referral/commission/records", input);
+  handler: async (input: Record<string, unknown>, context: ToolExecutionContext = {}) => {
+    return restClient.postAuth("/v5/referral/commission/records", input, context);
   },
 };

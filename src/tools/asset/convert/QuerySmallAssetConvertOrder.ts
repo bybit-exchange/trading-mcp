@@ -1,6 +1,7 @@
 // QuerySmallAssetConvertOrder.ts — auto-generated, do not edit
 import { z } from 'zod';
 import { restClient } from '../../../client/rest-client.js';
+import type { ToolExecutionContext } from '../../../utils/tool-context.js';
 
 export const QuerySmallAssetConvertOrder = {
   name: 'QuerySmallAssetConvertOrder',
@@ -14,7 +15,7 @@ export const QuerySmallAssetConvertOrder = {
     endTime: z.string().optional(),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},
-  handler: async (input: Record<string, unknown>) => {
-    return restClient.getAuth("/v5/asset/covert/small-balance-history", input);
+  handler: async (input: Record<string, unknown>, context: ToolExecutionContext = {}) => {
+    return restClient.getAuth("/v5/asset/covert/small-balance-history", input, context);
   },
 };

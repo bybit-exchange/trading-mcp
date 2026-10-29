@@ -1,6 +1,7 @@
 // queryInternalDepositRecords.ts — auto-generated, do not edit
 import { z } from 'zod';
 import { restClient } from '../../../client/rest-client.js';
+import type { ToolExecutionContext } from '../../../utils/tool-context.js';
 
 export const queryInternalDepositRecords = {
   name: 'queryInternalDepositRecords',
@@ -15,7 +16,7 @@ export const queryInternalDepositRecords = {
     status: z.string().optional(),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},
-  handler: async (input: Record<string, unknown>) => {
-    return restClient.getAuth("/v5/asset/deposit/query-internal-record", input);
+  handler: async (input: Record<string, unknown>, context: ToolExecutionContext = {}) => {
+    return restClient.getAuth("/v5/asset/deposit/query-internal-record", input, context);
   },
 };

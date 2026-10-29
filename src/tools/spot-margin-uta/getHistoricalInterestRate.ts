@@ -1,6 +1,7 @@
 // getHistoricalInterestRate.ts — auto-generated, do not edit
 import { z } from 'zod';
 import { restClient } from '../../client/rest-client.js';
+import type { ToolExecutionContext } from '../../utils/tool-context.js';
 
 export const getHistoricalInterestRate = {
   name: 'getHistoricalInterestRate',
@@ -12,7 +13,7 @@ export const getHistoricalInterestRate = {
     endTime: z.number().int().optional(),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},
-  handler: async (input: Record<string, unknown>) => {
-    return restClient.getAuth("/v5/spot-margin-trade/interest-rate-history", input);
+  handler: async (input: Record<string, unknown>, context: ToolExecutionContext = {}) => {
+    return restClient.getAuth("/v5/spot-margin-trade/interest-rate-history", input, context);
   },
 };

@@ -1,6 +1,7 @@
 // getLaunchpoolUserCurrentStaking.ts — auto-generated, do not edit
 import { z } from 'zod';
 import { restClient } from '../../client/rest-client.js';
+import type { ToolExecutionContext } from '../../utils/tool-context.js';
 
 export const getLaunchpoolUserCurrentStaking = {
   name: 'getLaunchpoolUserCurrentStaking',
@@ -9,7 +10,7 @@ export const getLaunchpoolUserCurrentStaking = {
 
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},
-  handler: async (input: Record<string, unknown>) => {
-    return restClient.getAuth("/v5/spot-x/launchpool/user/current-staking", input);
+  handler: async (input: Record<string, unknown>, context: ToolExecutionContext = {}) => {
+    return restClient.getAuth("/v5/spot-x/launchpool/user/current-staking", input, context);
   },
 };

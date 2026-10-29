@@ -1,6 +1,7 @@
 // createCopyMt5Bind.ts — auto-generated, do not edit
 import { z } from 'zod';
 import { restClient } from '../../client/rest-client.js';
+import type { ToolExecutionContext } from '../../utils/tool-context.js';
 
 export const createCopyMt5Bind = {
   name: 'createCopyMt5Bind',
@@ -13,7 +14,7 @@ export const createCopyMt5Bind = {
   annotations: {"readOnlyHint":false,"destructiveHint":true,"openWorldHint":true},
   requiresApproval: true,
   approvalTarget: "/v5/copy-mt5/private/follower/trade-setting/create",
-  handler: async (input: Record<string, unknown>) => {
-    return restClient.postAuth("/v5/copy-mt5/private/follower/trade-setting/create", (({ confirm: _confirm, ...rest }) => rest)(input));
+  handler: async (input: Record<string, unknown>, context: ToolExecutionContext = {}) => {
+    return restClient.postAuth("/v5/copy-mt5/private/follower/trade-setting/create", (({ confirm: _confirm, ...rest }) => rest)(input), context);
   },
 };

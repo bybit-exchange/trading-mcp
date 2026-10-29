@@ -1,6 +1,7 @@
 // getPredictionPositionList.ts — auto-generated, do not edit
 import { z } from 'zod';
 import { restClient } from '../../client/rest-client.js';
+import type { ToolExecutionContext } from '../../utils/tool-context.js';
 
 export const getPredictionPositionList = {
   name: 'getPredictionPositionList',
@@ -11,7 +12,7 @@ export const getPredictionPositionList = {
     direction: z.enum(["prev", "next"]).optional(),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},
-  handler: async (input: Record<string, unknown>) => {
-    return restClient.postAuth("/v5/alpha/prediction/position-list", input);
+  handler: async (input: Record<string, unknown>, context: ToolExecutionContext = {}) => {
+    return restClient.postAuth("/v5/alpha/prediction/position-list", input, context);
   },
 };

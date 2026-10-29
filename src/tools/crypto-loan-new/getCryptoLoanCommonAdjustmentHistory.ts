@@ -1,6 +1,7 @@
 // getCryptoLoanCommonAdjustmentHistory.ts — auto-generated, do not edit
 import { z } from 'zod';
 import { restClient } from '../../client/rest-client.js';
+import type { ToolExecutionContext } from '../../utils/tool-context.js';
 
 export const getCryptoLoanCommonAdjustmentHistory = {
   name: 'getCryptoLoanCommonAdjustmentHistory',
@@ -12,7 +13,7 @@ export const getCryptoLoanCommonAdjustmentHistory = {
     cursor: z.number().int().optional(),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},
-  handler: async (input: Record<string, unknown>) => {
-    return restClient.getAuth("/v5/crypto-loan-common/adjustment-history", input);
+  handler: async (input: Record<string, unknown>, context: ToolExecutionContext = {}) => {
+    return restClient.getAuth("/v5/crypto-loan-common/adjustment-history", input, context);
   },
 };
