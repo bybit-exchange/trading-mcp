@@ -1,0 +1,41 @@
+src/tools/referral/getReferralCampaignRewards.ts
+  s_895492d0ccfa57::t_a5fbb02845040a 7
+src/tools/referral/getReferralCommissionRecords.ts
+  s_895492d0ccfa57::t_e7a650b3268dfa 7
+src/tools/referral/getReferralUserIdentityProfile.ts
+  s_895492d0ccfa57::t_35828e175da770 7
+src/tools/referral/getReferralUserInvitations.ts
+  s_895492d0ccfa57::t_b97f50002554cf 7,9-11,13-39
+src/tools/spot-margin-trade-uta/cancelFixedBorrowOrder.ts
+  s_895492d0ccfa57::t_f027ba546177a9 1-18
+src/tools/spot-margin-trade-uta/index.ts
+  s_895492d0ccfa57::t_eab3d1f38a376c 3,15,23,35
+src/tools/spot-margin-trade-uta/queryFixedBorrowPenaltyInterest.ts
+  s_895492d0ccfa57::t_4a099428206c84 1-18
+src/utils/rate-limiter.ts
+  s_0cadfba3079bb1::t_f8f1c01dbca67d 6,26-27
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2-bit.2+419f699",
+  "base_commit_sha": "f8a87e3f7c7e677a71184d5a71a01839ff0c54e3",
+  "prompts": {},
+  "sessions": {
+    "s_0cadfba3079bb1": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a13479-c769-7511-95bc-37cc99133038",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "paul.yang <paul.yang@bybit.com>"
+    },
+    "s_895492d0ccfa57": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "01a13479-c769-7511-95bc-37cc99133038",
+        "model": "unknown"
+      },
+      "human_author": "paul.yang <paul.yang@bybit.com>"
+    }
+  }
+}
