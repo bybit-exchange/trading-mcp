@@ -1,6 +1,6 @@
 {
   "name": "bybit-official-trading-server",
-  "version": "2.1.25",
+  "version": "2.1.26",
   "publishConfig": {
     "access": "public"
   },
@@ -35,16 +35,16 @@
     "publish-pkg": "bash scripts/publish.sh"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.32.1",
+    "@modelcontextprotocol/sdk": "^1.32.2",
     "ws": "^8.22.0",
     "zod": "^3.24.2",
     "zod-to-json-schema": "^3.24.5"
   },
   "devDependencies": {
-    "js-yaml": "^4.1.0",
     "@types/js-yaml": "^4.0.9",
     "@types/node": "^22.0.0",
     "@types/ws": "^8.5.13",
+    "js-yaml": "^4.1.0",
     "tsup": "^8.4.0",
     "tsx": "^4.19.3",
     "typescript": "^5.7.3"

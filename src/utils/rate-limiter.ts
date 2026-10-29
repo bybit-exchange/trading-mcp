@@ -3,7 +3,7 @@ import { performance } from 'node:perf_hooks';
 /**
  * Simple token-bucket rate limiter keyed by endpoint path.
  * Default: 10 requests / second per endpoint (configurable per path).
- * Referral paths use a strict rolling window matching their one-second limit.
+ * Endpoints with strict per-second limits use a rolling window.
  */
 
 interface Bucket {
@@ -23,6 +23,8 @@ const ENDPOINT_LIMITS: Record<string, number> = {
 };
 
 const ROLLING_WINDOW_LIMITS: Record<string, number> = {
+  '/v5/spot-margin-trade/fixedborrow-interest-accrued': 5,
+  '/v5/spot-margin-trade/fixedborrow-order-cancel': 1,
   '/v5/referral/campaign/rewards': 5,
   '/v5/referral/commission/records': 5,
   '/v5/referral/user/identity-profile': 5,

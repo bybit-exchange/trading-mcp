@@ -4,7 +4,7 @@ import { restClient } from '../../client/rest-client.js';
 
 export const getReferralUserIdentityProfile = {
   name: 'getReferralUserIdentityProfile',
-  description: "Query the authenticated API Key owner's referral identity, affiliate status, and inviter/invitee relationships. The request has no user ID input. commissionInfo is available only when a matching M1 inviter record and commission data are found. Missing relationship records are normal and may leave related fields at their defaults.",
+  description: "Query the authenticated API Key owner's referral identity, affiliate status, and inviter/invitee relationships. The request has no user ID input. inviterAffiliateUserId and inviterUserId are 0/1 relationship indicators, not actual inviter IDs. commissionInfo is available only when a matching M1 inviter record and commission data are found. Missing relationship records are normal and may leave related fields at their defaults.",
   inputSchema: z.object({
 
   }),
