@@ -1,6 +1,7 @@
 // getAds.ts — auto-generated, do not edit
 import { z } from 'zod';
 import { restClient } from '../../client/rest-client.js';
+import type { ToolExecutionContext } from '../../utils/tool-context.js';
 
 export const getAds = {
   name: 'getAds',
@@ -13,8 +14,8 @@ export const getAds = {
     size: z.string().optional(),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},
-  handler: async (input: Record<string, unknown>) => {
-    const result = await restClient.postAuth("/v5/p2p/item/online", input) as any;
+  handler: async (input: Record<string, unknown>, context: ToolExecutionContext = {}) => {
+    const result = await restClient.postAuth("/v5/p2p/item/online", input, context) as any;
         result?.result?.items?.forEach((item: any) => { delete item.remark; });
     return result;
   },

@@ -1,6 +1,7 @@
 // setCollateralSwitch.ts — auto-generated, do not edit
 import { z } from 'zod';
 import { restClient } from '../../client/rest-client.js';
+import type { ToolExecutionContext } from '../../utils/tool-context.js';
 
 export const setCollateralSwitch = {
   name: 'setCollateralSwitch',
@@ -12,7 +13,7 @@ export const setCollateralSwitch = {
   annotations: {"readOnlyHint":false,"destructiveHint":false,"openWorldHint":true},
   requiresApproval: true,
   approvalTarget: "/v5/account/set-collateral-switch",
-  handler: async (input: Record<string, unknown>) => {
-    return restClient.postAuth("/v5/account/set-collateral-switch", input);
+  handler: async (input: Record<string, unknown>, context: ToolExecutionContext = {}) => {
+    return restClient.postAuth("/v5/account/set-collateral-switch", input, context);
   },
 };

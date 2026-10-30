@@ -1,6 +1,7 @@
 // getAssetDetail.ts — auto-generated, do not edit
 import { z } from 'zod';
 import { restClient } from '../../client/rest-client.js';
+import type { ToolExecutionContext } from '../../utils/tool-context.js';
 
 export const getAssetDetail = {
   name: 'getAssetDetail',
@@ -10,7 +11,7 @@ export const getAssetDetail = {
     tokenAddress: z.string(),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},
-  handler: async (input: Record<string, unknown>) => {
-    return restClient.postAuth("/v5/alpha/trade/asset-detail", input);
+  handler: async (input: Record<string, unknown>, context: ToolExecutionContext = {}) => {
+    return restClient.postAuth("/v5/alpha/trade/asset-detail", input, context);
   },
 };

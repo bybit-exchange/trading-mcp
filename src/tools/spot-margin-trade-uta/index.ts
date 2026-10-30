@@ -1,5 +1,6 @@
 // spot-margin-trade-uta/index.ts — auto-generated, do not edit
 import { accountFixedBorrow } from './accountFixedBorrow.js';
+import { cancelFixedBorrowOrder } from './cancelFixedBorrowOrder.js';
 import { getSpotMarginTradeAutoRepayMode } from './getSpotMarginTradeAutoRepayMode.js';
 import { getSpotMarginTradeCoinState } from './getSpotMarginTradeCoinState.js';
 import { getSpotMarginTradeFlexibleAvailableInventory } from './getSpotMarginTradeFlexibleAvailableInventory.js';
@@ -11,6 +12,7 @@ import { queryFixedAvailableInventory } from './queryFixedAvailableInventory.js'
 import { queryFixedBorrowContracts } from './queryFixedBorrowContracts.js';
 import { queryFixedBorrowMarket } from './queryFixedBorrowMarket.js';
 import { queryFixedBorrowOrders } from './queryFixedBorrowOrders.js';
+import { queryFixedBorrowPenaltyInterest } from './queryFixedBorrowPenaltyInterest.js';
 import { renewFixedBorrow } from './renewFixedBorrow.js';
 import { setAutoRepayMode } from './setAutoRepayMode.js';
 import { spotMarginSetLeverage } from './spotMarginSetLeverage.js';
@@ -18,6 +20,7 @@ import { spotMarginSwitchMode } from './spotMarginSwitchMode.js';
 
 export const spotMarginTradeUtaTools = [
   accountFixedBorrow,
+  cancelFixedBorrowOrder,
   getSpotMarginTradeAutoRepayMode,
   getSpotMarginTradeCoinState,
   getSpotMarginTradeFlexibleAvailableInventory,
@@ -29,6 +32,7 @@ export const spotMarginTradeUtaTools = [
   queryFixedBorrowContracts,
   queryFixedBorrowMarket,
   queryFixedBorrowOrders,
+  queryFixedBorrowPenaltyInterest,
   renewFixedBorrow,
   setAutoRepayMode,
   spotMarginSetLeverage,

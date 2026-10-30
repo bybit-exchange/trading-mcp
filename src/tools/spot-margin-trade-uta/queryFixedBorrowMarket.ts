@@ -1,6 +1,7 @@
 // queryFixedBorrowMarket.ts — auto-generated, do not edit
 import { z } from 'zod';
 import { restClient } from '../../client/rest-client.js';
+import type { ToolExecutionContext } from '../../utils/tool-context.js';
 
 export const queryFixedBorrowMarket = {
   name: 'queryFixedBorrowMarket',
@@ -13,7 +14,7 @@ export const queryFixedBorrowMarket = {
     limit: z.number().int().default(10).optional(),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},
-  handler: async (input: Record<string, unknown>) => {
-    return restClient.getAuth("/v5/spot-margin-trade/fixedborrow-order-quote", input);
+  handler: async (input: Record<string, unknown>, context: ToolExecutionContext = {}) => {
+    return restClient.getAuth("/v5/spot-margin-trade/fixedborrow-order-quote", input, context);
   },
 };

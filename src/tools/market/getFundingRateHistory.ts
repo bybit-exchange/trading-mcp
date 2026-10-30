@@ -1,6 +1,7 @@
 // getFundingRateHistory.ts — auto-generated, do not edit
 import { z } from 'zod';
 import { restClient } from '../../client/rest-client.js';
+import type { ToolExecutionContext } from '../../utils/tool-context.js';
 
 export const getFundingRateHistory = {
   name: 'getFundingRateHistory',
@@ -13,7 +14,7 @@ export const getFundingRateHistory = {
     limit: z.number().int().min(1).max(200).default(200).optional(),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},
-  handler: async (input: Record<string, unknown>) => {
-    return restClient.get("/v5/market/funding/history", input);
+  handler: async (input: Record<string, unknown>, context: ToolExecutionContext = {}) => {
+    return restClient.get("/v5/market/funding/history", input, context);
   },
 };

@@ -1,6 +1,7 @@
 // getFGridDetail.ts — auto-generated, do not edit
 import { z } from 'zod';
 import { restClient } from '../../client/rest-client.js';
+import type { ToolExecutionContext } from '../../utils/tool-context.js';
 
 export const getFGridDetail = {
   name: 'getFGridDetail',
@@ -9,7 +10,7 @@ export const getFGridDetail = {
     bot_id: z.union([z.string().regex(/^[0-9]+$/), z.number().int().safe()]).transform((v) => String(v)),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},
-  handler: async (input: Record<string, unknown>) => {
-    return restClient.postAuth("/v5/fgridbot/detail", input);
+  handler: async (input: Record<string, unknown>, context: ToolExecutionContext = {}) => {
+    return restClient.postAuth("/v5/fgridbot/detail", input, context);
   },
 };

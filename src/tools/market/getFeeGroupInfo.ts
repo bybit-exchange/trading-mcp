@@ -1,6 +1,7 @@
 // getFeeGroupInfo.ts — auto-generated, do not edit
 import { z } from 'zod';
 import { restClient } from '../../client/rest-client.js';
+import type { ToolExecutionContext } from '../../utils/tool-context.js';
 
 export const getFeeGroupInfo = {
   name: 'getFeeGroupInfo',
@@ -10,7 +11,7 @@ export const getFeeGroupInfo = {
     groupId: z.enum(["1", "2", "3", "4", "5", "6", "7", "8"]).optional(),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},
-  handler: async (input: Record<string, unknown>) => {
-    return restClient.get("/v5/market/fee-group-info", input);
+  handler: async (input: Record<string, unknown>, context: ToolExecutionContext = {}) => {
+    return restClient.get("/v5/market/fee-group-info", input, context);
   },
 };

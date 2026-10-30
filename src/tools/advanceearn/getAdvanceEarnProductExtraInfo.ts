@@ -1,6 +1,7 @@
 // getAdvanceEarnProductExtraInfo.ts — auto-generated, do not edit
 import { z } from 'zod';
 import { restClient } from '../../client/rest-client.js';
+import type { ToolExecutionContext } from '../../utils/tool-context.js';
 
 export const getAdvanceEarnProductExtraInfo = {
   name: 'getAdvanceEarnProductExtraInfo',
@@ -10,7 +11,7 @@ export const getAdvanceEarnProductExtraInfo = {
     productId: z.number().int().optional(),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},
-  handler: async (input: Record<string, unknown>) => {
-    return restClient.get("/v5/earn/advance/product-extra-info", input);
+  handler: async (input: Record<string, unknown>, context: ToolExecutionContext = {}) => {
+    return restClient.get("/v5/earn/advance/product-extra-info", input, context);
   },
 };

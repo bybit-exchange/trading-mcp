@@ -1,6 +1,7 @@
 // createTaxReport.ts — auto-generated, do not edit
 import { z } from 'zod';
 import { restClient } from '../../client/rest-client.js';
+import type { ToolExecutionContext } from '../../utils/tool-context.js';
 
 export const createTaxReport = {
   name: 'createTaxReport',
@@ -15,7 +16,7 @@ export const createTaxReport = {
   annotations: {"readOnlyHint":false,"destructiveHint":true,"openWorldHint":true},
   requiresApproval: true,
   approvalTarget: "/fht/compliance/tax/v3/private/create",
-  handler: async (input: Record<string, unknown>) => {
-    return restClient.postAuth("/fht/compliance/tax/v3/private/create", (({ confirm: _confirm, ...rest }) => rest)(input));
+  handler: async (input: Record<string, unknown>, context: ToolExecutionContext = {}) => {
+    return restClient.postAuth("/fht/compliance/tax/v3/private/create", (({ confirm: _confirm, ...rest }) => rest)(input), context);
   },
 };

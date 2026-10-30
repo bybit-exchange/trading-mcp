@@ -3,7 +3,7 @@ import { performance } from 'node:perf_hooks';
 /**
  * Simple token-bucket rate limiter keyed by endpoint path.
  * Default: 10 requests / second per endpoint (configurable per path).
- * Referral paths use a strict rolling window matching their one-second limit.
+ * Endpoints with strict per-second limits use a rolling window.
  */
 
 interface Bucket {
@@ -23,6 +23,8 @@ const ENDPOINT_LIMITS: Record<string, number> = {
 };
 
 const ROLLING_WINDOW_LIMITS: Record<string, number> = {
+  '/v5/spot-margin-trade/fixedborrow-interest-accrued': 5,
+  '/v5/spot-margin-trade/fixedborrow-order-cancel': 1,
   '/v5/referral/campaign/rewards': 5,
   '/v5/referral/commission/records': 5,
   '/v5/referral/user/identity-profile': 5,
@@ -49,13 +51,15 @@ export class RateLimiter {
   /**
    * Waits until a token is available for the given endpoint.
    */
-  async acquire(endpoint: string): Promise<void> {
+  async acquire(endpoint: string, signal?: AbortSignal): Promise<void> {
+    signal?.throwIfAborted();
     const windowLimit = ROLLING_WINDOW_LIMITS[endpoint];
     if (windowLimit !== undefined) {
-      return this.acquireRollingWindow(endpoint, windowLimit);
+      return this.acquireRollingWindow(endpoint, windowLimit, signal);
     }
     const bucket = this.getBucket(endpoint);
     while (true) {
+      signal?.throwIfAborted();
       const now = Date.now();
       const elapsed = now - bucket.lastRefillMs;
       const tokensToAdd = Math.floor(elapsed / bucket.refillIntervalMs);
@@ -69,17 +73,18 @@ export class RateLimiter {
         bucket.tokens--;
         return;
       }
-      await new Promise((r) => setTimeout(r, bucket.refillIntervalMs));
+      await waitForSlot(bucket.refillIntervalMs, signal);
     }
   }
 
-  private async acquireRollingWindow(endpoint: string, limit: number): Promise<void> {
+  private async acquireRollingWindow(endpoint: string, limit: number, signal?: AbortSignal): Promise<void> {
     let times = this.requestTimes.get(endpoint);
     if (!times) {
       times = [];
       this.requestTimes.set(endpoint, times);
     }
     while (true) {
+      signal?.throwIfAborted();
       // Monotonic time prevents wall-clock corrections from freeing slots early.
       const now = performance.now();
       while (times.length > 0 && times[0] <= now - 1000) times.shift();
@@ -88,9 +93,25 @@ export class RateLimiter {
         return;
       }
       // Check again after waking; concurrent callers must compete for real slots.
-      await new Promise((resolve) => setTimeout(resolve, Math.ceil(times[0] + 1000 - now)));
+      await waitForSlot(Math.ceil(times[0] + 1000 - now), signal);
     }
   }
+}
+
+function waitForSlot(ms: number, signal?: AbortSignal): Promise<void> {
+  signal?.throwIfAborted();
+  return new Promise((resolve, reject) => {
+    const cleanup = () => {
+      clearTimeout(timer);
+      signal?.removeEventListener('abort', onAbort);
+    };
+    const onAbort = () => {
+      cleanup();
+      reject(signal?.reason ?? new Error('Request aborted'));
+    };
+    const timer = setTimeout(() => { cleanup(); resolve(); }, ms);
+    signal?.addEventListener('abort', onAbort, { once: true });
+  });
 }
 
 export const rateLimiter = new RateLimiter();

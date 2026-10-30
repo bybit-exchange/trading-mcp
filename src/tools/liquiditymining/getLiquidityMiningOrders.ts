@@ -1,6 +1,7 @@
 // getLiquidityMiningOrders.ts — auto-generated, do not edit
 import { z } from 'zod';
 import { restClient } from '../../client/rest-client.js';
+import type { ToolExecutionContext } from '../../utils/tool-context.js';
 
 export const getLiquidityMiningOrders = {
   name: 'getLiquidityMiningOrders',
@@ -17,7 +18,7 @@ export const getLiquidityMiningOrders = {
     cursor: z.string().optional(),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},
-  handler: async (input: Record<string, unknown>) => {
-    return restClient.getAuth("/v5/earn/liquidity-mining/order", input);
+  handler: async (input: Record<string, unknown>, context: ToolExecutionContext = {}) => {
+    return restClient.getAuth("/v5/earn/liquidity-mining/order", input, context);
   },
 };

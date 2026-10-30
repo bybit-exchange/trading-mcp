@@ -1,6 +1,7 @@
 // getDoubleWinLeverage.ts — auto-generated, do not edit
 import { z } from 'zod';
 import { restClient } from '../../client/rest-client.js';
+import type { ToolExecutionContext } from '../../utils/tool-context.js';
 
 export const getDoubleWinLeverage = {
   name: 'getDoubleWinLeverage',
@@ -12,7 +13,7 @@ export const getDoubleWinLeverage = {
     upperPrice: z.string(),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},
-  handler: async (input: Record<string, unknown>) => {
-    return restClient.getAuth("/v5/earn/advance/double-win-leverage", input);
+  handler: async (input: Record<string, unknown>, context: ToolExecutionContext = {}) => {
+    return restClient.getAuth("/v5/earn/advance/double-win-leverage", input, context);
   },
 };

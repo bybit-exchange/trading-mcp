@@ -1,6 +1,7 @@
 // getLPPayTokenList.ts — auto-generated, do not edit
 import { z } from 'zod';
 import { restClient } from '../../client/rest-client.js';
+import type { ToolExecutionContext } from '../../utils/tool-context.js';
 
 export const getLPPayTokenList = {
   name: 'getLPPayTokenList',
@@ -10,7 +11,7 @@ export const getLPPayTokenList = {
     tokenAddress: z.string().optional(),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},
-  handler: async (input: Record<string, unknown>) => {
-    return restClient.postAuth("/v5/alpha/lp/pay-token-list", input);
+  handler: async (input: Record<string, unknown>, context: ToolExecutionContext = {}) => {
+    return restClient.postAuth("/v5/alpha/lp/pay-token-list", input, context);
   },
 };

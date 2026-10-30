@@ -1,6 +1,7 @@
 // CoinListQuery.ts — auto-generated, do not edit
 import { z } from 'zod';
 import { restClient } from '../../../client/rest-client.js';
+import type { ToolExecutionContext } from '../../../utils/tool-context.js';
 
 export const CoinListQuery = {
   name: 'CoinListQuery',
@@ -11,7 +12,7 @@ export const CoinListQuery = {
     coin: z.string().optional(),
   }),
   annotations: {"readOnlyHint":true,"openWorldHint":true},
-  handler: async (input: Record<string, unknown>) => {
-    return restClient.getAuth("/v5/asset/exchange/query-coin-list", input);
+  handler: async (input: Record<string, unknown>, context: ToolExecutionContext = {}) => {
+    return restClient.getAuth("/v5/asset/exchange/query-coin-list", input, context);
   },
 };

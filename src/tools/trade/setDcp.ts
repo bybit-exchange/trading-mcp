@@ -1,6 +1,7 @@
 // setDcp.ts — auto-generated, do not edit
 import { z } from 'zod';
 import { restClient } from '../../client/rest-client.js';
+import type { ToolExecutionContext } from '../../utils/tool-context.js';
 
 export const setDcp = {
   name: 'setDcp',
@@ -12,7 +13,7 @@ export const setDcp = {
   annotations: {"readOnlyHint":false,"destructiveHint":false,"openWorldHint":true},
   requiresApproval: true,
   approvalTarget: "/v5/order/disconnected-cancel-all",
-  handler: async (input: Record<string, unknown>) => {
-    return restClient.postAuth("/v5/order/disconnected-cancel-all", input);
+  handler: async (input: Record<string, unknown>, context: ToolExecutionContext = {}) => {
+    return restClient.postAuth("/v5/order/disconnected-cancel-all", input, context);
   },
 };
