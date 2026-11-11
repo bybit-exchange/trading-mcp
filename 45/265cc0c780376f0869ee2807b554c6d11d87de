@@ -1,0 +1,19 @@
+src/utils/rate-limiter.ts
+  s_c687849667d870::t_b829345b46d908 26-27
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2-bit.2+419f699",
+  "base_commit_sha": "45265cc0c780376f0869ee2807b554c6d11d87de",
+  "prompts": {},
+  "sessions": {
+    "s_c687849667d870": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "01a1ca10-ddeb-79d2-9ac9-bda9116b8420",
+        "model": "unknown"
+      },
+      "human_author": "paul.yang <paul.yang@bybit.com>"
+    }
+  }
+}
