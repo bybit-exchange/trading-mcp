@@ -1,0 +1,19 @@
+AGENTS.md
+  s_a445c3cc9ca936::t_f4073450f45409 1-27
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2-bit.2+419f699",
+  "base_commit_sha": "6414312ae8a74d74f7252859692adfdb87c37d41",
+  "prompts": {},
+  "sessions": {
+    "s_a445c3cc9ca936": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1ca10-ddeb-79d2-9ac9-bda9116b8420",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "paul.yang <paul.yang@bybit.com>"
+    }
+  }
+}
