@@ -359,7 +359,7 @@ Run **Developer: Reload Window** from the Command Palette (`Cmd+Shift+P` / `Ctrl
 | `rfq-trading` | Yes | 15 | Create/cancel RFQs and quotes, execute quotes, accept non-LP quotes, RFQ config, realtime and historical RFQs/quotes, trade history, public trades |
 | `spread-trading` | Mixed | 12 | Spread instruments, orderbook, tickers, recent trades, create/amend/cancel spread orders, open orders, order history, trade history, max order quantity |
 | `asset` | Yes | 35 | Asset overview, portfolio margin, delivery/settlement records, aggregated parent+sub account assets, funding history, coin/chain info, transfer & coin-balance queries, deposit record/address queries, withdraw record/address and withdrawable-amount queries, currency convert (quote/execute/history) and dust conversion |
-| `user` | Yes | 8 | Read-only user & sub-account info: API key info & permissions including Compliance, sub-account and escrow sub-account listings, member account type, referral code and referral (invited-user) queries |
+| `user` | Yes | 8 | Read-only user & sub-account info: API key info & permissions, sub-account and escrow sub-account listings, member account type, referral code and referral (invited-user) queries |
 | `referral` | Yes | 4 | Read-only campaign reward rules, referral identity, invitation records, and commission records |
 | `affiliate` | Yes | 2 | Affiliate user list and per-user referral information |
 | `broker` | Yes | 8 | Broker earnings and account info, award info/distribution/records, API rate-limit set and query (cap & per-UID) |
