@@ -23,8 +23,6 @@ const ENDPOINT_LIMITS: Record<string, number> = {
 };
 
 const ROLLING_WINDOW_LIMITS: Record<string, number> = {
-  '/v5/spot-margin-trade/get-trade-auto-repay': 50,
-  '/v5/spot-margin-trade/set-trade-auto-repay': 5,
   '/v5/spot-margin-trade/fixedborrow-interest-accrued': 5,
   '/v5/spot-margin-trade/fixedborrow-order-cancel': 1,
   '/v5/referral/campaign/rewards': 5,
