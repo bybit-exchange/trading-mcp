@@ -1,0 +1,19 @@
+README.md
+  s_c687849667d870::t_6fc73bf191a0fd 362
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2-bit.2+419f699",
+  "base_commit_sha": "6f48229fdbc683e6e9ffa6e3f5dd3436f66fd1bd",
+  "prompts": {},
+  "sessions": {
+    "s_c687849667d870": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "01a1ca10-ddeb-79d2-9ac9-bda9116b8420",
+        "model": "unknown"
+      },
+      "human_author": "paul.yang <paul.yang@bybit.com>"
+    }
+  }
+}
