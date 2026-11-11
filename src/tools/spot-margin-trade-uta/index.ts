@@ -7,6 +7,7 @@ import { getSpotMarginTradeFlexibleAvailableInventory } from './getSpotMarginTra
 import { getSpotMarginTradeMaxBorrowable } from './getSpotMarginTradeMaxBorrowable.js';
 import { getSpotMarginTradeRepaymentAvailableAmount } from './getSpotMarginTradeRepaymentAvailableAmount.js';
 import { getSpotMarginTradeState } from './getSpotMarginTradeState.js';
+import { getTradeAutoRepay } from './getTradeAutoRepay.js';
 import { queryBorrowLiability } from './queryBorrowLiability.js';
 import { queryFixedAvailableInventory } from './queryFixedAvailableInventory.js';
 import { queryFixedBorrowContracts } from './queryFixedBorrowContracts.js';
@@ -15,6 +16,7 @@ import { queryFixedBorrowOrders } from './queryFixedBorrowOrders.js';
 import { queryFixedBorrowPenaltyInterest } from './queryFixedBorrowPenaltyInterest.js';
 import { renewFixedBorrow } from './renewFixedBorrow.js';
 import { setAutoRepayMode } from './setAutoRepayMode.js';
+import { setTradeAutoRepay } from './setTradeAutoRepay.js';
 import { spotMarginSetLeverage } from './spotMarginSetLeverage.js';
 import { spotMarginSwitchMode } from './spotMarginSwitchMode.js';
 
@@ -27,6 +29,7 @@ export const spotMarginTradeUtaTools = [
   getSpotMarginTradeMaxBorrowable,
   getSpotMarginTradeRepaymentAvailableAmount,
   getSpotMarginTradeState,
+  getTradeAutoRepay,
   queryBorrowLiability,
   queryFixedAvailableInventory,
   queryFixedBorrowContracts,
@@ -35,6 +38,7 @@ export const spotMarginTradeUtaTools = [
   queryFixedBorrowPenaltyInterest,
   renewFixedBorrow,
   setAutoRepayMode,
+  setTradeAutoRepay,
   spotMarginSetLeverage,
   spotMarginSwitchMode,
 ];
