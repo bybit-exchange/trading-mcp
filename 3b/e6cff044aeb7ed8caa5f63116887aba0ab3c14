@@ -1,0 +1,19 @@
+.github/workflows/retract-mcp-2.1.27.yml
+  s_a445c3cc9ca936::t_1be8792a930170 1-41
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2-bit.2+419f699",
+  "base_commit_sha": "3be6cff044aeb7ed8caa5f63116887aba0ab3c14",
+  "prompts": {},
+  "sessions": {
+    "s_a445c3cc9ca936": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1ca10-ddeb-79d2-9ac9-bda9116b8420",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "paul.yang <paul.yang@bybit.com>"
+    }
+  }
+}
