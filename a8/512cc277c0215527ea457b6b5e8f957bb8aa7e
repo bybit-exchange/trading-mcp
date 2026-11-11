@@ -1,0 +1,35 @@
+src/tools/spot-margin-trade-uta/getTradeAutoRepay.ts
+  s_a445c3cc9ca936::t_6da0e831dc2dc8 1-16
+src/tools/spot-margin-trade-uta/index.ts
+  s_a445c3cc9ca936::t_f403a787bfc400 10,19,32,41
+src/tools/spot-margin-trade-uta/setTradeAutoRepay.ts
+  s_a445c3cc9ca936::t_f8e4c8e4839b56 1-18
+src/tools/user/queryAPIKey.ts
+  s_a445c3cc9ca936::t_f3fd0d647160d8 8
+src/utils/rate-limiter.ts
+  s_c687849667d870::t_2a556f079559c8 26-27
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2-bit.2+419f699",
+  "base_commit_sha": "a8512cc277c0215527ea457b6b5e8f957bb8aa7e",
+  "prompts": {},
+  "sessions": {
+    "s_a445c3cc9ca936": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1ca10-ddeb-79d2-9ac9-bda9116b8420",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "paul.yang <paul.yang@bybit.com>"
+    },
+    "s_c687849667d870": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "01a1ca10-ddeb-79d2-9ac9-bda9116b8420",
+        "model": "unknown"
+      },
+      "human_author": "paul.yang <paul.yang@bybit.com>"
+    }
+  }
+}
