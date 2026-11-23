@@ -1,0 +1,19 @@
+.github/workflows/publish.yml
+  s_30cd3f4f81bb11::t_79ac6227a5e60e 13,20,22-25,53
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2-bit.2+419f699",
+  "base_commit_sha": "4ecbc38431833c2013776c20ca80c66aacbbafd9",
+  "prompts": {},
+  "sessions": {
+    "s_30cd3f4f81bb11": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a20708-dcb5-7253-8d46-30d58f55dce5",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "paul.yang <paul.yang@bybit.com>"
+    }
+  }
+}
