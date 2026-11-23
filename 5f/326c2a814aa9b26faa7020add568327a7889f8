@@ -1,0 +1,32 @@
+README.md
+  h_df8eef7955e0ba 8,11,32,34,389,399
+README.zh.md
+  h_df8eef7955e0ba 8,11,32,34,389,399
+package-lock.json
+  h_df8eef7955e0ba 3,9
+package.json
+  h_df8eef7955e0ba 3
+src/server.ts
+  h_df8eef7955e0ba 46
+src/tools/launchpool/getLaunchpoolUserStakeInfo.ts
+  h_df8eef7955e0ba 1-16
+src/tools/launchpool/index.ts
+  h_df8eef7955e0ba 6-8,15-17
+src/tools/launchpool/stakeLaunchpoolUser.ts
+  h_df8eef7955e0ba 1-21
+src/tools/launchpool/unstakeLaunchpoolUser.ts
+  h_df8eef7955e0ba 1-21
+src/version.ts
+  h_df8eef7955e0ba 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.2-bit.2+419f699",
+  "base_commit_sha": "5f326c2a814aa9b26faa7020add568327a7889f8",
+  "prompts": {},
+  "humans": {
+    "h_df8eef7955e0ba": {
+      "author": "paul.yang <paul.yang@bybit.com>"
+    }
+  }
+}
